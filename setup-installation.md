@@ -94,4 +94,4 @@ October CMS 对应的服务器要求:
 ### 设置队列
 
 您可以选择设置一个外部队列来处理排队的作业，默认情况下，这些工作将由平台异步处理。可以通过在“config/queue.php”中设置“default”参数来进行修改。
-如果您决定使用`数据库`队列驱动程序，最好为命令“php artisan queue:work—once”添加一个Crontab入口，以处理队列中第一个可用的作业。
+如果您决定使用`数据库`队列驱动程序，最好为命令“php artisan queue:work --once”添加一个Crontab入口，以处理队列中第一个可用的作业。
