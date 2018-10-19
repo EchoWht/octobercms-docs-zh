@@ -5,3 +5,6 @@
 1. [配置](setup-configuration.md)
 1. [CMS主题](cms-themes.md)
 1. [CMS页面](cms-pages.md)
+1. [CMS部件](cms-partials.md)
+1. [CMS布局](cms-layouts.md)
+1. [CMS内容](cms-content.md)
