@@ -48,7 +48,7 @@
 <a name="content-global-variables"></a>
 ### 全局变量
 
-您可以使用`View :: share`方法注册全局可用于所有内容块的变量。
+您可以使用`View::share`方法注册全局可用于所有内容块的变量。
 
     View::share('site_name', 'OctoberCMS');
 
