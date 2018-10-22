@@ -8,6 +8,8 @@
     1. [CMS部件](cms-partials.md)
     1. [CMS布局](cms-layouts.md)
     1. [CMS内容](cms-content.md)
+    1. [CMS组件](cms-content.md)
+    1. [CMS多媒体文件管理](cms-mediamanager.md)
 1. AJAX
 1. Themes 主题
 1. Plugins 扩展
