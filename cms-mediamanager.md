@@ -236,7 +236,7 @@ There are several options that allow you to fine-tune the Media Manager. All of 
 **file.move** | 文件移动时执行 | `(string) $path`, `(string) $dest`
 **file.upload** | 文件上传时执行 | `(string) $filePath`, `(\Symfony\Component\HttpFoundation\File\UploadedFile) $uploadedFile`
 
-**要使用这些钩子事件，可以直接继承`Backend\Widgets\MediaManager`类：:**
+**要使用这些钩子事件，可以直接继承`Backend\Widgets\MediaManager`类：**
 
     Backend\Widgets\MediaManager::extend(function($widget) {
         $widget->bindEvent('file.rename', function ($originalPath, $newPath) {
