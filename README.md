@@ -18,6 +18,7 @@
     1. [AJAX JavaScript API](ajax-javascript-api.md)
     1. [AJAX额外功能](ajax-extras.md)
 1. Themes 主题
+    1. [主题开发](themes-development.md)
 1. Plugins 扩展
 1. Backend 后端
 1. Database 数据库
