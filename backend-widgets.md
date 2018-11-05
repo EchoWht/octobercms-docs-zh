@@ -15,7 +15,7 @@
     - [报告小部件属性](#report-properties)
     - [报告小部件注册](#report-widget-registration)
 
-窗口小部件是自包含的功能块，可以解决不同的任务。 窗口小部件始终具有用户界面和后端控制器（窗口小部件类），用于准备窗口小部件数据并处理窗口小部件用户界面生成的AJAX请求。
+窗口小部件是自包含的功能块，可以解决不同的任务。 窗口小部件始终包含用户界面和后端控制器（窗口小部件类），用于准备窗口小部件数据并处理窗口小部件用户界面生成的AJAX请求。
 
 <a name="generic-widgets"></a>
 ## 通用小部件
@@ -27,13 +27,13 @@
     widgets/
       /form
         /partials
-          _form.htm     <=== Widget partial file
+          _form.htm     <=== 小部件 partial 文件
         /assets
           /js
-            form.js     <=== Widget JavaScript file
+            form.js     <=== 小部件JavaScript 文件
           /css
-            form.css    <=== Widget StyleSheet file
-      Form.php          <=== Widget class
+            form.css    <=== 小部件css 文件
+      Form.php          <=== 小部件类
 
 <a name="generic-class-definition"></a>
 ### 类定义
@@ -47,7 +47,7 @@
     class Lists extends WidgetBase
     {
         /**
-         * @var string A unique alias to identify this widget.
+         * @var string用于标识此窗口小部件的唯一别名。
          */
         protected $defaultAlias = 'list';
 
