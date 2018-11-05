@@ -1,4 +1,4 @@
-#后端视图和Partials
+# 后端视图和Partials
 
 - [Partials和提示](#partials)
     - [提示部分](#hints)

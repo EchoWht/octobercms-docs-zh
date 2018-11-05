@@ -20,7 +20,17 @@
 1. Themes 主题
     1. [主题开发](themes-development.md)
 1. Plugins 扩展
+    1. [插件(Plugins)注册](plugin-registration.md)
+    1. [版本历史](plugin-updates.md)
+    1. [组件开发](plugin-components.md)
+    1. [插件设置和配置](plugin-settings.md)
+    1. [本地化](plugin-localization.md)
+    1. [任务调度](plugin-scheduling.md)
+    1. [扩展插件](plugin-extending.md)
 1. Backend 后端
+    1. [后端控制器和AJAX](backend-controllers-ajax.md)
+    1. [后端视图和Partials](backend-views-partials.md)
+    1. [小工具](backend-widgets.md)
 1. Database 数据库
 1. Services 服务
 1. Console 控制台
