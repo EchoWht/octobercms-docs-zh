@@ -88,7 +88,7 @@ October CMS 对应的服务器要求:
     * * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
 请确保将 **/path/to/artisan** 替换为October根目录下artisan文件的绝对路径。此Cron将每分钟调用命令调度程序。然后October评估所有计划任务并且执行预期的任务。
 
-> **注意**: If you are adding this to `/etc/cron.d` 之后需要立即指定一个用户 `* * * * *`.
+> **注意**: 如果你添加 `/etc/cron.d` 之后需要立即指定一个用户 `* * * * *`.
 
 <a name="queue-setup"></a>
 ### 设置队列
