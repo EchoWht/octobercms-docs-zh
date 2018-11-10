@@ -14,7 +14,7 @@
 - [AJAX处理](#ajax-handlers)
 - [默认标签](#default-markup)
 - [组件部分(partials)](#component-partials)
-    - [引用 "self"](#referencing-self)
+    - [引用自身 "self"](#referencing-self)
     - [唯一标识符](#unique-identifier)
 - [在代码里引用partials](#render-partial-method)
 - [使用组件注入页面资源](#component-assets)
@@ -33,7 +33,6 @@
             ComponentName.php    <=== 组件类文件
           Plugin.php
 
-Components must be [registered in the Plugin registration class](#component-registration) with the `registerComponents` method.
 组件必须使用`registerComponents`方法在[Plugin注册类中注册](#component-registration)。
 
 <a name="component-class-definition"></a>
@@ -369,7 +368,7 @@ Components must be [registered in the Plugin registration class](#component-regi
     {% partial '@shared' %}
 
 <a name="referencing-self"></a>
-### 引用 "self"
+### 引用自身 "self"
 
 组件可以使用`__SELF__`变量在其partials中引用它们自己。 默认情况下，它将返回组件的短名称或[别名](../cms/components#aliases)。
 
