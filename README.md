@@ -42,7 +42,7 @@
     1. [数据库转换器](database-mutators.md)
     1. [模型序列化](database-serialization.md)
     1. [数据库特性](database-traits.md)
-    1. [数据库行文](database-behaviors.md)
+    1. [数据库行为](database-behaviors.md)
 1. Services 服务
 1. Console 控制台
     1. [命令行界面](console-commands.md)
