@@ -4,11 +4,11 @@
 
     {{ html_strip() }}
 
-是PHP的等价物如下：
+对应的PHP的方法如下：
 
     <?= Html::strip() ?>
 
-> **注意**: *camelCase*中的方法应转换为*snake_case*。
+> **注意**: *camelCase驼峰命名*中的方法应转换为*snake_case下划线命名*。
 
 ## html_strip()
 
