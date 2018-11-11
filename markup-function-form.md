@@ -40,7 +40,7 @@
 
 ## form_ajax()
 
-输出启用AJAX的FORM开始标记。 `form_ajax()`函数的第一个参数是AJAX处理程序名称。 处理程序可以在布局或页面[PHP部分](../cms/themes#php-section) 代码中定义，也可以在组件中定义。 您可以在[AJAX Framework](../ajax/introduction) 文章中找到有关AJAX的更多信息。
+输出启用AJAX的FORM开始标签。 `form_ajax()`函数的第一个参数是AJAX处理程序名称。 处理程序可以在布局或页面[PHP部分](../cms/themes#php-section) 代码中定义，也可以在组件中定义。 您可以在[AJAX Framework](../ajax/introduction) 文章中找到有关AJAX的更多信息。
 
     {{ form_ajax('onUpdate') }}
 
@@ -71,7 +71,7 @@
 
 ## form_close()
 
-输出标准FORM结束标记。 此标记通常可用于提供使用的一致性。
+输出标准FORM结束标签。 此标签通常可用于提供使用的一致性。
 
     {{ form_close() }}
 
