@@ -44,6 +44,10 @@
     1. [数据库特性](database-traits.md)
     1. [数据库行为](database-behaviors.md)
 1. Services 服务
+    1. [应用](services-application.md)
+    1. [行为](services-behaviors.md)
+    1. [缓存](services-cache.md)
+    1. [哈希和加密](services-hashing-encryption.md)
 1. Console 控制台
     1. [命令行界面](console-commands.md)
     1. [脚手架命令](console-scaffolding.md)
