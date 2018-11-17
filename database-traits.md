@@ -58,7 +58,7 @@ Model特征用于实现通用功能。译者注：《Modern PHP(中文版)》书
         use \October\Rain\Database\Traits\Encryptable;
 
         /**
-         * @var array List of attributes to encrypt.
+         * @var array 要加密的属性列表。
          */
         protected $encryptable = ['api_key', 'api_secret'];
     }
@@ -75,7 +75,7 @@ Slugs是页面URL中常用的有意义的代码。 要为您的Model实例自动
         use \October\Rain\Database\Traits\Sluggable;
 
         /**
-         * @var array Generate slugs for these attributes.
+         * @var array 为这些属性生成唯一标示。
          */
         protected $slugs = ['slug' => 'name'];
     }
@@ -93,7 +93,7 @@ Slugs仅在首次创建Model实例时生成。 要覆盖或禁用此功能，只
     $user = new User;
     $user->name = 'Remy';
     $user->slug = 'custom-slug';
-    $user->save(); // Slug will not be generated
+    $user->save(); // 不会产生slug
 
 更新Model实例时，使用`slugAttributes`方法重新生成slugs：
 
