@@ -1118,3 +1118,4 @@ The above example will set the `hidden` flag on certain fields by checking the v
 ## 验证表单字段
 
 To validate the fields of your form you can make use of the [Validation](../database/traits#validation) trait in your model.
+
