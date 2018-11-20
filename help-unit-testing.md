@@ -108,10 +108,10 @@
 
 #### 安装Selenium
 
-1.从http://java.sun.com/下载最新的Java SE并安装
-1.下载[Selenium Server](http://seleniumhq.org/download/)的分发档案。
-1.解压缩分发存档，并将selenium-server-standalone-2.42.2.jar（检查版本后缀）复制到/usr/local/bin。
-1.运行`java -jar /usr/local/bin/selenium-server-standalone-2.42.2.jar`启动Selenium Server服务器。
+1. 从http://java.sun.com/下载最新的Java SE并安装
+1. 下载[Selenium Server](http://seleniumhq.org/download/)的分发档案。
+1. 解压缩分发存档，并将selenium-server-standalone-2.42.2.jar（检查版本后缀）复制到/usr/local/bin。
+1. 运行`java -jar /usr/local/bin/selenium-server-standalone-2.42.2.jar`启动Selenium Server服务器。
 
 #### Selenium配置
 
