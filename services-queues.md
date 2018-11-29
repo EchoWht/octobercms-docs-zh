@@ -2,9 +2,9 @@
 
 - [配置](#configuration)
 - [基本用法](#basic-usage)
-- [Queueing closures](#queueing-closures)
+- [队列闭包](#queueing-closures)
 - [运行队列](#running-the-queue-worker)
-- [Supervisor configuration](#supervisor-configuration)
+- [Supervisor配置](#supervisor-configuration)
 - [守护进程队列工作者](#daemon-queue-worker)
 - [推送队列](#push-queues)
 - [失败的任务](#failed-jobs)
@@ -14,7 +14,7 @@
 
 队列允许您将处理耗时的任务（例如发送电子邮件）推迟到稍后的时间，从而大大加快了对应用程序的Web请求。
 
-队列配置文件存储在`config / queue.php`中。 在此文件中，您将找到包含的每个队列驱动程序的连接配置，例如数据库， [Beanstalkd](http://kr.github.com/beanstalkd), [IronMQ](http://iron.io), [Amazon SQS](http://aws.amazon.com/sqs), [Redis](http://redis.io),，null和同步（用于本地使用）驱动程序。 `null`队列驱动程序只是丢弃排队的作业，因此永远不会执行它们。
+队列配置文件存储在`config/queue.php`中。 在此文件中，您将找到包含的每个队列驱动程序的连接配置，例如数据库， [Beanstalkd](http://kr.github.com/beanstalkd), [IronMQ](http://iron.io), [Amazon SQS](http://aws.amazon.com/sqs), [Redis](http://redis.io),，null和同步（用于本地使用）驱动程序。 `null`队列驱动程序只是丢弃排队的作业，因此永远不会执行它们。
 
 ### 先决条件
 
@@ -25,11 +25,11 @@
 
 #### 将作业推送到队列中
 
-要将新作业推送到队列，请使用`Queue :: push`方法：
+要将新作业推送到队列，请使用`Queue::push`方法:
 
     Queue::push('SendEmail', ['message' => $message]);
 
-`push`方法的第一个参数是应该用于处理作业的类的名称。 第二个参数是应该传递给处理程序的数据数组。 应该像这样定义一个作业处理程序：
+`push`方法的第一个参数是应该用于处理作业的类的名称。 第二个参数是应该传递给处理程序的数据数组。 应该像这样定义一个作业处理程序:
 
     class SendEmail
     {
@@ -43,19 +43,19 @@
 
 #### 指定自定义处理程序方法
 
-如果您希望作业使用`fire`以外的方法，则可以在推送作业时指定方法：
+如果您希望作业使用`fire`以外的方法，则可以在推送作业时指定方法:
 
     Queue::push('SendEmail@send', ['message' => $message]);
 
 #### 指定作业的队列名称
 
-为jobaYou指定队列名称还可以指定作业应发送到的队列/管道：
+为jobaYou指定队列名称还可以指定作业应发送到的队列/管道:
 
     Queue::push('SendEmail@send', ['message' => $message], 'emails');
 
 #### 延迟作业的执行
 
-有时您可能希望延迟执行排队的作业。 例如，您可能希望将注册后15分钟向客户发送电子邮件的作业排队。 您可以使用`Queue :: later`方法完成此操作：
+有时您可能希望延迟执行排队的作业。 例如，您可能希望将注册后15分钟向客户发送电子邮件的作业排队。 您可以使用`Queue::later`方法完成此操作:
 
     $date = Carbon::now()->addMinutes(15);
 
@@ -71,7 +71,7 @@
 
 #### 删除已处理的作业
 
-处理完作业后，必须从队列中删除它，这可以通过`Job`实例上的`delete`方法完成：
+处理完作业后，必须从队列中删除它，这可以通过`Job`实例上的`delete`方法完成:
 
     public function fire($job, $data)
     {
@@ -82,7 +82,7 @@
 
 #### 将作业释放回队列
 
-如果您希望将作业释放回队列，可以通过`release`方法执行此操作：
+如果您希望将作业释放回队列，可以通过`release`方法执行此操作:
 
     public function fire($job, $data)
     {
@@ -91,13 +91,13 @@
         $job->release();
     }
 
-您还可以指定在作业发布之前等待的秒数：
+您还可以指定在作业发布之前等待的秒数:
 
     $job->release(5);
 
 #### 检查运行尝试次数
 
-如果在处理作业时发生异常，它将自动释放回队列。 您可以使用`attempts`方法检查运行作业的尝试次数：
+如果在处理作业时发生异常，它将自动释放回队列。 您可以使用`attempts`方法检查运行作业的尝试次数:
 
     if ($job->attempts() > 3) {
         //
@@ -105,14 +105,14 @@
 
 #### 访问作业ID
 
-您还可以访问作业标识符：
+您还可以访问作业标识符:
 
     $job->getJobId();
 
 <a name="queueing-closures"></a>
 ## 队列闭包
 
-您也可以将Closure推入队列。 这对于需要排队的快速，简单的任务非常方便：
+您也可以将Closure推入队列。 这对于需要排队的快速，简单的任务非常方便:
 
 #### 将闭包推入队列
 
@@ -124,66 +124,66 @@
 
 > **注意:** 不要在排队的Closures通过`use`指令使用对象，可以传递主键并从队列作业中重新拉出关联的模型。 这通常可以避免意外的序列化行为。
 
-使用Iron.io [推送队列](#push-queues)时，您应该采取额外的预防措施排队闭包。 接收队列消息的端点应检查令牌以验证请求是否实际来自Iron.io. 例如，您的推送队列端点应该类似于：`https：//example.com/queue/receive？token = SecretToken`。 然后，您可以在编组队列请求之前检查应用程序中的秘密令牌的值。
+使用Iron.io [推送队列](#push-queues)时，您应该采取额外的预防措施排队闭包。 接收队列消息的端点应检查令牌以验证请求是否实际来自Iron.io. 例如，您的推送队列端点应该类似于:`https://example.com/queue/receive？token = SecretToken`。 然后，您可以在编组队列请求之前检查应用程序中的秘密令牌的值。
 
 <a name="running-the-queue-worker"></a>
 ## 运行队列工作程序
 
 October 包括一些将处理队列中的作业的[控制台命令](../console/commands)。
 
-要在将新作业推入队列时处理它们，请运行`queue：work`命令：
+要在将新作业推入队列时处理它们，请运行`queue:work`命令:
 
     php artisan queue:work
 
 此任务启动后，它将继续运行，直到手动停止。 您可以使用[Supervisor]（#supervisor-configuration）等进程监视器来确保队列工作程序不会停止运行。
 
-Queue worker processes store the booted application state in memory. They will not recognize changes in your code after they have been started. When deploying changes, restart queue workers.
+队列工作进程将引导的应用程序状态存储在内存中。 它们在启动后无法识别代码中的更改。 部署更改时，请重新启动队列工作程序。
 
-#### Processing a single job
+#### 处理单个工作
 
-To process only the first job on the queue, use the `--once` option:
+要仅处理队列中的第一个作业，请使用`--once`选项:
 
     php artisan queue:work --once
 
-#### Specifying the connection & Queue
+#### 指定连接和队列
 
-You may also specify which queue connection the worker should utilize:
+您还可以指定工作人员应使用的队列连接:
 
     php artisan queue:work connection
 
 
-You may pass a comma-delimited list of queue connections to the `work` command to set queue priorities:
+您可以将逗号分隔的队列连接列表传递给`work`命令以设置队列优先级:
 
     php artisan queue:work --queue=high,low
 
-In this example, jobs on the `high` queue will always be processed before moving onto jobs from the `low` queue.
+在这个例子中，在从`low`队列转移到作业之前，将始终处理`high`队列上的作业。
 
-#### Specifying the job timeout parameter
+#### 指定作业超时参数
 
-You may also set the length of time (in seconds) each job should be allowed to run:
+您还可以设置允许每个作业运行的时间长度（以秒为单位）:
 
     php artisan queue:work --timeout=60
 
-#### Specifying queue sleep duration
+#### 指定队列睡眠持续时间
 
-In addition, you may specify the number of seconds to wait before polling for new jobs:
+此外，您可以指定轮询新作业之前要等待的秒数:
 
     php artisan queue:work --sleep=5
 
-Note that the queue only "sleeps" if no jobs are on the queue. If more jobs are available, the queue will continue to work them without sleeping.
+请注意，如果队列中没有作业，则队列仅“休眠”。 如果有更多可用的作业，队列将继续工作而不会休眠。
 
 <a name="supervisor-configuration"></a>
-## Supervisor configuration
+## Supervisor配置
 
-### Installing Supervisor
+### 安装Supervisor
 
-Supervisor is a process monitor for the Linux operating system, and will automatically restart your `queue:work` process if it fails. To install Supervisor on Ubuntu, you may use the following command:
+Supervisor是Linux操作系统的进程监视器，如果失败，将自动重启`queue:work`进程。 要在Ubuntu上安装Supervisor，您可以使用以下命令:
 
     sudo apt-get install supervisor
 
-### Configuring Supervisor
+### 配置Supervisor
 
-Supervisor configuration files are typically stored in the `/etc/supervisor/conf.d` directory. Within this directory, you may create any number of configuration files that instruct supervisor how your processes should be monitored. For example, let's create a `october-worker.conf` file that starts and monitors a `queue:work` process:
+Supervisor配置文件通常存储在`/etc/supervisor/conf.d`目录中。 在此目录中，您可以创建任意数量的配置文件，以指示supervisor如何监视您的进程。 例如，让我们创建一个`october-worker.conf`文件，它启动并监视`queue:work`进程:
 
     [program:october-worker]
     process_name=%(program_name)s_%(process_num)02d
@@ -195,11 +195,11 @@ Supervisor configuration files are typically stored in the `/etc/supervisor/conf
     redirect_stderr=true
     stdout_logfile=/path/to/october/worker.log
     
-In this example, the `numprocs` directive will instruct Supervisor to run 8 `queue:work` processes and monitor all of them, automatically restarting them if they fail. Of course, you should change the `queue:work` portion of the command directive to reflect your desired queue connection. The `user` directive should be changed to the name of a user that has permission to run the command.
+在这个例子中，`numprocs`指令将指示Supervisor运行8`queue:work`进程并监视所有进程，如果失败则自动重启它们。 当然，您应该更改命令指令的`queue:work`部分以反映您所需的队列连接。 应将`user`指令更改为有权运行该命令的用户的名称。
 
-### Starting Supervisor
+### 开始Supervisor
 
-Once the configuration file has been created, you may update the Supervisor configuration and start the processes using the following commands:
+创建配置文件后，您可以使用以下命令更新Supervisor配置并启动进程:
 
     sudo supervisorctl reread
 
@@ -207,14 +207,14 @@ Once the configuration file has been created, you may update the Supervisor conf
 
     sudo supervisorctl start october-worker:*
     
-For more information on Supervisor, consult the [Supervisor documentation](http://supervisord.org/index.html).
+有关Supervisor的更多信息，请参阅[Supervisor文档](http://supervisord.org/index.html)。
 
 <a name="daemon-queue-worker"></a>
-## Daemon queue worker
+## 守护进程队列工作者
 
-The `queue:work` also includes a `--daemon` option for forcing the queue worker to continue processing jobs without ever re-booting the framework. This results in a significant reduction of CPU usage when compared to the `queue:work` command, but at the added complexity of needing to drain the queues of currently executing jobs during your deployments.
+`queue:work`还包括一个`--daemon`选项，用于强制队列工作者继续处理作业而无需重新启动框架。 与`queue:work`命令相比，这会显着降低CPU使用率，但会增加部署期间需要耗尽当前正在执行的作业队列的复杂性。
 
-To start a queue worker in daemon mode, use the `--daemon` flag:
+要以守护进程模式启动队列工作程序，请使用`--daemon`标志：
 
     php artisan queue:work connection --daemon
 
@@ -222,64 +222,64 @@ To start a queue worker in daemon mode, use the `--daemon` flag:
 
     php artisan queue:work connection --daemon --sleep=3 --tries=3
 
-You may use the `php artisan help queue:work` command to view all of the available options.
+您可以使用`php artisan help queue:work`命令查看所有可用选项。
 
-### Deploying with daemon queue workers
+### 使用守护程序队列工作程序进行部署
 
-The simplest way to deploy an application using daemon queue workers is to put the application in maintenance mode at the beginning of your deployment. This can be done using the back-end settings area. Once the application is in maintenance mode, October will not accept any new jobs off of the queue, but will continue to process existing jobs.
+使用守护程序队列工作程序部署应用程序的最简单方法是在部署开始时将应用程序置于维护模式。 这可以使用后端设置区域完成。 应用程序处于维护模式后，October将不接受队列中的任何新作业，但将继续处理现有作业。
 
-The easiest way to restart your workers is to include the following command in your deployment script:
+重新启动worker的最简单方法是在部署脚本中包含以下命令：
 
     php artisan queue:restart
 
-This command will instruct all queue workers to restart after they finish processing their current job.
+此命令将指示所有队列工作程序在完成当前作业的处理后重新启动。
 
-> **Note:** This command relies on the cache system to schedule the restart. By default, APCu does not work for CLI commands. If you are using APCu, add `apc.enable_cli=1` to your APCu configuration.
+> **注意:** 此命令依赖于缓存系统来安排重新启动。 默认情况下，APCu不适用于CLI命令。 如果您使用的是APCu，请将“apc.enable_cli = 1”添加到您的APCu配置中。
 
-### Coding for daemon queue workers
+### 守护程序队列工作程序的编码
 
-Daemon queue workers do not restart the platform before processing each job. Therefore, you should be careful to free any heavy resources before your job finishes. For example, if you are doing image manipulation with the GD library, you should free the memory with `imagedestroy` when you are done.
+守护程序队列工作程序在处理每个作业之前不会重新启动平台。 因此，在工作完成之前，您应该小心释放任何重型资源。 例如，如果您使用GD库进行图像处理，则在完成后应使用`imagedestroy`释放内存。
 
-Similarly, your database connection may disconnect when being used by long-running daemon. You may use the `Db::reconnect` method to ensure you have a fresh connection.
+同样，数据库连接在长时运行的守护程序使用时可能会断开连接。 您可以使用`Db::reconnect`方法来确保您有新的连接。
 
 <a name="failed-jobs"></a>
-## Failed jobs
+## 失败的任务
 
-Since things don't always go as planned, sometimes your queued jobs will fail. Don't worry, it happens to the best of us! There is a convenient way to specify the maximum number of times a job should be attempted. After a job has exceeded this amount of attempts, it will be inserted into a `failed_jobs` table. The failed jobs table name can be configured via the `config/queue.php` configuration file.
+由于事情并不总是按计划进行，因此有时排队的工作会失败。 别担心，它发生在我们最好的人身上！ 有一种方便的方法可以指定尝试作业的最大次数。 作业超过此尝试次数后，它将被插入到“failed_jobs”表中。 可以通过`config / queue.php`配置文件配置失败的作业表名称。
 
-You can specify the maximum number of times a job should be attempted using the `--tries` switch on the `queue:work` command:
+您可以使用`queue：work`命令中的`--tries`开关指定应尝试作业的最大次数：
 
     php artisan queue:work connection-name --tries=3
 
-If you would like to register an event that will be called when a queue job fails, you may use the `Queue::failing` method. This event is a great opportunity to notify your team via e-mail or another third party service.
+如果要注册在队列作业失败时将调用的事件，可以使用`Queue::failing`方法。 此活动是通过电子邮件或其他第三方服务通知您的团队的绝佳机会。
 
     Queue::failing(function($connection, $job, $data) {
         //
     });
 
-You may also define a `failed` method directly on a queue job class, allowing you to perform job specific actions when a failure occurs:
+您还可以直接在队列作业类上定义`failed`方法，允许您在发生故障时执行特定于作业的操作：
 
     public function failed($data)
     {
         // Called when the job is failing...
     }
     
-The original array of `data` will also be automatically passed onto the failed method.    
+原始数据`data`也将自动传递给失败的方法。   
 
-### Retrying failed jobs
+### 重试失败的作业
 
-To view all of your failed jobs, you may use the `queue:failed` Artisan command:
+要查看所有失败的作业，可以使用`queue:failed` Artisan命令：
 
     php artisan queue:failed
 
-The `queue:failed` command will list the job ID, connection, queue, and failure time. The job ID may be used to retry the failed job. For instance, to retry a failed job that has an ID of 5, the following command should be issued:
+`queue:failed`命令将列出作业ID，连接，队列和失败时间。 作业ID可用于重试失败的作业。 例如，要重试ID为5的失败作业，应发出以下命令：
 
     php artisan queue:retry 5
 
-If you would like to delete a failed job, you may use the `queue:forget` command:
+如果要删除失败的作业，可以使用`queue:forget`命令：
 
     php artisan queue:forget 5
 
-To delete all of your failed jobs, you may use the `queue:flush` command:
+要删除所有失败的作业，可以使用`queue:flush`命令：
 
     php artisan queue:flush
