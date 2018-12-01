@@ -108,12 +108,12 @@
 
 对于每个页面功能[导入](#import-page)和[导出](#export-page)，您应该提供一个[视图文件](controllers-views-ajax/＃introduction)和相应的名称 - **import.htm**和**export.htm**。
 
-The import/export behavior adds two methods to the controller class: `importRender` and `exportRender`. These methods render the importing and exporting sections as per the YAML configuration file described above.
+导入/导出行为向控制器类添加了两个方法：`importRender`和`exportRender`。 这些方法根据上述YAML配置文件呈现导入和导出部分。
 
 <a name="import-view"></a>
-### Import view
+### 导入视图
 
-The **import.htm** view represents the Import page that allows users to import data. A typical Import page contains breadcrumbs, the import section itself, and the submission buttons. The **data-request** attribute should refer to the `onImport` AJAX handler provided by the behavior. Below is a contents of the typical import.htm view file.
+**import.htm**视图表示允许用户导入数据的导入页面。 典型的导入页面包含面包屑，导入部分本身和提交按钮。 ** data-request **属性应该引用行为提供的`onImport` AJAX处理程序。 以下是典型的import.htm视图文件的内容。
 
     <?= Form::open(['class' => 'layout']) ?>
 
@@ -135,9 +135,9 @@ The **import.htm** view represents the Import page that allows users to import d
     <?= Form::close() ?>
 
 <a name="export-view"></a>
-### Export view
+### 导出视图
 
-The **export.htm** view represents the Export page that allows users to export a file from the database. A typical Export page contains breadcrumbs, the export section itself, and the submission buttons. The **data-request** attribute should refer to the `onExport` AJAX handler provided by the behavior. Below is a contents of the typical export.htm form.
+**export.htm**视图表示允许用户从数据库导出文件的“导出”页面。 典型的“导出”页面包含面包屑，导出部分本身和提交按钮。 **data-request**属性应该引用行为提供的`onExport` AJAX处理程序。 以下是典型的export.htm表单的内容。
 
     <?= Form::open(['class' => 'layout']) ?>
 
@@ -159,14 +159,14 @@ The **export.htm** view represents the Export page that allows users to export a
     <?= Form::close() ?>
 
 <a name="import-model"></a>
-## Defining an import model
+## 定义导入模型
 
-For importing data you should create a dedicated model for this process which extends the `Backend\Models\ImportModel` class. Here is an example class definition:
+对于导入数据，您应该为此过程创建一个专用模型，该模型扩展了`Backend\Models\ImportModel`类。 这是一个示例类定义：
 
     class SubscriberImport extends \Backend\Models\ImportModel
     {
         /**
-         * @var array The rules to be applied to the data.
+         * @var array 要应用于数据的规则。
          */
         public $rules = [];
 
@@ -189,20 +189,20 @@ For importing data you should create a dedicated model for this process which ex
         }
     }
 
-The class must define a method called `importData` used for processing the imported data. The first parameter `$results` will contain an array containing the data to import. The second parameter `$sessionKey` will contain the session key used for the request.
+该类必须定义一个名为`importData`的方法，用于处理导入的数据。 第一个参数`$results`将包含一个包含要导入的数据的数组。 第二个参数`$sessionKey`将包含用于请求的会话密钥。
 
-Method | Description
+方法 | 描述
 ------------- | -------------
-`logUpdated()` | Called when a record is updated.
-`logCreated()` | Called when a record is created.
-`logError(rowIndex, message)` | Called when there is a problem with importing the record.
-`logWarning(rowIndex, message)` | Used to provide a soft warning, like modifying a value.
-`logSkipped(rowIndex, message)` | Used when the entire row of data was not imported (skipped).
+`logUpdated()` | 更新记录时调用。（Called when a record is updated.）
+`logCreated()` | 当创建记录时调用。（Called when a record is created.）
+`logError(rowIndex, message)` | 导入记录时出现问题。
+`logWarning(rowIndex, message)` | 用于提供软警告，例如修改值。
+`logSkipped(rowIndex, message)` | 在未导入（跳过）整行数据时使用。
 
 <a name="export-model"></a>
-## Defining an export model
+## 定义导出模型
 
-For exporting data you should create a dedicated model which extends the `Backend\Models\ExportModel` class. Here is an example:
+要导出数据，您应该创建一个扩展`Backend\Models\ExportModel`类的专用模型。 这是一个例子：
 
     class SubscriberExport extends \Backend\Models\ExportModel
     {
@@ -216,12 +216,12 @@ For exporting data you should create a dedicated model which extends the `Backen
         }
     }
 
-The class must define a method called `exportData` used for returning the export data. The first parameter `$columns` is an array of column names to export. The second parameter `$sessionKey` will contain the session key used for the request.
+该类必须定义一个名为`exportData`的方法，用于返回导出数据。 第一个参数`$columns`是要导出的列名数组。 第二个参数`$sessionKey`将包含用于请求的会话密钥。
 
 <a name="custom-options"></a>
-## Custom options
+## 自定义选项
 
-Both import and export forms support custom options that can be introduced using form fields, defined in the **form** option in the import or export configuration respectively. These values are then passed to the Import / Export model and are available during processing.
+导入和导出表单都支持可以使用表单字段引入的自定义选项，这些表单字段分别在导入或导出配置中的**表单**选项中定义。 然后将这些值传递给导入/导出模型，并在处理期间可用。
 
     import:
         [...]
@@ -231,7 +231,7 @@ Both import and export forms support custom options that can be introduced using
         [...]
         form: $/acme/campaign/models/subscriberexport/fields.yaml
 
-The form fields specified will appear on the import/export page. Here is an example `fields.yaml` file contents:
+指定的表单字段将显示在导入/导出页面上。 这是一个示例`fields.yaml`文件内容：
 
     # ===================================
     #  Form Field Definitions
@@ -244,7 +244,7 @@ The form fields specified will appear on the import/export page. Here is an exam
             type: checkbox
             default: true
 
-The value of the form field above called **auto_create_lists** can be accessed using `$this->auto_create_lists` inside the `importData` method of the import model. If this were the export model, the value would be available inside the `exportData` method instead.
+可以使用导入模型的`importData`方法中的`$ this-> auto_create_lists`访问上面名为** auto_create_lists **的表单字段的值。 如果这是导出模型，则该值将在`exportData`方法中可用。
 
     class SubscriberImport extends \Backend\Models\ImportModel
     {
@@ -259,20 +259,20 @@ The value of the form field above called **auto_create_lists** can be accessed u
     }
 
 <a name="list-behavior-integration"></a>
-## Integration with list behavior
+## 与列表行为集成
 
-There is an alternative approach to exporting data that uses the [list behavior](lists) to provide the export data. In order to use this feature you should have the `Backend.Behaviors.ListController` definition to the `$implement` field of the controller class. You do not need to use an export view and all the settings will be pulled from the list. Here is the only configuration needed:
+有一种替代方法可以导出使用[list行为](lists) 来提供导出数据的数据。 要使用此功能，您应该将`Backend.Behaviors.ListController`定义到控制器类的`$implement`字段。 您不需要使用导出视图，所有设置都将从列表中提取。 这是唯一需要的配置：
 
     export:
         useList: true
 
-If you are using [multiple list definitions](lists#multiple-list-definitions), then you can supply the list definition:
+如果您使用[多个列表定义](lists#multiple-list-definitions)，那么您可以提供列表定义：
 
     export:
         useList: orders
         fileName: orders.csv
 
-The `useList` option also supports extended configuration options.
+`useList`选项还支持扩展配置选项。
 
 
     export:
@@ -280,9 +280,9 @@ The `useList` option also supports extended configuration options.
             definition: orders
             raw: true
 
-The following configuration options are supported:
+支持以下配置选项：
 
-Option | Description
+选项 | 描述
 ------------- | -------------
-**definition** | the list definition to source records from, optional.
-**raw** | output the raw attribute values from the record, default: false.
+**definition** | 源记录的列表定义，可选。
+**raw** | 列表定义来自源记录，optional.output来自记录的原始属性值，默认值：false。
