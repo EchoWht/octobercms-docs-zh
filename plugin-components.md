@@ -303,7 +303,7 @@
 <a name="page-cycle-response"></a>
 ### 页面周期响应
 
-与[页面执行生命周期](../cms/layouts#layout-life-cycle)中的所有方法一样，如果组件中的`onRun`方法返回一个值，这将在此时停止循环并返回 响应浏览器。 这里我们使用`Response`外观返回一个拒绝访问的消息：
+与[页面执行生命周期](../cms/layouts#layout-life-cycle)中的所有方法一样，如果组件中的`onRun`方法返回一个值，这将在此时停止循环并返回 响应浏览器。 这里我们使用`Response`facade返回一个拒绝访问的消息：
 
     public function onRun()
     {
@@ -419,7 +419,7 @@
         return ['#someDiv' => $this->renderPartial('component-partial.htm')];
     }
 
-另一个例子可能是通过从`onRun` [页面循环方法](#page-cycle)返回一个值来覆盖整个页面视图响应。 此代码将使用“Response”外观专门返回XML响应：
+另一个例子可能是通过从`onRun` [页面循环方法](#page-cycle)返回一个值来覆盖整个页面视图响应。 此代码将使用“Response”facade专门返回XML响应：
 
     public function onRun()
     {

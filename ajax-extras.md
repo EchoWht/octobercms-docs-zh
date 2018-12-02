@@ -112,7 +112,7 @@ T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的
         <!-- ... -->
     </form>
 
-结合在事件处理程序中使用`Flash`外观，在请求完成后将出现一条flash消息。
+结合在事件处理程序中使用`Flash`facade，在请求完成后将出现一条flash消息。
 
     function onSuccess()
     {

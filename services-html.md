@@ -25,7 +25,7 @@ October提供各种有用的函数与`Html`facade，用于处理HTML和表单。
     // Twig
     {{ form_open(...) }}
 
-如上所示，在Twig中，所有以`form_`为前缀的函数将直接绑定到`Form`外观，并使用*snake_case下划线格式*提供对方法的访问。 有关使用前端中的表单帮助程序的信息，请参阅[标记指南以获取更多信息](../markup/function-form)。
+如上所示，在Twig中，所有以`form_`为前缀的函数将直接绑定到`Form`facade，并使用*snake_case下划线格式*提供对方法的访问。 有关使用前端中的表单帮助程序的信息，请参阅[标记指南以获取更多信息](../markup/function-form)。
 
 <a name="opening-a-form"></a>
 ## 打开表单

@@ -150,7 +150,7 @@ October开始提供几种基本的异常类型。
 <a name="logging"></a>
 ## 日志
 
-默认情况下，October配置为为您的应用程序创建一个日志文件，该文件存储在`storage/logs`目录中。 您可以使用`Log`外观将信息写入日志：
+默认情况下，October配置为为您的应用程序创建一个日志文件，该文件存储在`storage/logs`目录中。 您可以使用`Log`facade将信息写入日志：
 
     $user = User::find(1);
     Log::info('Showing user profile for user: '.$user->name);

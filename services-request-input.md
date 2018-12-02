@@ -9,7 +9,7 @@
 <a name="basic-input"></a>
 ## 基本输入
 
-您可以使用一些简单的方法访问所有用户输入。 使用`Input`外观时，您无需担心请求的HTTP谓词，因为所有谓词都以相同的方式访问输入。 全局`input` [helper function](../services/helpers)是`Input::get`的别名。
+您可以使用一些简单的方法访问所有用户输入。 使用`Input`facade时，您无需担心请求的HTTP谓词，因为所有谓词都以相同的方式访问输入。 全局`input` [helper function](../services/helpers)是`Input::get`的别名。
 
 #### 检索输入值
 
