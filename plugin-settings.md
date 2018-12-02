@@ -135,7 +135,7 @@
 <a name="settings-page-context"></a>
 ### 设置页面导航上下文
 
-就像[在控制器中设置导航上下文](../backend/controllers-views-ajax#navigation-context)一样，后端设置页面应该设置设置导航上下文。 为了将系统页面侧栏中的当前设置链接标记为活动，需要它。 使用`System \ Classes \ SettingsManager`类设置设置上下文。 通常可以在控制器构造函数中完成：
+就像[在控制器中设置导航上下文](../backend/controllers-views-ajax#navigation-context)一样，后端设置页面应该设置设置导航上下文。 为了将系统页面侧栏中的当前设置链接标记为活动，需要它。 使用`System\Classes\SettingsManager`类设置设置上下文。 通常可以在控制器构造函数中完成：
 
     public function __construct()
     {

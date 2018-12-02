@@ -157,7 +157,7 @@ October使用*October风格的INI*扩展了此功能，以允许无限深度的�
 
     <h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>
 
-此解析器没有facade，因此完全限定的`October \ Rain \ Parse \ Syntax \ Parser`类应与`parse`方法一起使用。 `parse`方法的第一个参数将模板内容作为字符串并返回一个`Parser`对象。
+此解析器没有facade，因此完全限定的`October\Rain\Parse\Syntax\Parser`类应与`parse`方法一起使用。 `parse`方法的第一个参数将模板内容作为字符串并返回一个`Parser`对象。
 
     use October\Rain\Parse\Syntax\Parser as SyntaxParser;
 
