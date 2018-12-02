@@ -30,7 +30,7 @@ JavaScript API比数据属性API更强大。 `request`方法可以与表单内�
 **form** | 一个表单元素，用于获取随请求一起发送的表单数据，作为选择器字符串或表单元素传递。
 **flash** | 如果为true，则指示服务器清除并发送带响应的任何Flash消息。 默认值：false
 **files** | 如果为true，请求将接受文件上传，这需要浏览器支持`FormData`接口。 默认值：false
-**loading** | 请求运行时要显示的可选字符串或对象。 字符串应该是元素的CSS选择器，对象应该支持`show()`和`hide()`函数来管理可见性。 使用[framework extras](../ajax/extras)时，可以传递全局对象`$ .oc.stripeLoadIndicator`。
+**loading** | 请求运行时要显示的可选字符串或对象。 字符串应该是元素的CSS选择器，对象应该支持`show()`和`hide()`函数来管理可见性。 使用[framework extras](../ajax/extras)时，可以传递全局对象`$.oc.stripeLoadIndicator`。
 
 您还可以通过将新函数作为选项传递来覆盖某些请求逻辑。这些逻辑处理程序可用。
 

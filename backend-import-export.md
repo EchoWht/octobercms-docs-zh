@@ -36,7 +36,7 @@
 <a name="configuring-import-export"></a>
 ## 配置行为
 
-`$ importExportConfig`属性中引用的配置文件以YAML格式定义。 该文件应放入控制器的[views目录](controllers-views-ajax/#introduction)。 以下是配置文件的示例：
+`$importExportConfig`属性中引用的配置文件以YAML格式定义。 该文件应放入控制器的[views目录](controllers-views-ajax/#introduction)。 以下是配置文件的示例：
 
     # ===================================
     #  Import/Export Behavior Config
@@ -244,7 +244,7 @@
             type: checkbox
             default: true
 
-可以使用导入模型的`importData`方法中的`$ this-> auto_create_lists`访问上面名为** auto_create_lists **的表单字段的值。 如果这是导出模型，则该值将在`exportData`方法中可用。
+可以使用导入模型的`importData`方法中的`$this-> auto_create_lists`访问上面名为** auto_create_lists **的表单字段的值。 如果这是导出模型，则该值将在`exportData`方法中可用。
 
     class SubscriberImport extends \Backend\Models\ImportModel
     {

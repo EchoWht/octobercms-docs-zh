@@ -38,7 +38,7 @@ Model可以使用[多态关系]的子集支持文件附件(../database/relations
 <a name="creating-attachments"></a>
 ### 创建新附件
 
-对于一对一关系（`$ attachOne`），您可以通过Model关系直接创建附件，方法是使用`Input::file`方法设置其值，该方法从上传中读取文件数据。
+对于一对一关系（`$attachOne`），您可以通过Model关系直接创建附件，方法是使用`Input::file`方法设置其值，该方法从上传中读取文件数据。
 
     $model->avatar = Input::file('file_input');
 

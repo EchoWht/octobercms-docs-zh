@@ -145,7 +145,7 @@
 
     Event::fire('cms.processContent', [&$content]);
 
-在监听事件时，还需要在闭包定义中使用`＆`符号声明参数。 在下面的示例中，`$ content`变量将在结果中附加“AB”。
+在监听事件时，还需要在闭包定义中使用`＆`符号声明参数。 在下面的示例中，`$content`变量将在结果中附加“AB”。
 
     Event::listen('cms.processContent', function (&$content) {
         $content = $content . 'A';

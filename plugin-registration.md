@@ -150,7 +150,7 @@
 <a name="dependency-definitions"></a>
 ## 依赖关系定义
 
-插件可以通过在[插件注册文件](#registration-file)中定义`$ require`属性来依赖其他插件，该属性应该包含一系列被认为是需求的插件名称。 依赖于**Acme.User**插件的插件可以通过以下方式声明此要求：
+插件可以通过在[插件注册文件](#registration-file)中定义`$require`属性来依赖其他插件，该属性应该包含一系列被认为是需求的插件名称。 依赖于**Acme.User**插件的插件可以通过以下方式声明此要求：
 
     namespace Acme\Blog;
 

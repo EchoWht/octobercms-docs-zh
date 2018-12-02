@@ -25,7 +25,7 @@
 
 > **注意：** 系统角色(`developer`，`publisher`，以及`is_system`设置为`true`的任何角色）不能通过后端更改其权限，它们在代码中定义，并附加到任何权限 它们也直接在代码中定义。
 
-组(`\Backend\Models\UserGroup`）是用于对管理员进行分组的组织工具，可以将它们视为“用户类别”。 它们与权限无关，严格用于组织目的。 例如，如果您想向“总部员工”组中的所有用户发送电子邮件，您只需执行`Mail::sendTo(UserGroup::where('code'，'head-office-staff'）)->get(）->users，'author.plugin::mail.important_notification'，$ data）;`
+组(`\Backend\Models\UserGroup`）是用于对管理员进行分组的组织工具，可以将它们视为“用户类别”。 它们与权限无关，严格用于组织目的。 例如，如果您想向“总部员工”组中的所有用户发送电子邮件，您只需执行`Mail::sendTo(UserGroup::where('code'，'head-office-staff'）)->get(）->users，'author.plugin::mail.important_notification'，$data）;`
 
 <a name="backend-auth-facade"></a>
 ## 后端用户帮助器

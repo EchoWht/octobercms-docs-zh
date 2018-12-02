@@ -308,7 +308,7 @@ Markdown内容的文本输入。
         <p>{{ fields.content|raw }}</p>
     {% endfor %}
 
-调用`$ syntax-> toEditor`将为转发器字段返回一个不同的数组：
+调用`$syntax-> toEditor`将为转发器字段返回一个不同的数组：
 
     'repeater' => [
         'label' => 'Website name',

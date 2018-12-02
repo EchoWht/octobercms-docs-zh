@@ -98,7 +98,7 @@
 <a name="extending-user-model"></a>
 ### 扩展用户模型
 
-此示例将通过绑定到其本地事件来修改`User`模型的`model.getAttribute`事件。 这是在[插件注册文件](registration#routing-initialization)的`boot`方法内执行的。 在两种情况下，当访问`$ model-> foo`属性时，它将返回值*bar*。
+此示例将通过绑定到其本地事件来修改`User`模型的`model.getAttribute`事件。 这是在[插件注册文件](registration#routing-initialization)的`boot`方法内执行的。 在两种情况下，当访问`$model-> foo`属性时，它将返回值*bar*。
 
     class Plugin extends PluginBase
     {
