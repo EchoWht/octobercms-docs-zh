@@ -15,7 +15,7 @@ AJAX框架有两种形式，您可以使用[JavaScript API](../ajax/javascript-a
 <a name="framework-script"></a>
 ## 引入AJAX框架
 
-AJAX框架在您的[CMS主题](../cms/themes)中是可选的，要使用您应该包含它的库，将`{％framework％}`标记放在[page]中的任何位置(../cms)/pages)或[layout](../cms/layouts)。这增加了对10月前端JavaScript库的引用。该库需要jQuery，因此应首先加载它，例如：
+AJAX框架在您的[CMS主题](../cms/themes)中是可选的，要使用您应该包含它的库，将`{％framework％}`标记放在[page]中的任何位置(../cms)/pages)或[layout](../cms/layouts)。这增加了对October前端JavaScript库的引用。该库需要jQuery，因此应首先加载它，例如：
 
     <script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
 

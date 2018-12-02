@@ -28,7 +28,7 @@
     ==
     ...
 
-这将使用组件定义的属性来初始化这个组件。某些属性是必需的，某些属性具有默认值。如果您不确定组件支持哪些属性，请参阅组件开发人员提供的文档，或使用10月后端的Inspector。单击页面或布局组件面板中的组件时，将打开Inspector。
+这将使用组件定义的属性来初始化这个组件。某些属性是必需的，某些属性具有默认值。如果您不确定组件支持哪些属性，请参阅组件开发人员提供的文档，或使用October后端的Inspector。单击页面或布局组件面板中的组件时，将打开Inspector。
 
 When you refer a component, it automatically creates a page variable that matches the component name (`demoTodo` in the previous example). Components that provide HTML markup can be rendered on a page with the `{% component %}` tag, like this:
 当您引用组件时，它会自动创建一个与组件名称匹配的页面变量（前一个示例中的“demoTodo”）。通过`{％component％}`标签将组件在页面中展示出来，如下所示：

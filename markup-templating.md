@@ -79,7 +79,7 @@ October扩展了[Twig模板语言](http://twig.sensiolabs.org/documentation) ，
 
 ## 不支持的功能
 
-Twig提供的一些功能在10月份不受支持。 它们列在等效功能旁边。
+Twig提供的一些功能在October不受支持。 它们列在等效功能旁边。
 
 标签 | 相等
 ------------- | -------------

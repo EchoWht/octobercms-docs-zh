@@ -84,7 +84,7 @@ October还附带了一个简单的括号模板解析器，作为Twig解析器的
 <a name="yaml-parser"></a>
 ## YAML配置解析器
 
-YAML（“YAML不是标记语言”）是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于10月份的后端开发，例如[表单字段](../backend/forms#form-fields)和[list column](../backend/lists##list-columns) 定义。 一些YAML的例子：
+YAML（“YAML不是标记语言”）是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于October的后端开发，例如[表单字段](../backend/forms#form-fields)和[list column](../backend/lists##list-columns) 定义。 一些YAML的例子：
 
     receipt:     Acme Purchase Invoice
     date:        2015-10-02

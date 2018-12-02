@@ -76,7 +76,7 @@
 <a name="date-mutators"></a>
 ## 日期转换器
 
-默认情况下，10月份的模型会将`created_at`和`updated_at`列转换为[Carbon](https://github.com/briannesbitt/Carbon)对象的实例，该对象提供各种有用的方法并扩展原生PHP`DateTime`类。
+默认情况下，October的模型会将`created_at`和`updated_at`列转换为[Carbon](https://github.com/briannesbitt/Carbon)对象的实例，该对象提供各种有用的方法并扩展原生PHP`DateTime`类。
 
 您可以通过覆盖模型的`$dates`属性来自定义哪些字段会自动转换，甚至完全禁用此转换：
 
