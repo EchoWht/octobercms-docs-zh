@@ -146,9 +146,9 @@ October将始终检查会话数据中的错误，并自动将它们绑定到视�
 -  [已接受](#rule-accepted)
 -  [有效网址](#rule-active-url)
 -  [之后(日期)](#rule-after)
--  [Alpha](#rule-alpha)
--  [Alpha Dash](#rule-alpha-dash)
--  [Alpha Numeric](#rule-alpha-num)
+-  [字母](#rule-alpha)
+-  [字母字符](#rule-alpha-dash)
+-  [字母数字](#rule-alpha-num)
 -  [数组](#rule-array)
 -  [之前(日期)](#rule-before)
 -  [之间](#rule-between)
@@ -295,7 +295,7 @@ October将始终检查会话数据中的错误，并自动将它们绑定到视�
 <a name="rule-image"></a>
 #### image 图片
 
-验证文件必须是图像（jpeg，png，bmp或gif）
+验证文件必须是图像(jpeg，png，bmp或gif)
 
 <a name="rule-in"></a>
 #### in:_foo_,_bar_,...
@@ -315,7 +315,7 @@ October将始终检查会话数据中的错误，并自动将它们绑定到视�
 <a name="rule-max"></a>
 #### max:_value_
 
-验证字段必须小于或等于最大_value_。 字符串，数字和文件的评估方式与[`size`](＃rule-size)规则相同。
+验证字段必须小于或等于最大_value_。 字符串，数字和文件的评估方式与[`size`](#rule-size)规则相同。
 
 <a name="rule-mimes"></a>
 #### mimes:_foo_,_bar_,...
@@ -329,7 +329,7 @@ October将始终检查会话数据中的错误，并自动将它们绑定到视�
 <a name="rule-min"></a>
 #### min:_value_
 
-验证字段必须具有最小_value_。 字符串，数字和文件的评估方式与[`size`]（＃rule-size）规则相同。
+验证字段必须具有最小_value_。 字符串，数字和文件的评估方式与[`size`](＃rule-size)规则相同。
 
 <a name="rule-not-in"></a>
 #### not_in:_foo_,_bar_,...
