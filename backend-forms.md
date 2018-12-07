@@ -215,12 +215,12 @@ The following fields are required in the form configuration file:
 选项 | 描述
 ------------- | -------------
 **label** | 向用户显示表单字段时的名称。
-**type** | defines how this field should be rendered (see [Available fields types](#field-types) below). Default: text.
-**span** | aligns the form field to one side. Options: auto, left, right, full. Default: full.
-**size** | specifies a field size for fields that use it, for example, the textarea field. Options: tiny, small, large, huge, giant.
-**placeholder** | if the field supports a placeholder value.
-**comment** | places a descriptive comment below the field.
-**commentAbove** | places a comment above the field.
+**type** | 定义应该如何呈现此字段（请参阅下面的[可用字段类型](#field-types) ）。 默认值：文字。
+**span** | 将表单字段对齐到一侧。 选项：auto, left, right, full。 默认值：full。
+**size** | 指定使用它的字段的字段大小，例如textarea字段. Options: tiny, small, large, huge, giant.
+**placeholder** | 如果字段支持占位符值。
+**comment** | 在字段下方放置描述性注释。
+**commentAbove** | 在该字段上方显示评论。
 **commentHtml** | allow HTML markup inside the comment. Options: true, false.
 **default** | specifies the default value for the field.
 **defaultFrom** | takes the default value from the value of another field.
