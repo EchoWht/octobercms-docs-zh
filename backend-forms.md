@@ -221,20 +221,20 @@ The following fields are required in the form configuration file:
 **placeholder** | 如果字段支持占位符值。
 **comment** | 在字段下方放置描述性注释。
 **commentAbove** | 在该字段上方显示评论。
-**commentHtml** | allow HTML markup inside the comment. Options: true, false.
-**default** | specifies the default value for the field.
-**defaultFrom** | takes the default value from the value of another field.
-**tab** | assigns the field to a tab.
-**cssClass** | assigns a CSS class to the field container.
-**readOnly** | prevents the field from being modified. Options: true, false.
-**disabled** | prevents the field from being modified and excludes it from the saved data. Options: true, false.
-**hidden** | hides the field from the view and excludes it from the saved data. Options: true, false.
-**stretch** | specifies if this field stretches to fit the parent height.
-**context** | specifies what context should be used when displaying the field. Context can also be passed by using an `@` symbol in the field name, for example, `name@update`.
-**dependsOn** | an array of other field names this field [depends on](#field-dependencies), when the other fields are modified, this field will update.
-**trigger** | specify conditions for this field using [trigger events](#field-trigger-events).
-**preset** | allows the field value to be initially set by the value of another field, converted using the [input preset converter](#field-input-preset).
-**required** | places a red asterisk next to the field label to indicate it is required (make sure to setup validation on the model as this is not enforced by the form controller).
+**commentHtml** | 允许的HTML标记内的comment。选项：true，false。
+**default** | 指定字段的默认值。
+**defaultFrom** | 从另一个字段的值中获取默认值。
+**tab** | 将字段分配给选项卡。
+**cssClass** | 向字段容器分配CSS类。
+**readOnly** | 防止字段被修改。选项： true, false.
+**disabled** | 防止字段被修改，并将其从保存的数据中排除。选项：true, false.
+**hidden** | 从视图隐藏字段，并将其从保存的数据中排除。选项： true, false.
+**stretch** | 指定此字段是否延伸到适合父级的高度。
+**context** | 什么时候应该使用上下文应该提醒显示场。上下文可以通过使用符号`@` 在“字段名称”名称，例如，`name@update`。
+**dependsOn** | 其他字段名的数组[依赖于](#field-dependencies)，当修改其他字段时，该字段将更新。
+**trigger** | 使用[触发器事件](#field-trigger-events).指定该字段的条件。
+**preset** | 允许字段值最初由另一个字段的值设置，使用[输入预置转换器](#field-input-preset)进行转换。
+**required** | 在字段标签旁边放置一个红色的星号以指示它是必需的（请确保在模型上设置验证，因为这不是由表单控制器执行的）。
 **attributes** | specify custom HTML attributes to add to the form field element.
 **containerAttributes** | specify custom HTML attributes to add to the form field container.
 
