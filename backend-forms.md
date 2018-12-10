@@ -235,13 +235,13 @@ The following fields are required in the form configuration file:
 **trigger** | 使用[触发器事件](#field-trigger-events).指定该字段的条件。
 **preset** | 允许字段值最初由另一个字段的值设置，使用[输入预置转换器](#field-input-preset)进行转换。
 **required** | 在字段标签旁边放置一个红色的星号以指示它是必需的（请确保在模型上设置验证，因为这不是由表单控制器执行的）。
-**attributes** | specify custom HTML attributes to add to the form field element.
-**containerAttributes** | specify custom HTML attributes to add to the form field container.
+**attributes** | 指定要添加到表单字段元素的自定义HTML属性。
+**containerAttributes** | 指定要添加到表单字段容器的自定义HTML属性。
 
 <a name="field-types"></a>
 ## 可用的字段类型
 
-There are various native field types that can be used for the **type** setting. For more advanced form fields, a [form widget](#form-widgets) can be used instead.
+有各种本机字段类型可用于**类型**设置。 对于更高级的表单字段，可以使用[表单窗口小部件](#form-widgets)。
 
 <style>
     .collection-method-list {
@@ -274,7 +274,7 @@ There are various native field types that can be used for the **type** setting. 
 <a name="field-text"></a>
 ### Text
 
-`text` - renders a single line text box. This is the default type used if none is specified.
+`text` - 呈现单行文本框。 如果未指定，则使用此默认类型。
 
     blog_title:
         label: Blog Title
@@ -283,7 +283,7 @@ There are various native field types that can be used for the **type** setting. 
 <a name="field-number"></a>
 ### Number
 
-`number` - renders a single line text box that takes numbers only.
+`number` - 呈现仅包含数字的单行文本框。
 
     your_age:
         label: Your Age
@@ -292,7 +292,7 @@ There are various native field types that can be used for the **type** setting. 
 <a name="field-password"></a>
 ### Password
 
-`password ` - renders a single line password field.
+`password ` - 呈现单行密码字段。
 
     user_password:
         label: Password
@@ -301,7 +301,7 @@ There are various native field types that can be used for the **type** setting. 
 <a name="field-textarea"></a>
 ### Textarea
 
-`textarea` - renders a multiline text box. A size can also be specified with possible values: tiny, small, large, huge, giant.
+`textarea` - 呈现多行文本框。 尺寸也可以用可能的值指定： tiny, small, large, huge, giant.
 
     blog_contents:
         label: Contents
@@ -311,7 +311,7 @@ There are various native field types that can be used for the **type** setting. 
 <a name="field-dropdown"></a>
 ### Dropdown
 
-`dropdown` - renders a dropdown with specified options. There are 4 ways to provide the drop-down options. The first method defines `options` directly in the YAML file:
+`dropdown` - 使用指定选项呈现下拉列表。 有4种方法可以提供下拉选项。 第一个方法直接在YAML文件中定义`options`：
 
     status_type:
         label: Blog Post Status
@@ -321,20 +321,20 @@ There are various native field types that can be used for the **type** setting. 
             published: Published
             archived: Archived
 
-The second method defines options with a method declared in the model's class. If the options element is omitted, the framework expects a method with the name `get*FieldName*Options` to be defined in the model. Using the example above, the model should have the `getStatusTypeOptions` method. The first argument of this method is the current value of this field and the second is the current data object for the entire form. This method should return an array of options in the format **key => label**.
+第二种方法使用模型类中声明的方法定义选项。 如果省略options元素，框架需要在模型中定义名为`get*FieldName*Options`的方法。 使用上面的示例，模型应该具有`getStatusTypeOptions`方法。 此方法的第一个参数是此字段的当前值，第二个参数是整个表单的当前数据对象。 此方法应返回**key=>label**格式的选项数组。
 
     status_type:
         label: Blog Post Status
         type: dropdown
 
-Supplying the dropdown options in the model class:
+提供模型类中的下拉选项：
 
     public function getStatusTypeOptions($value, $formData)
     {
         return ['all' => 'All', ...];
     }
 
-The third global method `getDropdownOptions` can also be defined in the model, this will be used for all dropdown field types for the model. The first argument of this method is the field name, the second is the currect value of the field, and the third is the current data object for the entire form. It should return an array of options in the format **key => label**.
+第三个全局方法`getDropdownOptions`也可以在模型中定义，这将用于模型的所有下拉字段类型。 此方法的第一个参数是字段名称，第二个参数是字段的当前值，第三个参数是整个表单的当前数据对象。 它应该以**key=>label**格式返回一个选项数组。
 
     public function getDropdownOptions($fieldName, $value, $formData)
     {
@@ -346,35 +346,35 @@ The third global method `getDropdownOptions` can also be defined in the model, t
         }
     }
 
-The fourth method uses a specific method declared in the model's class. In the next example the `listStatuses` method should be defined in the model class. This method receives all the same arguments as the `getDropdownOptions` method, and should return an array of options in the format **key => label**.
+第四种方法使用模型类中声明的特定方法。 在下一个示例中，应该在模型类中定义`listStatuses`方法。 此方法接收与`getDropdownOptions`方法相同的所有参数，并应返回**key=>label**格式的选项数组。
 
     status:
         label: Blog Post Status
         type: dropdown
         options: listStatuses
 
-Supplying the dropdown options to the model class:
+将下拉选项提供给模型类：
 
     public function listStatuses($fieldName, $value, $formData)
     {
         return ['published' => 'Published', ...];
     }
 
-To define the behavior when there is no selection, you may specify an `emptyOption` value to include an empty option that can be reselected.
+要在没有选择时定义行为，可以指定`emptyOption`值以包含可以重新选择的空选项。
 
     status:
         label: Blog Post Status
         type: dropdown
         emptyOption: -- no status --
 
-Alternatively you may use the `placeholder` option to use a "one-way" empty option that cannot be reselected.
+或者，您可以使用`placeholder`选项来使用无法重新选择的“单向”空选项。
 
     status:
         label: Blog Post Status
         type: dropdown
         placeholder: -- select a status --
 
-By default the dropdown has a searching feature, allowing quick selection of a value. This can be disabled by setting the `showSearch` option to `false`.
+默认情况下，下拉列表具有搜索功能，允许快速选择值。 可以通过将`showSearch`选项设置为`false`来禁用它。
 
     status:
         label: Blog Post Status
@@ -384,7 +384,7 @@ By default the dropdown has a searching feature, allowing quick selection of a v
 <a name="field-radio"></a>
 ### Radio List
 
-`radio` - renders a list of radio options, where only one item can be selected at a time.
+`radio` - 呈现单选按钮列表，其中一次只能选择一个项目。
 
     security_level:
         label: Access Level
@@ -394,7 +394,7 @@ By default the dropdown has a searching feature, allowing quick selection of a v
             registered: Registered only
             guests: Guests only
 
-Radio lists can also support a secondary description.
+单选按钮列表还可以支持次要描述。
 
     security_level:
         label: Access Level
@@ -404,12 +404,12 @@ Radio lists can also support a secondary description.
             registered: [Registered only, Only logged in member will be able to access this page.]
             guests: [Guests only, Only guest users will be able to access this page.]
 
-Radio lists support three ways of defining the options, exactly like the [dropdown field type](#field-dropdown). For radio lists the method could return either the simple array: **key => value** or an array of arrays for providing the descriptions: **key => [label, description]**
+无线电列表支持三种定义选项的方式，与[下拉字段类型](#field-dropdown)完全相同。 对于无线电列表，该方法可以返回简单数组：**key=>value**或用于提供描述的数组数组：**key=>[label,description]**
 
 <a name="field-balloon"></a>
 ### Balloon Selector
 
-`balloon-selector` - renders a list, where only one item can be selected at a time.
+`balloon-selector` - 呈现一个列表，其中一次只能选择一个项目。
 
     gender:
         label: Gender
