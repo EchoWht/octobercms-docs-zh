@@ -52,12 +52,12 @@ If your webserver is running Apache there are some extra system requirements:
 
 `nano /etc/nginx/sites-available/default`
 
-在 **server** 区块中使用以下代码。如果 October 安装到子目录中，请将第一个 / 替换为 October 的安装目录：
-    location / {
+在 **server** 区块中使用以下代码。如果 October 安装到子目录中，请将第一个/替换为 October 的安装目录：
+    location/{
         # Let OctoberCMS handle everything by default.
         # The path not resolved by OctoberCMS router will return OctoberCMS's 404 page.
         # Everything that does not match with the whitelist below will fall into this.
-        rewrite ^/.*$ /index.php last;
+        rewrite ^/.*$/index.php last;
     }
 
     # Pass the PHP scripts to FastCGI server

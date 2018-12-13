@@ -207,7 +207,7 @@
 
     $value = Request::header('Content-Type');
 
-#### 从$ _SERVER中检索值
+#### 从$_SERVER中检索值
 
     $value = Request::server('PATH_INFO');
 

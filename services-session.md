@@ -15,7 +15,7 @@
 - `file` - 会话存储在 `storage/framework/sessions`文件。
 - `cookie` - 会话存储在安全的加密cookie中。
 - `database` - 会话存储在应用程序使用的数据库中。
-- `memcached` / `redis` -会话存储在这些快速的基于缓存的存储之一中。
+- `memcached`/`redis` -会话存储在这些快速的基于缓存的存储之一中。
 - `array` - 会话存储在一个简单的PHP数组中，不会在请求之间保留。
 </div>
 

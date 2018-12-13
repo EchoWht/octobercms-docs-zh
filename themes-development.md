@@ -25,7 +25,7 @@
 **author** | 指定作者姓名，必填。
 **homepage** | 指定作者网站URL。
 **description** | 主题描述，必填。
-**previewImage** | 自定义预览图像，相对于主题目录的路径，例如：`assets / images / preview.png`，可选。
+**previewImage** | 自定义预览图像，相对于主题目录的路径，例如：`assets/images/preview.png`，可选。
 **code** | 主题代码，可选。 该值在OctoberCMS市场上用于初始化主题代码值。 如果未提供主题代码，则主题目录名称将用作代码。 从Marketplace安装主题时，代码将用作新的主题目录名称。
 **form** | 表单字段定义文件的配置数组或引用，用于[主题自定义](＃customizeization)，可选。
 **require** | 用于[主题依赖项](＃dependencies)的插件名称数组，可选。

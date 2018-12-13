@@ -113,11 +113,11 @@ Congratulations! Now you're ready to use Amazon S3 with OctoberCMS. Note that yo
 
 To use Rackspace CDN with OctoberCMS, you should create Rackspace CDN container, folder in the container and API user.
 
-Log into Rackspace management console and navigate to Storage / Files page. Create a new container. The container name doesn't matter, it will be a part of your public file URLs. Select **Public (Enabled CDN)** type for the new container.
+Log into Rackspace management console and navigate to Storage/Files page. Create a new container. The container name doesn't matter, it will be a part of your public file URLs. Select **Public (Enabled CDN)** type for the new container.
 
 Create **media** folder in the container. The folder name doesn't matter. This folder will be a root of your Media Library.
 
-You should create an API user that OctoberCMS will use for managing files in the CDN container. Open Account / User Management page in Rackspace console. Click **Create user** button. Fill in the user name (for example october.cdn.api), password, security question and answer. In the **Product Access** section select **Custom** and in the CDN row select **Admin**. Use **No Access** role in the **Account** section and use **Technical Contact** type in the **Contact Information** section. Save the user account. After saving the account you will see the Login Details section with the **API Key** row that contains a value you need to use in OctoberCMS configuration files.
+You should create an API user that OctoberCMS will use for managing files in the CDN container. Open Account/User Management page in Rackspace console. Click **Create user** button. Fill in the user name (for example october.cdn.api), password, security question and answer. In the **Product Access** section select **Custom** and in the CDN row select **Admin**. Use **No Access** role in the **Account** section and use **Technical Contact** type in the **Contact Information** section. Save the user account. After saving the account you will see the Login Details section with the **API Key** row that contains a value you need to use in OctoberCMS configuration files.
 
 Now you have all the information to update OctoberCMS configuration. Open **config/filesystem.php** script and find the **disks** section. It already contains Rackspace configuration, you need to replace the API credentials and container information parameters:
 

@@ -87,7 +87,7 @@
 <a name="view-responses"></a>
 ### 视图响应
 
-如果您需要访问`Response`类方法，但想要返回[view](#views)作为响应内容，为方便起见，您可以使用`Response :: view`方法：
+如果您需要访问`Response`类方法，但想要返回[view](#views)作为响应内容，为方便起见，您可以使用`Response::view`方法：
 
     return Response::view('acme.blog::hello')->header('Content-Type', $type);
 
@@ -130,7 +130,7 @@
 
     return Redirect::to('user/login')->with('message', 'Login Failed');
 
-> **注意:** 由于`with`方法将数据\到会话，您可以使用典型的`Session :: get`方法检索数据。
+> **注意:** 由于`with`方法将数据\到会话，您可以使用典型的`Session::get`方法检索数据。
 
 <a name="redirecting-previous-url"></a>
 #### 重定向到以前的URL

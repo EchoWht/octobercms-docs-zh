@@ -57,7 +57,7 @@
 
     lang/               <=== App localization directory
       en/               <=== Language directory
-        acme/           <=== Plugin / Module directory
+        acme/           <=== Plugin/Module directory
           blog/         <===^
             lang.php    <=== Localization override file
 

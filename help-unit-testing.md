@@ -101,7 +101,7 @@
 
 ### 功能测试
 
-可以通过在`/ tests / functional`目录中运行`phpunit`来执行功能测试。 确保满足以下配置：
+可以通过在`/ tests/functional`目录中运行`phpunit`来执行功能测试。 确保满足以下配置：
 
 - 正在使用的主题是 `demo`
 - 语言是`en`
