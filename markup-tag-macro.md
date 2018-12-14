@@ -36,11 +36,11 @@
     <p>{{ form.input('username') }}</p>
     <p>{{ form.input('password', null, 'password') }}</p>
 
-宏可以在[主题部分](../cms/partials)中定义并按名称导入。 要从名为$macros/form.htm **的部分导入宏，只需在引用为字符串的`import`标记后传递名称即可。
+宏可以在[主题部分](cms-partials.md)中定义并按名称导入。 要从名为$macros/form.htm **的部分导入宏，只需在引用为字符串的`import`标记后传递名称即可。
 
     {% import 'macros/form' as form %}
 
-或者，您可以从[系统视图文件](../services/response-view#views)导入宏，这些宏将被接受。 要从$plugins/acme/blog/views/macros.htm导入**，只需传递路径提示即可。
+或者，您可以从[系统视图文件](services-response-view.md#views)导入宏，这些宏将被接受。 要从$plugins/acme/blog/views/macros.htm导入**，只需传递路径提示即可。
 
     {% import 'acme.blog::macros' as form %}
 

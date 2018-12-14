@@ -129,7 +129,7 @@
 <a name="running-the-queue-worker"></a>
 ## 运行队列工作程序
 
-October 包括一些将处理队列中的作业的[控制台命令](../console/commands)。
+October 包括一些将处理队列中的作业的[控制台命令](console-commands.md)。
 
 要在将新作业推入队列时处理它们，请运行`queue:work`命令:
 

@@ -82,7 +82,7 @@ M有关占位符的更多信息可以在[标记指南](../markup/tag-placeholder
 在布局的[PHP部分](cms-themes.md#php-section)中，您可以定义以下函数来处理页面执行生命周期：`onInit`，`onStart`，`onBeforePageStart`和`onEnd`。
 
 
-`onInit`方法会在当初始化所有组件并处理AJAX请求之前执行， `onStart`函数在页面处理开始时执行。`onBeforePageStart`函数在布局[组件](components)运行之后但在执行页面的`onStart`函数之前执行。在呈现页面后执行`onEnd`函数。执行处理程序的顺序如下：
+`onInit`方法会在当初始化所有组件并处理AJAX请求之前执行， `onStart`函数在页面处理开始时执行。`onBeforePageStart`函数在布局[组件](cms-components.md)运行之后但在执行页面的`onStart`函数之前执行。在呈现页面后执行`onEnd`函数。执行处理程序的顺序如下：
 
 1. Layout `onInit()` function.
 1. Page `onInit()` function.

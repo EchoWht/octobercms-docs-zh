@@ -16,7 +16,7 @@
 <a name="loader-stripe"></a>
 ## 进度条
 
-T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的加载指示器。 该指标挂钩到AJAX框架使用的[global events](../ajax/javascript-api#global-events)。
+T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的加载指示器。 该指标挂钩到AJAX框架使用的[global events](ajax-javascript-api.md#global-events)。
 
 当AJAX请求启动时，会触发“ajaxPromise”事件，该事件显示指示符并将鼠标光标置于加载状态。 `ajaxFail`和`ajaxDone`事件用于检测请求何时完成，指示符再次隐藏。
 
@@ -34,14 +34,14 @@ T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的
 <a name="throw-validation-exception"></a>
 ### 抛出一个校验错误
 
-在服务器端AJAX处理程序中，您可以使用`ValidationException`类抛出[validation exception](../services/error-log#validation-exception)以使字段无效，其中第一个参数是数组。 该数组应使用键的字段名称和值的错误消息。
+在服务器端AJAX处理程序中，您可以使用`ValidationException`类抛出[validation exception](services-error-log.md#validation-exception)以使字段无效，其中第一个参数是数组。 该数组应使用键的字段名称和值的错误消息。
 
     function onSubmit()
     {
         throw new ValidationException(['name' => 'Name 字段不能为空~']);
     }
 
-> **注意**: 您还可以传递[validation service](../services/validation)的实例作为异常的第一个参数。
+> **注意**: 您还可以传递[validation service](services-validation.md)的实例作为异常的第一个参数。
 
 <a name="error-messages"></a>
 ### 显示错误信息

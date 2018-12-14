@@ -61,7 +61,7 @@
 
 `componentDetails`方法是必需的。该方法应该返回一个带有两个键的数组：`name`和`description`。 名称和说明显示在CMS后端用户界面中。
 
-当此[组件附加到页面或布局](../cms/components)时，类属性和方法在页面上通过组件变量可用，该组件变量的名称与组件短名称或别名匹配。 例如，如果上一个示例中的BlogPost组件是在具有短名称的页面上定义的：
+当此[组件附加到页面或布局](cms-components.md)时，类属性和方法在页面上通过组件变量可用，该组件变量的名称与组件短名称或别名匹配。 例如，如果上一个示例中的BlogPost组件是在具有短名称的页面上定义的：
 
     url = "/blog"
 
@@ -77,7 +77,7 @@
 <a name="component-registration"></a>
 ### 组件注册
 
-必须通过覆盖[Plugin注册类](registration#registration-file)中的`registerComponents`方法来注册组件。 这告诉CMS有关组件并提供**短名称**以便使用它。 注册组件的示例：
+必须通过覆盖[Plugin注册类](plugin-registration.md#registration-file)中的`registerComponents`方法来注册组件。 这告诉CMS有关组件并提供**短名称**以便使用它。 注册组件的示例：
 
     public function registerComponents()
     {
@@ -86,7 +86,7 @@
         ];
     }
 
-这将使用默认别名**demoTodo**注册Todo组件类。 有关使用组件的更多信息，请参见[CMS组件文章](../cms/components)。
+这将使用默认别名**demoTodo**注册Todo组件类。 有关使用组件的更多信息，请参见[CMS组件文章](cms-components.md)。
 
 <a name="component-properties"></a>
 ## 组件属性
@@ -234,7 +234,7 @@
 <a name="routing-parameters"></a>
 ## 路由参数
 
-组件可以直接访问[页面URL](../cms/pages#url-syntax)中定义的路由参数值。
+组件可以直接访问[页面URL](cms-pages.md#url-syntax)中定义的路由参数值。
 
     // 返回URL段值，例如： /page/:post_id
     $postId = $this->param('post_id');
@@ -248,7 +248,7 @@
     [blogPost]
     id = "2"
 
-或者，可以使用[external property value](../cms/components#external-property-values)从页面URL动态引用该值：
+或者，可以使用[external property value](cms-components.md#external-property-values)从页面URL动态引用该值：
 
     url = "/blog/:my_custom_parameter"
 
@@ -278,7 +278,7 @@
 <a name="page-cycle-handlers"></a>
 ### 页面执行生命周期处理程序
 
-当页面加载时，October执行可以在布局和页面[PHP部分](../cms/themes#php-section)和组件类中定义的处理函数。 执行处理程序的顺序如下：
+当页面加载时，October执行可以在布局和页面[PHP部分](cms-themes.md#php-section)和组件类中定义的处理函数。 执行处理程序的顺序如下：
 
 1. 布局Layout `onInit()` function.
 1. 页面Page `onInit()` function.
@@ -303,7 +303,7 @@
 <a name="page-cycle-response"></a>
 ### 页面周期响应
 
-与[页面执行生命周期](../cms/layouts#layout-life-cycle)中的所有方法一样，如果组件中的`onRun`方法返回一个值，这将在此时停止循环并返回 响应浏览器。 这里我们使用`Response`facade返回一个拒绝访问的消息：
+与[页面执行生命周期](cms-layouts.md#layout-life-cycle)中的所有方法一样，如果组件中的`onRun`方法返回一个值，这将在此时停止循环并返回 响应浏览器。 这里我们使用`Response`facade返回一个拒绝访问的消息：
 
     public function onRun()
     {
@@ -315,7 +315,7 @@
 <a name="ajax-handlers"></a>
 ## AJAX处理
 
-组件可以托管AJAX事件处理程序。 它们在组件类中定义，就像它们可以在[页面或布局代码](../ajax/handlers)中定义一样。 在组件类中定义的示例AJAX处理程序方法：
+组件可以托管AJAX事件处理程序。 它们在组件类中定义，就像它们可以在[页面或布局代码](ajax-handlers.md)中定义一样。 在组件类中定义的示例AJAX处理程序方法：
 
     public function onAddItem()
     {
@@ -324,7 +324,7 @@
         $this->page['result'] = $value1 + $value2;
     }
 
-如果此组件的别名是*demoTodo*，则可以通过`demoTodo::onAddItem`访问此处理程序。 有关将AJAX与组件一起使用的详细信息，请参阅[调用组件中定义的AJAX处理程序(../ajax/handlers#calling-handlers))文章。
+如果此组件的别名是*demoTodo*，则可以通过`demoTodo::onAddItem`访问此处理程序。 有关将AJAX与组件一起使用的详细信息，请参阅[调用组件中定义的AJAX处理程序(ajax-handlers.md#calling-handlers))文章。
 
 <a name="default-markup"></a>
 ## 默认标签
@@ -370,7 +370,7 @@
 <a name="referencing-self"></a>
 ### 引用自身 "self"
 
-组件可以使用`__SELF__`变量在其partials中引用它们自己。 默认情况下，它将返回组件的短名称或[别名](../cms/components#aliases)。
+组件可以使用`__SELF__`变量在其partials中引用它们自己。 默认情况下，它将返回组件的短名称或[别名](cms-components.md#aliases)。
 
     <form data-request="{{__SELF__}}::onEventHandler">
         [...]
@@ -412,7 +412,7 @@
         'name' => 'John Smith'
     ]);
 
-例如，要将partial作为对[AJAX 处理](../ajax/handlers)的响应呈现：
+例如，要将partial作为对[AJAX 处理](ajax-handlers.md)的响应呈现：
 
     function onGetTemplate()
     {

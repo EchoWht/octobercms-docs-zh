@@ -58,7 +58,7 @@
     php artisan plugin:refresh Acme.Blog
     [php artisan plugin:refresh <dependency>, ...]
     
-> **注意:** 如果你的插件使用[配置文件](../plugin/settings#file-configuration)，那么你需要在`setUp中运行`System\Classes\PluginManager::instance()->registerAll(true);`测试方法。 下面是一个基本测试用例类的示例，如果您需要测试插件使用其他插件而不是单独使用，则应使用该示例。
+> **注意:** 如果你的插件使用[配置文件](plugin-settings.md#file-configuration)，那么你需要在`setUp中运行`System\Classes\PluginManager::instance()->registerAll(true);`测试方法。 下面是一个基本测试用例类的示例，如果您需要测试插件使用其他插件而不是单独使用，则应使用该示例。
 
     use System\Classes\PluginManager;
         

@@ -38,7 +38,7 @@
 
 设置模型需要`$settingsCode`属性。 它定义了唯一设置键，用于将设置保存到数据库。
 
-如果要根据模型构建后端设置表单，则需要`$settingsFields`属性。 该属性指定包含表单字段定义的YAML文件的名称。 表单字段在[后端表单](../backend/forms)文章中描述。 应将YAML文件放在名称与小写的模型类名称匹配的目录中。 对于上一个示例中的模型，目录结构如下所示：
+如果要根据模型构建后端设置表单，则需要`$settingsFields`属性。 该属性指定包含表单字段定义的YAML文件的名称。 表单字段在[后端表单](backend-forms.md)文章中描述。 应将YAML文件放在名称与小写的模型类名称匹配的目录中。 对于上一个示例中的模型，目录结构如下所示：
 
     plugins/
       acme/
@@ -93,7 +93,7 @@
 <a name="link-registration"></a>
 ### 设置链接注册
 
-可以通过覆盖[Plugin注册类](registration#registration-file)中的`registerSettings`方法来扩展后端设置导航链接。 创建配置链接时，您有两个选项 - 创建指向特定后端页面的链接，或创建指向设置模型的链接。 下一个示例显示如何创建指向后端页面的链接。
+可以通过覆盖[Plugin注册类](plugin-registration.md#registration-file)中的`registerSettings`方法来扩展后端设置导航链接。 创建配置链接时，您有两个选项 - 创建指向特定后端页面的链接，或创建指向设置模型的链接。 下一个示例显示如何创建指向后端页面的链接。
 
     public function registerSettings()
     {

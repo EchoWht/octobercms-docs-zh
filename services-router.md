@@ -15,9 +15,9 @@
 <a name="basic-routing"></a>
 ## 基本路由
 
-虽然[后端控制器](../backend/controllers-views-ajax)的路由是自动处理的，CMS页面在[页面配置](../cms/pages#configuration)中定义了自己的URL路由，路由器service主要用于定义固定API和端点。 
+虽然[后端控制器](../backend/controllers-views-ajax)的路由是自动处理的，CMS页面在[页面配置](cms-pages.md#configuration)中定义了自己的URL路由，路由器service主要用于定义固定API和端点。 
 
-您可以通过在与[插件注册文件](../plugin/registration)相同的目录中创建名为**routes.php**的文件来定义这些路由。 最基本的路由只接受URI和`Closure`：
+您可以通过在与[插件注册文件](plugin-registration.md)相同的目录中创建名为**routes.php**的文件来定义这些路由。 最基本的路由只接受URI和`Closure`：
 
     Route::get('/', function () {
         return 'Hello World';
@@ -208,4 +208,4 @@
 
 其次，您可以手动抛出`Symfony\Component\HttpKernel\Exception\NotFoundHttpException`的实例。
 
-有关处理404异常和对这些错误使用自定义响应的更多信息，请参阅文档的[错误和日志](../services/error-log) 部分。
+有关处理404异常和对这些错误使用自定义响应的更多信息，请参阅文档的[错误和日志](services-error-log.md) 部分。

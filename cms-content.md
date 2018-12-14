@@ -24,7 +24,7 @@
 <a name="rendering-content-blocks"></a>
 ## 渲染内容
 
-使用`{% content 'file.htm' %}` 标签在[page](cms-pages.md), [partial](cms-partials.md) 或 [layout](layouts)中渲染内容块。 例如：
+使用`{% content 'file.htm' %}` 标签在[page](cms-pages.md), [partial](cms-partials.md) 或 [layout](cms-layouts.md)中渲染内容块。 例如：
 
     url = "/contacts"
     ==
@@ -52,4 +52,4 @@
 
     View::share('site_name', 'OctoberCMS');
 
-可以在[插件注册文件](../plugin/registration)的寄存器或引导方法内调用此代码。使用上面的示例，变量`{site_name}`将在所有内容块中可用。
+可以在[插件注册文件](plugin-registration.md)的寄存器或引导方法内调用此代码。使用上面的示例，变量`{site_name}`将在所有内容块中可用。

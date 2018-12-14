@@ -10,7 +10,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-Partials包含可重复使用的Twig标记块，可以在整个网站的任何地方使用。Partials对于在不同页面或布局上重复的页面元素非常有用。一个很好的局部示例是页脚，用于不同的[页面布局](layouts). 。此外，[使用AJAX更新页面内容](../ajax/update-partials)更需要partials。
+Partials包含可重复使用的Twig标记块，可以在整个网站的任何地方使用。Partials对于在不同页面或布局上重复的页面元素非常有用。一个很好的局部示例是页脚，用于不同的[页面布局](cms-layouts.md). 。此外，[使用AJAX更新页面内容](ajax-update-partials.md)更需要partials。
 
 Partial模板文件驻留在主题目录的 **/partials** 子目录中。 Partial 文件应是 **htm** 后后缀名。最简单的Partial示例:
 
@@ -22,7 +22,7 @@ Partial模板文件驻留在主题目录的 **/partials** 子目录中。 Partia
     ==
     <p>这是一个partial</p>
 
-partial配置部分还可以包含组件定义。 [组件](components)在另一篇文章中进行了解释。
+partial配置部分还可以包含组件定义。 [组件](cms-components.md)在另一篇文章中进行了解释。
 
 <a name="rendering-partials"></a>
 ## 渲染partials
@@ -61,7 +61,7 @@ Partials像页面一样，也可以使用任何Twig功能。有关详细信息�
 <a name="partial-life-cycle"></a>
 ### Partial执行生命周期
 
-可以在partials的PHP部分中定义特殊函数：`onStart`和`onEnd`。 `onStart`函数在部分渲染之前和partials[组件](components)执行之前执行。 `onEnd`函数在渲染之前和partials[组件](components) 执行之后执行。在onStart和onEnd函数中，您可以将变量注入Twig环境。使用`array notation`将变量传递给页面：
+可以在partials的PHP部分中定义特殊函数：`onStart`和`onEnd`。 `onStart`函数在部分渲染之前和partials[组件](cms-components.md)执行之前执行。 `onEnd`函数在渲染之前和partials[组件](cms-components.md) 执行之后执行。在onStart和onEnd函数中，您可以将变量注入Twig环境。使用`array notation`将变量传递给页面：
 
     ==
     function onStart()
@@ -71,12 +71,12 @@ Partials像页面一样，也可以使用任何Twig功能。有关详细信息�
     ==
     <h3>{{ hello }}</h3>
 
-October提供的模板语言在[标记指南](../markup)中有具体描述。执行处理程序的整体顺序在[动态布局](layouts#dynamic-layouts)的文章中有提到.
+October提供的模板语言在[标记指南](../markup)中有具体描述。执行处理程序的整体顺序在[动态布局](cms-layouts.md#dynamic-layouts)的文章中有提到.
 
 <a name="life-cycle-limitations"></a>
 ### 生命周期限制
 
-由于它们实例化较晚，因此在渲染页面期间，partials限制的生命周期会受到一些限制。它们不遵循标准执行过程，如[布局执行生命周期](layouts#dynamic-layouts)中所述。应注意以下限制：
+由于它们实例化较晚，因此在渲染页面期间，partials限制的生命周期会受到一些限制。它们不遵循标准执行过程，如[布局执行生命周期](cms-layouts.md#dynamic-layouts)中所述。应注意以下限制：
 
 1. AJAX事件未注册，将无法正常运行。
 1. 生命周期函数不能返回任何值。

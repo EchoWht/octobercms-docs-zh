@@ -10,7 +10,7 @@
 <a name="file-attachments"></a>
 ## 文件附件
 
-Model可以使用[多态关系]的子集支持文件附件(../database/relations#polymorphic-relations)。 `$attachOne`或`$attachMany`关系用于将文件链接到名为“attachments”的数据库记录。在几乎所有情况下，`System\Models\File`Model用于维护这种关系，其中对文件的引用作为记录存储在`system_files`表中，并且和父Model具有多态关系。
+Model可以使用[多态关系]的子集支持文件附件(database-relations.md#polymorphic-relations)。 `$attachOne`或`$attachMany`关系用于将文件链接到名为“attachments”的数据库记录。在几乎所有情况下，`System\Models\File`Model用于维护这种关系，其中对文件的引用作为记录存储在`system_files`表中，并且和父Model具有多态关系。
 
 在下面的示例中，Model具有单个头像附件Model和许多照片附件Model。
 
@@ -131,7 +131,7 @@ Model可以使用[多态关系]的子集支持文件附件(../database/relations
         $post->featured_image = Input::file('example_file');
     }
 
-或者，您可以使用[延迟绑定](../database/relations#deferred-binding)来推迟关系：
+或者，您可以使用[延迟绑定](database-relations.md#deferred-binding)来推迟关系：
 
     // 找到Blog PostModel
     $post = Post::find(1);
@@ -169,12 +169,12 @@ Model可以使用[多态关系]的子集支持文件附件(../database/relations
 
     $user = $file->attachment;
     
-有关更多信息，请阅读[多态关系](../database/relations#polymorphic-relations)
+有关更多信息，请阅读[多态关系](database-relations.md#polymorphic-relations)
 
 <a name="attachments-validation-example"></a>
 ### 验证示例
 
-下面的示例使用[数组验证](../services/validation#validating-arrays)来验证`$attachMany`关系。
+下面的示例使用[数组验证](services-validation.md#validating-arrays)来验证`$attachMany`关系。
 
     use October\Rain\Database\Traits\Validation;
     use System\Models\File;
@@ -196,4 +196,4 @@ Model可以使用[多态关系]的子集支持文件附件(../database/relations
         /* some other code */
     }
 
-有关上面使用的`attribute.*`语法的更多信息，请参阅[validating arrays](../services/validation#validating-arrays)。
+有关上面使用的`attribute.*`语法的更多信息，请参阅[validating arrays](services-validation.md#validating-arrays)。

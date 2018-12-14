@@ -43,7 +43,7 @@
         ]
     }
 
-像模型本身这样的关系也可以作为强大的[查询构建器](query)，访问关系作为函数提供强大的方法链接和查询功能。 例如：
+像模型本身这样的关系也可以作为强大的[查询构建器](database-query.md)，访问关系作为函数提供强大的方法链接和查询功能。 例如：
 
     $user->posts()->where('is_active', true)->get();
 
@@ -258,7 +258,7 @@
 
 多对多关系比`hasOne`和`hasMany`关系稍微复杂一些。 这种关系的一个示例是具有许多角色的用户，其中角色也由其他用户共享。 例如，许多用户可能具有“管理员”的角色。 要定义这种关系，需要三个数据库表：`users`，`roles`和`role_user`。 `role_user`表是从相关模型名称的字母顺序派生而来的，包含`user_id`和`role_id`列。
 
-下面的示例显示了用于创建连接表的[数据库表结构](../plugin/updates#migration-files) 。
+下面的示例显示了用于创建连接表的[数据库表结构](plugin-updates.md#migration-files) 。
 
     Schema::create('role_user', function($table)
     {
@@ -481,7 +481,7 @@ has-many-through关系为通过中间关系访问远程关系提供了方便的�
         'product' => 'Acme\Blog\Models\Product',
     ]);
 
-在[插件注册文件](../plugin/registration#registration-methods)的`boot`方法中注册`morphMap`的最常见的地方。
+在[插件注册文件](plugin-registration.md#registration-methods)的`boot`方法中注册`morphMap`的最常见的地方。
 
 <a name="many-to-many-polymorphic-relations"></a>
 ### 多对多的多态关系
@@ -551,7 +551,7 @@ has-many-through关系为通过中间关系访问远程关系提供了方便的�
 <a name="querying-relations"></a>
 ## 查询关系
 
-由于可以通过函数调用所有类型的模型关系，因此可以调用这些函数来获取关系的实例，而无需实际执行关系查询。 此外，所有类型的关系也可用作[查询构建器](query)，允许您在最终针对数据库执行SQL之前继续将约束链接到关系查询。
+由于可以通过函数调用所有类型的模型关系，因此可以调用这些函数来获取关系的实例，而无需实际执行关系查询。 此外，所有类型的关系也可用作[查询构建器](database-query.md)，允许您在最终针对数据库执行SQL之前继续将约束链接到关系查询。
 
 For example, imagine a blog system in which a `User` model has many associated `Post` models:
 
@@ -565,7 +565,7 @@ For example, imagine a blog system in which a `User` model has many associated `
 <a name="querying-method"></a>
 ### 通过关系方法访问
 
-您可以使用`posts`方法查询** posts **关系并为关系添加其他约束。 这使您能够链接任何[查询构建器](query)方法的关系。
+您可以使用`posts`方法查询** posts **关系并为关系添加其他约束。 这使您能够链接任何[查询构建器](database-query.md)方法的关系。
 
     $user = User::find(1);
 
@@ -670,7 +670,7 @@ For example, imagine a blog system in which a `User` model has many associated `
         }
     ])->get();
 
-在这个例子中，如果帖子的`title`列包含单词`first`，模型将只会加载帖子。 当然，您可以调用其他[查询构建器](query)方法来进一步自定义预先加载操作：
+在这个例子中，如果帖子的`title`列包含单词`first`，模型将只会加载帖子。 当然，您可以调用其他[查询构建器](database-query.md)方法来进一步自定义预先加载操作：
 
     $users = User::with([
         'posts' => function ($query) {
@@ -766,7 +766,7 @@ October提供了为关系添加新模型的便捷方法。 主要模型可以添
         'message' => 'A new comment.',
     ]);
 
-在使用`create`方法之前，请务必查看属性[mass assignment](model#mass-assignment)的文档，因为PHP数组中的属性受模型的“可填充”定义的限制。
+在使用`create`方法之前，请务必查看属性[mass assignment](database-model.md#mass-assignment)的文档，因为PHP数组中的属性受模型的“可填充”定义的限制。
 
 <a name="inserting-dynamic-property"></a>
 ### 通过动态属性插入

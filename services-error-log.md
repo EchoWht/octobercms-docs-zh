@@ -89,7 +89,7 @@ October开始提供几种基本的异常类型。
         throw new ValidationException($validation);
     }
 
-当抛出此异常时，[AJAX框架](../ajax/introduction)将以可用格式提供此信息并聚焦第一个无效字段。
+当抛出此异常时，[AJAX框架](ajax-introduction.md)将以可用格式提供此信息并聚焦第一个无效字段。
 
 <a name="ajax-exception"></a>
 ### AJAX异常
@@ -98,7 +98,7 @@ October开始提供几种基本的异常类型。
 
     throw new AjaxException(['#flashMessages' => $this->renderPartial(...)]);
 
-抛出此异常时，[AJAX框架](../ajax/introduction) 将遵循标准错误工作流程，但也将刷新指定的部分。
+抛出此异常时，[AJAX框架](ajax-introduction.md) 将遵循标准错误工作流程，但也将刷新指定的部分。
 
 <a name="exception-handling"></a>
 ## 异常处理
@@ -127,7 +127,7 @@ October开始提供几种基本的异常类型。
 
 ### 放置错误处理程序的位置
 
-错误处理程序注册(如[事件处理程序](events))通常属于“引导代码”类别。 换句话说，它们准备应用程序以实际处理请求，并且通常需要在实际调用路由或控制器之前执行。 最常见的地方是[插件注册文件](../plugin/registration#registration-methods)的`boot`方法。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置错误处理程序注册。
+错误处理程序注册(如[事件处理程序](services-error-log.md))通常属于“引导代码”类别。 换句话说，它们准备应用程序以实际处理请求，并且通常需要在实际调用路由或控制器之前执行。 最常见的地方是[插件注册文件](plugin-registration.md#registration-methods)的`boot`方法。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置错误处理程序注册。
 
 <a name="http-exceptions"></a>
 ## HTTP异常

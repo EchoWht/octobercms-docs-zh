@@ -20,7 +20,7 @@
 <a name="generic-widgets"></a>
 ## 通用小部件
 
-窗口小部件是前端[组件](../cms/components)的后端等效项。 它们是相似的，因为它们是模块化的功能集，提供部分并使用别名命名。 关键区别在于后端窗口小部件使用YAML标记进行配置，并将自身绑定到后端页面。
+窗口小部件是前端[组件](cms-components.md)的后端等效项。 它们是相似的，因为它们是模块化的功能集，提供部分并使用别名命名。 关键区别在于后端窗口小部件使用YAML标记进行配置，并将自身绑定到后端页面。
 
 窗口小部件类驻留在插件目录的**widgets**目录中。 目录名称与以小写字母书写的窗口小部件类的名称相匹配。 小部件可以提供资产和部分。 示例窗口小部件目录结构如下所示：
 
@@ -38,7 +38,7 @@
 <a name="generic-class-definition"></a>
 ### 类定义
 
-通用窗口小部件类必须扩展`Backend\Classes\WidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](../plugin/registration#namespaces)。 示例小部件控制器类定义：
+通用窗口小部件类必须扩展`Backend\Classes\WidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](plugin-registration.md#namespaces)。 示例小部件控制器类定义：
 
     <?php namespace Backend\Widgets;
 
@@ -114,12 +114,12 @@
 <a name="form-widgets"></a>
 ## 表单小部件
 
-使用表单小部件，您可以向后端[表单](../backend/forms)添加新的控件类型。 它们提供了为模型提供数据所共有的功能。 表单小部件必须在[插件注册文件](../plugin/registration#registration-methods)中注册。
+使用表单小部件，您可以向后端[表单](backend-forms.md)添加新的控件类型。 它们提供了为模型提供数据所共有的功能。 表单小部件必须在[插件注册文件](plugin-registration.md#registration-methods)中注册。
 
 <a name="form-class-definition"></a>
 ### 类定义
 
-表单窗口小部件类必须扩展`Backend\Classes\FormWidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](../plugin/registration#namespaces)。 已注册的窗口小部件可用于后端[表单字段定义](../backend/forms#form-fields) 文件。 示例窗体小部件类定义：
+表单窗口小部件类必须扩展`Backend\Classes\FormWidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](plugin-registration.md#namespaces)。 已注册的窗口小部件可用于后端[表单字段定义](backend-forms.md#form-fields) 文件。 示例窗体小部件类定义：
 
     namespace Backend\Widgets;
 
@@ -138,7 +138,7 @@
 <a name="form-widget-properties"></a>
 ### 表单小部件属性
 
-表单小部件可能具有可以使用[表单字段配置](../backend/forms#form-fields)设置的属性。 只需在类上定义可配置属性，然后调用`fillFromConfig`方法在`init`方法定义中填充它们。
+表单小部件可能具有可以使用[表单字段配置](backend-forms.md#form-fields)设置的属性。 只需在类上定义可配置属性，然后调用`fillFromConfig`方法在`init`方法定义中填充它们。
 
     class DatePicker extends FormWidgetBase
     {
@@ -187,7 +187,7 @@
         // ...
     }
 
-然后，在使用窗口小部件时，可以从[窗体字段定义](../backend/forms#form-fields) 设置属性值。
+然后，在使用窗口小部件时，可以从[窗体字段定义](backend-forms.md#form-fields) 设置属性值。
 
     born_at:
         label: Date of Birth
@@ -199,7 +199,7 @@
 <a name="form-widget-registration"></a>
 ### 表单小部件注册
 
-插件应该通过覆盖[Plugin注册类](../plugin/registration#registration-file)中的`registerFormWidgets`方法来注册表单小部件。 该方法返回一个数组，其中包含键中的窗口小部件类和窗口小部件短代码作为值。 例：
+插件应该通过覆盖[Plugin注册类](plugin-registration.md#registration-file)中的`registerFormWidgets`方法来注册表单小部件。 该方法返回一个数组，其中包含键中的窗口小部件类和窗口小部件短代码作为值。 例：
 
     public function registerFormWidgets()
     {
@@ -209,7 +209,7 @@
         ];
     }
 
-短代码是可选的，可以在[表单字段定义](forms#field-widget)中引用窗口小部件时使用，它应该是一个唯一值，以避免与其他表单字段冲突。
+短代码是可选的，可以在[表单字段定义](backend-forms.md#field-widget)中引用窗口小部件时使用，它应该是一个唯一值，以避免与其他表单字段冲突。
 
 <a name="form-widget-load-data"></a>
 ### 加载表单数据
@@ -249,12 +249,12 @@
 <a name="report-widgets"></a>
 ## 报告窗口小部件
 
-报告窗口小部件可用于后端仪表板和其他后端报告容器中。 报告窗口小部件必须在[插件注册文件](../plugin/registration#widget-registration)中注册。
+报告窗口小部件可用于后端仪表板和其他后端报告容器中。 报告窗口小部件必须在[插件注册文件](plugin-registration.md#widget-registration)中注册。
 
 <a name="report-class-definition"></a>
 ### 报告小部件类
 
-报表小部件类应该扩展`Backend\Classes\ReportWidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](../plugin/registration#namespaces)。 该类应覆盖`render`方法，以便呈现小部件本身。 与所有后端小部件类似，报告小部件使用部分和特殊目录布局。 示例目录布局：
+报表小部件类应该扩展`Backend\Classes\ReportWidgetBase`类。 与任何其他插件类一样，通用窗口小部件控制器应属于[插件命名空间](plugin-registration.md#namespaces)。 该类应覆盖`render`方法，以便呈现小部件本身。 与所有后端小部件类似，报告小部件使用部分和特殊目录布局。 示例目录布局：
 
     plugins/
       rainlab/                    <=== Author name
@@ -345,7 +345,7 @@
 
 ![image](https://github.com/octobercms/docs/blob/master/images/report-widget-inspector.png?raw=true)
 
-应该在widget类的`defineProperties`方法中定义属性。 这些属性在[文章组件](../plugin/components#component-properties)中描述。 例：
+应该在widget类的`defineProperties`方法中定义属性。 这些属性在[文章组件](plugin-components.md#component-properties)中描述。 例：
 
     public function defineProperties()
     {
@@ -369,7 +369,7 @@
 <a name="report-widget-registration"></a>
 ### 报告小部件注册
 
-插件可以通过覆盖[插件注册类](../plugin/registration#registration-file)中的`registerReportWidgets`方法来注册报表小部件。 该方法应返回一个数组，其中包含键中的窗口小部件类以及值中的窗口小部件标签和上下文。 例：
+插件可以通过覆盖[插件注册类](plugin-registration.md#registration-file)中的`registerReportWidgets`方法来注册报表小部件。 该方法应返回一个数组，其中包含键中的窗口小部件类以及值中的窗口小部件标签和上下文。 例：
 
     public function registerReportWidgets()
     {

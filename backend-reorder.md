@@ -10,7 +10,7 @@
 
 **重新排序行为**是一个控制器修饰符，它提供了对数据库记录进行排序和重新排序的功能。 该行为使用控制器操作`reorder`提供名为Reorder的页面。 此页面显示带有拖动句柄的记录列表，允许对它们进行排序，并在某些情况下进行重组。
 
-行为取决于[model class](../database/model) ，它必须实现以下[model traits](../database/traits)之一：
+行为取决于[model class](database-model.md) ，它必须实现以下[model traits](database-traits.md)之一：
 
 1. `October\Rain\Database\Traits\Sortable`
 1. `October\Rain\Database\Traits\NestedTree`
@@ -73,7 +73,7 @@
 <a name="extend-model-query"></a>
 ## 扩展模型查询
 
-可以通过覆盖控制器类中的`reorderExtendQuery`方法来扩展列表[数据库模型](../database/model) 的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保列表数据中包含软删除的记录：
+可以通过覆盖控制器类中的`reorderExtendQuery`方法来扩展列表[数据库模型](database-model.md) 的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保列表数据中包含软删除的记录：
 
 	public function reorderExtendQuery($query)
 	{

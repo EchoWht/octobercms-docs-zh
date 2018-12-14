@@ -1,6 +1,6 @@
 # {% content %}
 
-`{％content％}`标签将在页面上显示[CMS内容块](../cms/content)。 要显示名为$contacts.htm **的内容块，请在引用为字符串的`content`标记后传递文件名。
+`{％content％}`标签将在页面上显示[CMS内容块](cms-content.md)。 要显示名为$contacts.htm **的内容块，请在引用为字符串的`content`标记后传递文件名。
 
     {% content "contacts.htm" %}
 
@@ -8,7 +8,7 @@
 
     {% content "sidebar/content.htm" %}
 
-> **注意**: [主题文档](../cms/themes#subdirectories)有关于子目录用法的更多详细信息。
+> **注意**: [主题文档](cms-themes.md#subdirectories)有关于子目录用法的更多详细信息。
 
 内容块可以呈现为纯文本：
 
@@ -18,7 +18,7 @@
 
     {% content "changelog.md" %}
 
-内容块也可以与[布局占位符](../cms/layouts#placeholders)结合使用：
+内容块也可以与[布局占位符](cms-layouts.md#placeholders)结合使用：
 
     {% put sidebar %}
         {% content 'sidebar-content.htm' %}
@@ -55,4 +55,4 @@
         {/likes}
     </ul>
 
-> **注意**: 内容块中不支持Twig语法，请考虑使用[CMS partial](../cms/partials)。
+> **注意**: 内容块中不支持Twig语法，请考虑使用[CMS partial](cms-partials.md)。

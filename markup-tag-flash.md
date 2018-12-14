@@ -24,7 +24,7 @@
 
 ## 设置Flash消息
 
-Flash消息可以通过[Components](../cms/components) 设置，也可以通过`Flash`类在页面或布局[PHP部分](../cms/themes#php-section) 中设置。
+Flash消息可以通过[Components](cms-components.md) 设置，也可以通过`Flash`类在页面或布局[PHP部分](cms-themes.md#php-section) 中设置。
 
     <?php
 

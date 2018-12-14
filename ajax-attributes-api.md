@@ -21,7 +21,7 @@ Attribute | Description
 **data-request-complete** | 指定在请求成功完成或遇到错误时要执行的JavaScript代码。在JavaScript代码中，您可以访问以下变量：`this`(页面元素触发请求)，`context`对象，`textStatus`文本字符串和`jqXHR`对象。
 **data-request-loading** | 为请求运行时要显示的元素指定CSS选择器。您可以使用此选项显示AJAX加载指示器。该功能使用jQuery的`show()`和`hide()`函数来管理元素可见性。
 **data-request-form** | 明确指定用于获取表单数据的表单元素。如果未指定，则使用与触发元素最接近的元素，包括元素本身是否为表单。
-**data-request-flash** | 指定此选项时，指示服务器清除并发送带响应的Flash消息。 [附加功能](../ajax/extras#ajax-flash)也使用此选项。
+**data-request-flash** | 指定此选项时，指示服务器清除并发送带响应的Flash消息。 [附加功能](ajax-extras.md#ajax-flash)也使用此选项。
 **data-request-files** | 当指定请求将接受文件上传时，这需要浏览器支持`FormData`接口。
 **data-track-input** | 可以应用于也具有`data-request`属性的文本，数字或密码输入字段。定义时，输入字段会在用户在字段中键入内容时自动发送AJAX请求。可选属性值可以定义框架在发送请求之前等待的间隔(以毫秒为单位)。
 
@@ -66,7 +66,7 @@ Attribute | Description
         <button data-request="onSave">Update</button>
     </div>
 
-含有[文件上传](../services/request-input#files)和请求：
+含有[文件上传](services-request-input.md#files)和请求：
 
     <form data-request="onSubmit" data-request-files>
         <input type="file" name="photo" accept="image/*"/>

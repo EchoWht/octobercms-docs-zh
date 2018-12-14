@@ -10,11 +10,11 @@
 <a name="pulling-updates"></a>
 ## 拉取Partials更新
 
-客户端浏览器可以在执行AJAX请求时请求从服务器更新partial，这被认为是*拉取内容更新*。以下代码在调用`onRefreshTime` [事件处理程序](../ajax/handlers)后，在页面上的`#myDiv`元素内部呈现** mytime ** partial。
+客户端浏览器可以在执行AJAX请求时请求从服务器更新partial，这被认为是*拉取内容更新*。以下代码在调用`onRefreshTime` [事件处理程序](ajax-handlers.md)后，在页面上的`#myDiv`元素内部呈现** mytime ** partial。
 
     <div id="myDiv">{% partial 'mytime' %}</div>
 
-[data attributes API](../ajax/attributes-api)使用`data-request-update`属性。
+[data attributes API](ajax-attributes-api.md)使用`data-request-update`属性。
 
     <!-- 属性 API -->
     <button
@@ -23,7 +23,7 @@
         Go
     </button>
 
-[JavaScript API](../ajax/javascript-api)使用`update`配置选项：
+[JavaScript API](ajax-javascript-api.md)使用`update`配置选项：
 
     <!-- JavaScript API -->
     $.request('onRefreshTime', {
@@ -57,7 +57,7 @@
 <a name="pushing-updates"></a>
 ## 部分更新
 
-相比之下，[AJAX处理程序](../ajax/handlers)可以*从服务器端将内容更新*推送到客户端浏览器。为了推送更新，处理程序返回一个数组，其中key是要更新的HTML元素(使用简单的CSS选择器)，value是要更新的内容。
+相比之下，[AJAX处理程序](ajax-handlers.md)可以*从服务器端将内容更新*推送到客户端浏览器。为了推送更新，处理程序返回一个数组，其中key是要更新的HTML元素(使用简单的CSS选择器)，value是要更新的内容。
 
 以下示例将使用在partial** mypartial **中找到的内容更新页面id为 ** myDiv **的元素。 `onRefreshTime`处理程序调用`renderPartial`方法在PHP中呈现partial内容。
 
@@ -73,11 +73,11 @@
 <a name="passing-variables"></a>
 ## 将变量传递给partials
 
-根据执行上下文，[AJAX事件处理程序](../ajax/handlers)使变量可用于不同的partials。
+根据执行上下文，[AJAX事件处理程序](ajax-handlers.md)使变量可用于不同的partials。
 
-- 在页面或布局[PHP部分](../cms/themes#php-section)中使用`$this []`。
-- 在[组件类](../plugin/components#ajax-handlers)中使用`$this-> page []`。
-- 在[后端区域](../backend/controllers-ajax#ajax)中使用`$this-> vars []`。
+- 在页面或布局[PHP部分](cms-themes.md#php-section)中使用`$this []`。
+- 在[组件类](plugin-components.md#ajax-handlers)中使用`$this-> page []`。
+- 在[后端区域](backend-controllers-ajax.md#ajax)中使用`$this-> vars []`。
 
 这些示例将为每个上下文的部分partials**结果**变量：
 

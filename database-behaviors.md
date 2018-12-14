@@ -3,9 +3,9 @@
 - [可清除的](#purgeable)
 
 模型行为用于实现通用功能。 
-与[Traits(特征)](traits)不同，这些可以直接实现
-in a class or by extending the class. You can read more about behaviors [here](../services/behaviors).
-在class类中或通过扩展class类。 您可以阅读更多有关行为[此处](../services/behaviors)的内容。
+与[Traits(特征)](database-traits.md)不同，这些可以直接实现
+in a class or by extending the class. You can read more about behaviors [here](services-behaviors.md).
+在class类中或通过扩展class类。 您可以阅读更多有关行为[此处](services-behaviors.md)的内容。
 
 <a name="purgeable"></a>
 ## 可清除的

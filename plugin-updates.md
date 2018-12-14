@@ -10,7 +10,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-插件维护更改日志是很好的做法，该日志记录代码中的任何更改或改进。 除了编写有关更改的注释之外，此过程还具有以正确顺序执行[迁移和种子文件](../database/structure) 的有用功能。
+插件维护更改日志是很好的做法，该日志记录代码中的任何更改或改进。 除了编写有关更改的注释之外，此过程还具有以正确顺序执行[迁移和种子文件](database-structure.md) 的有用功能。
 
 更改日志存储在插件的 **/updates** 目录中名为`version.yaml`的YAML文件中，该文件与迁移和种子文件共存。 此示例显示典型的插件更新目录结构：
 
@@ -30,14 +30,14 @@
 
 1. 当管理员登录后端时。
 1. 使用后端区域中的更新功能更新系统时。
-1. 当从控制台目录的命令行中调用[console command](../console/commands#console-up-command) `php artisan october:up` 时。
+1. 当从控制台目录的命令行中调用[console command](console-commands.md#console-up-command) `php artisan october:up` 时。
 
-> **注意:** 插件[初始化过程](../plugin/registration#routing-initialization)在更新过程中被禁用，这应该是迁移和播种脚本中的一个考虑因素。
+> **注意:** 插件[初始化过程](plugin-registration.md#routing-initialization)在更新过程中被禁用，这应该是迁移和播种脚本中的一个考虑因素。
 
 <a name="plugin-depedencies"></a>
 ### 插件依赖
 
-基于[插件注册文件中定义的依赖项](../plugin/registration#dependency-definitions)，以特定顺序应用更新。会先更新依赖插件。
+基于[插件注册文件中定义的依赖项](plugin-registration.md#dependency-definitions)，以特定顺序应用更新。会先更新依赖插件。
 
     <?php namespace Acme\Blog;
 
@@ -51,7 +51,7 @@
 <a name="version-file"></a>
 ## 插件版本文件
 
-**version.yaml**文件， 叫做*扩展版本文件*, 包含版本注释内容和正确执行顺序的数据库脚本。请阅读[数据库结构](../database/structure)文章来了解更多的迁移文件的信息。 如果您要将插件提交到[Marketplace](http://octobercms.com/help/site/marketplace)。则需要以下示例的版本文件：
+**version.yaml**文件， 叫做*扩展版本文件*, 包含版本注释内容和正确执行顺序的数据库脚本。请阅读[数据库结构](database-structure.md)文章来了解更多的迁移文件的信息。 如果您要将插件提交到[Marketplace](http://octobercms.com/help/site/marketplace)。则需要以下示例的版本文件：
 
     1.0.1: First version
     1.0.2: Second version
@@ -84,7 +84,7 @@
 <a name="migration-seed-files"></a>
 ### 迁移和种子文件
 
-如前所述，更新还定义何时应该应用[迁移和种子文件](../database/structure) 。 包含评论和更新的更新行：
+如前所述，更新还定义何时应该应用[迁移和种子文件](database-structure.md) 。 包含评论和更新的更新行：
 
     1.1.1:
         - This update will execute the two scripts below.

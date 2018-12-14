@@ -51,6 +51,6 @@
 <a name="scaffold-create-command"></a>
 ### 创建一个控制台命令
 
-`create:command`命令生成[新控制台命令](../console/development)。 第一个参数指定作者和插件名称。 第二个参数指定命令名称。
+`create:command`命令生成[新控制台命令](console-development.md)。 第一个参数指定作者和插件名称。 第二个参数指定命令名称。
 
     php artisan create:command RainLab.Blog MyCommand

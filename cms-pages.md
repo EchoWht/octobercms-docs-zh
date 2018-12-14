@@ -24,13 +24,13 @@
 <a name="configuration"></a>
 ## 页面配置
 
-页面配置在页面模板文件的[配置部分](cms-themes.md#configuration-section)中定义。页面配置定义了路由和呈现页面和页面[组件](components)所需的页面参数，这在另一篇文章中有解释。页面支持以下配置参数：
+页面配置在页面模板文件的[配置部分](cms-themes.md#configuration-section)中定义。页面配置定义了路由和呈现页面和页面[组件](cms-components.md)所需的页面参数，这在另一篇文章中有解释。页面支持以下配置参数：
 
 参数 | 描述
 ------------- | -------------
 **url** | 页面URL，必需。 URL语法如下所述。
 **title** | 页面标题，必需。
-**layout** | 页面[layout](layouts)，可选。如果指定，则应包含布局文件的名称，不带扩展名，例如：`default`。
+**layout** | 页面[layout](cms-layouts.md)，可选。如果指定，则应包含布局文件的名称，不带扩展名，例如：`default`。
 **description** | 后端接口的页面描述，可选。
 
 <a name="url-syntax"></a>
@@ -90,13 +90,13 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 <a name="dynamic-pages"></a>
 ## 动态页面
 
-Inside the [Twig section](cms-themes.md#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](cms-themes.md#php-section) or by [Components](components). In this article we describe how to prepare variables in the PHP section.
-在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup))。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](components)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
+Inside the [Twig section](cms-themes.md#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](cms-themes.md#php-section) or by [Components](cms-components.md). In this article we describe how to prepare variables in the PHP section.
+在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup))。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](cms-components.md)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
 
 <a name="page-life-cycle"></a>
 ### 页面执行的生命周期
 
-可以在页面和布局的PHP部分中定义特殊函数：`onInit`，`onStart`和`onEnd`。当初始化所有组件并处理AJAX请求之前，执行`onInit`函数。 `onStart`函数在页面执行开始时执行。 `onEnd`函数在呈现页面之前和页面[Components](components)执行之后执行。在onStart和onEnd函数中，您可以将变量注入Twig环境。使用`array notation`将变量传递给页面：
+可以在页面和布局的PHP部分中定义特殊函数：`onInit`，`onStart`和`onEnd`。当初始化所有组件并处理AJAX请求之前，执行`onInit`函数。 `onStart`函数在页面执行开始时执行。 `onEnd`函数在呈现页面之前和页面[Components](cms-components.md)执行之后执行。在onStart和onEnd函数中，您可以将变量注入Twig环境。使用`array notation`将变量传递给页面：
 
     url = "/"
     ==
@@ -126,7 +126,7 @@ Inside the [Twig section](cms-themes.md#twig-section) of a page template you can
         {% endfor %}
     </ul>
 
-October提供的默认变量和Twig扩展名在[标记指南](../markup)中描述。执行处理程序的整体顺序在[动态布局](layouts#dynamic-layouts)文章中有所描述。
+October提供的默认变量和Twig扩展名在[标记指南](../markup)中描述。执行处理程序的整体顺序在[动态布局](cms-layouts.md#dynamic-layouts)文章中有所描述。
 
 <a name="life-cycle-response"></a>
 ### 发送自定义响应
@@ -148,7 +148,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 <a name="handling-forms"></a>
 ### 处理表单
 
-您可以使用页面或布局中定义的方法处理标准表单[PHP部分](cms-themes.md#php-section) (处理AJAX请求在[AJAX Framework](../ajax/introduction) 文章中进行了解释). 使用[form_open()](markup#standard-form) 函数定义一个引用事件方法的表单。例如：
+您可以使用页面或布局中定义的方法处理标准表单[PHP部分](cms-themes.md#php-section) (处理AJAX请求在[AJAX Framework](ajax-introduction.md) 文章中进行了解释). 使用[form_open()](markup#standard-form) 函数定义一个引用事件方法的表单。例如：
 
     {{ form_open({ request: 'onHandleForm' }) }}
         请输入一些文字<input type="text" name="value"/>
@@ -165,9 +165,9 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 
 方法使用`post`函数加载值并初始化页面`lastValue`属性变量，将该变量显示在第一个示例中的表单下方
 
-> **注意:** 如果在页面布局中定义了具有相同名称的方法，则页面和页面[组件](components) October 将执行页面方法。如果在组件和布局中定义了方法，则将执行布局方法。方法的优先级是：页面，布局，组件。
+> **注意:** 如果在页面布局中定义了具有相同名称的方法，则页面和页面[组件](cms-components.md) October 将执行页面方法。如果在组件和布局中定义了方法，则将执行布局方法。方法的优先级是：页面，布局，组件。
 
-如果要引用特定[组件][component](components)中定义的方法, use the component name or alias in the handler reference:
+如果要引用特定[组件][component](cms-components.md)中定义的方法, use the component name or alias in the handler reference:
 
     {{ form_open({ request: 'myComponent::onHandleForm' }) }}
 
@@ -184,7 +184,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 <a name="page-variables"></a>
 ## 页面变量
 
-可以通过引用`$this->page`在[PHP代码部分](../cms/themes#php-section) 或 [组件](../cms/components) 中访问页面的属性。
+可以通过引用`$this->page`在[PHP代码部分](cms-themes.md#php-section) 或 [组件](cms-components.md) 中访问页面的属性。
 
     function onEnd()
     {

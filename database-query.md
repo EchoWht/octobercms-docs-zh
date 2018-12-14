@@ -31,7 +31,7 @@
 
     $users = Db::table('users')->get();
 
-与[raw queries](../database/basics#running-queries)一样，`get`方法返回一个结果的`array`，其中每个结果都是PHP`stdClass`对象的一个实例。 您可以通过访问列作为对象的属性来访问每个列的值：
+与[raw queries](database-basics.md#running-queries)一样，`get`方法返回一个结果的`array`，其中每个结果都是PHP`stdClass`对象的一个实例。 您可以通过访问列作为对象的属性来访问每个列的值：
 
     foreach ($users as $user) {
         echo $user->name;
@@ -51,7 +51,7 @@
 
 #### 从表中获得结果
 
-如果需要处理数千个数据库记录，请考虑使用`chunk`方法。 此方法一次检索结果的一小部分“块”，并将每个块提供给`Closure`进行处理。 此方法对于编写处理数千条记录的[控制台命令](../console/development)非常有用。 例如，让我们一次使用100个记录的整个`users`表：
+如果需要处理数千个数据库记录，请考虑使用`chunk`方法。 此方法一次检索结果的一小部分“块”，并将每个块提供给`Closure`进行处理。 此方法对于编写处理数千条记录的[控制台命令](console-development.md)非常有用。 例如，让我们一次使用100个记录的整个`users`表：
 
     Db::table('users')->chunk(100, function($users) {
         foreach ($users as $user) {
@@ -419,7 +419,7 @@
 <a name="adding-constraints"></a>
 ### 持久缓存
 
-您可以使用[缓存服务](../services/cache)轻松缓存查询结果。 在准备查询时，只需链接`remember`或`rememberForever`方法即可。
+您可以使用[缓存服务](services-cache.md)轻松缓存查询结果。 在准备查询时，只需链接`remember`或`rememberForever`方法即可。
 
     $users = Db::table('users')->remember(10)->get();
 
@@ -428,7 +428,7 @@
 <a name="adding-constraints"></a>
 ### 内存缓存
 
-通过使用内存缓存可以防止同一请求中的重复查询。 默认情况下，对于[由模型准备的查询](../database/model#retrievaling-models)启用此功能，但不启用直接使用`Db`facade生成的功能。
+通过使用内存缓存可以防止同一请求中的重复查询。 默认情况下，对于[由模型准备的查询](database-model.md#retrievaling-models)启用此功能，但不启用直接使用`Db`facade生成的功能。
 
     Db::table('users')->get(); //Result from database
     Db::table('users')->get(); //Result from database

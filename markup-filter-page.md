@@ -8,7 +8,7 @@
 
     <a href="{{ 'contacts/about'|page }}">About Us</a>
 
-> **注意**: [主题文档](../cms/themes#subdirectories)有关于子目录用法的更多详细信息。
+> **注意**: [主题文档](cms-themes.md#subdirectories)有关于子目录用法的更多详细信息。
 
 您可以通过过滤空字符串来创建指向当前页面的链接：
 

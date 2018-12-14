@@ -223,7 +223,7 @@ There are several options that allow you to fine-tune the Media Manager. All of 
 <a name="events"></a>
 ## 活动
 
-媒体管理器提供了一些您可以监听的[事件](../services/events)，以提高可扩展性。
+媒体管理器提供了一些您可以监听的[事件](services-events.md)，以提高可扩展性。
 
 事件 | 描述 | 参数
 ------------- | ------------- | -------------

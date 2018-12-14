@@ -16,13 +16,13 @@
 <a name="introduction"></a>
 ## 介绍
 
-插件是通过扩展将新功能添加到CMS的基础。 本文介绍了组件注册。 注册过程允许插件声明其功能，如[组件](components)或后端菜单和页面。 插件可以执行的一些示例：
+插件是通过扩展将新功能添加到CMS的基础。 本文介绍了组件注册。 注册过程允许插件声明其功能，如[组件](cms-components.md)或后端菜单和页面。 插件可以执行的一些示例：
 
-1. 定义 [组件](components).
-1. 定义 [用户权限](../backend/users).
-1. 添加 [设置页面](settings#backend-pages), [菜单项](#navigation-menus), [列表](../backend/lists) 和 [表单](../backend/forms).
-1. 创建 [数据库表结构和数据](updates).
-1. 修改 [核心或其他插件的功能](events).
+1. 定义 [组件](cms-components.md).
+1. 定义 [用户权限](backend-users.md).
+1. 添加 [设置页面](plugin-settings.md#backend-pages), [菜单项](#navigation-menus), [列表](backend-lists.md) 和 [表单](backend-forms.md).
+1. 创建 [数据库表结构和数据](plugin-updates.md).
+1. 修改 [核心或其他插件的功能](services-error-log.md).
 1. 准备classes, [后端控制器](../backend/controllers-views-ajax), 视图, 资源和其他文件。
 
 <a name="directory-structure"></a>
@@ -41,7 +41,7 @@
           ...
           Plugin.php     <=== 插件注册文件
 
-并非所有插件目录都是必需的。 唯一需要的文件是下面描述的**Plugin.php**。 如果你的插件只提供一个[组件](components)，你的插件目录可能会简单得多，如下所示：
+并非所有插件目录都是必需的。 唯一需要的文件是下面描述的**Plugin.php**。 如果你的插件只提供一个[组件](cms-components.md)，你的插件目录可能会简单得多，如下所示：
 
     plugins/
       acme/              <=== 作者名称
@@ -49,7 +49,7 @@
           components/
           Plugin.php     <=== 插件注册文件
 
-> **注意:** 如果您正在为[Marketplace](http://octobercms.com/help/site/marketplace)开发插件，则需要 [updates/version.yaml](updates) 文件。
+> **注意:** 如果您正在为[Marketplace](http://octobercms.com/help/site/marketplace)开发插件，则需要 [updates/version.yaml](plugin-updates.md) 文件。
 
 <a name="namespaces"></a>
 ### 插件命名空间(namespaces)
@@ -99,15 +99,15 @@
 **register()** | 注册方法，在首次注册插件时调用。
 **boot()** | 引导方法，在请求路由之前调用。
 **registerMarkupTags()** | 注册可在CMS中使用的[其他标记标记](#extended-twig)。
-**registerComponents()** | 注册此插件的[组件](components#component-registration)。
+**registerComponents()** | 注册此插件的[组件](cms-components.md#component-registration)。
 **registerNavigation()** | 注册此插件的[后端导航菜单项](#navigation-menus)。
-**registerPermissions()** | 注册此插件的[后端权限](../backend/users#permission-registration)。
-**registerSettings()** | 注册此插件的[后端设置链接](settings#link-registration)。
-**registerFormWidgets()** | 注册此插件的[后端表单小部件](../backend/widgets#form-widget-registration)。
-**registerReportWidgets()** | 注册此插件的[后端报告小部件](../backend/widgets#report-widget-registration)，包括仪表板小部件。
-**registerListColumnTypes()** | 注册此插件提供的[自定义列表列类型](../backend/lists#custom-column-types) 。
-**registerMailTemplates()** | 注册此插件提供的[邮件视图模板](mail#mail-template-registration) 。
-**registerSchedule()** | 注册定期执行的[计划任务](../plugin/scheduling#defining-schedules) 。
+**registerPermissions()** | 注册此插件的[后端权限](backend-users.md#permission-registration)。
+**registerSettings()** | 注册此插件的[后端设置链接](plugin-settings.md#link-registration)。
+**registerFormWidgets()** | 注册此插件的[后端表单小部件](backend-widgets.md#form-widget-registration)。
+**registerReportWidgets()** | 注册此插件的[后端报告小部件](backend-widgets.md#report-widget-registration)，包括仪表板小部件。
+**registerListColumnTypes()** | 注册此插件提供的[自定义列表列类型](backend-lists.md#custom-column-types) 。
+**registerMailTemplates()** | 注册此插件提供的[邮件视图模板](services-mail.md#mail-template-registration) 。
+**registerSchedule()** | 注册定期执行的[计划任务](plugin-scheduling.md#defining-schedules) 。
 
 <a name="basic-plugin-information"></a>
 ### 基本插件信息
@@ -139,7 +139,7 @@
 
 > **注意:** 在更新过程中不会调用`boot`和`register`方法来保护系统免受严重错误的影响。要克服此限制，请使用[提升权限](#elevated-plugin).
 
-插件还可以提供名为**routes.php**的文件，其中包含自定义路由逻辑，如[路由器服务](../services/router)中所定义。 例如：
+插件还可以提供名为**routes.php**的文件，其中包含自定义路由逻辑，如[路由器服务](services-router.md)中所定义。 例如：
 
     Route::group(['prefix' => 'api_acme_blog'], function() {
 
@@ -164,7 +164,7 @@
         [...]
     }
 
-依赖关系定义将影响插件的运行方式和[更新过程如何应用更新](../plugin/updates#update-process)。 安装过程将尝试自动安装任何依赖项，但是如果在系统中检测到插件而没有任何依赖项，则会禁用它以防止系统错误。
+依赖关系定义将影响插件的运行方式和[更新过程如何应用更新](plugin-updates.md#update-process)。 安装过程将尝试自动安装任何依赖项，但是如果在系统中检测到插件而没有任何依赖项，则会禁用它以防止系统错误。
 
 依赖关系定义可能很复杂，但应注意防止循环引用。 应始终指向依赖图，并将循环依赖视为设计错误。
 
@@ -231,9 +231,9 @@
         ];
     }
 
-注册后端导航时，可以使用[本地化字符串](localization)作为“label”值。 后端导航也可以通过`permissions`值控制，并对应于定义的[后端用户权限](../backend/users)。 后端导航在整个导航菜单项上显示的顺序由“order”值控制。 数字越大意味着该项目将在菜单项的顺序中稍后出现，而较低的数字意味着它将在较早时出现。
+注册后端导航时，可以使用[本地化字符串](plugin-localization.md)作为“label”值。 后端导航也可以通过`permissions`值控制，并对应于定义的[后端用户权限](backend-users.md)。 后端导航在整个导航菜单项上显示的顺序由“order”值控制。 数字越大意味着该项目将在菜单项的顺序中稍后出现，而较低的数字意味着它将在较早时出现。
 
-要使子菜单项可见，您可以使用`BackendMenu::setContext`方法在后端控制器中[设置导航上下文](../backend/controllers-ajax#navigation-context) 。 这将使父菜单项处于活动状态，并在侧边菜单中显示子项。
+要使子菜单项可见，您可以使用`BackendMenu::setContext`方法在后端控制器中[设置导航上下文](backend-controllers-ajax.md#navigation-context) 。 这将使父菜单项处于活动状态，并在侧边菜单中显示子项。
 
 <a name="registering-middleware"></a>
 ## 注册中间件(middleware)

@@ -11,14 +11,14 @@
 
 ## 注入样式
 
-StyleSheet文件的链接可以通过[components](../plugin/components#component-assets) 或[pagesmaticmatically](../cms/pages#injecting-assets)注入PHP。
+StyleSheet文件的链接可以通过[components](plugin-components.md#component-assets) 或[pagesmaticmatically](cms-pages.md#injecting-assets)注入PHP。
 
     function onStart()
     {
         $this->addCss('assets/css/hello.css');
     }
 
-您还可以使用**styles** anonymous [placeholder](../cms/layouts#placeholders)将原始标记注入`{％styles％}`标记。 在页面或布局中使用`{％put％}`标记将内容添加到占位符：
+您还可以使用**styles** anonymous [placeholder](cms-layouts.md#placeholders)将原始标记注入`{％styles％}`标记。 在页面或布局中使用`{％put％}`标记将内容添加到占位符：
 
     {% put styles %}
         <link href="/themes/demo/assets/css/page.css" rel="stylesheet" />

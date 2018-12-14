@@ -29,7 +29,7 @@
 
     $collection = new October\Rain\Support\Collection([1, 2, 3]);
 
-默认情况下，[数据库模型](../database/model)的集合总是作为`Collection`实例返回; 但是，您可以随意使用`Collection`类，方便您的应用。
+默认情况下，[数据库模型](database-model.md)的集合总是作为`Collection`实例返回; 但是，您可以随意使用`Collection`类，方便您的应用。
 
 <a name="available-methods"></a>
 ## 可用方法
@@ -119,7 +119,7 @@
 
     //[[1, 2, 3, 4], [5, 6, 7]]
 
-在使用网格系统时，此方法在[CMS页面](../cms/pages)中特别有用，例如[Bootstrap](http://getbootstrap.com/css/#grid)。 想象一下，您有一组要在网格中显示的模型：
+在使用网格系统时，此方法在[CMS页面](cms-pages.md)中特别有用，例如[Bootstrap](http://getbootstrap.com/css/#grid)。 想象一下，您有一组要在网格中显示的模型：
 
     {% for chunk in products.chunk(3) %}
         <div class="row">
@@ -982,7 +982,7 @@
 <a name="method-toarray"></a>
 #### `toArray()` 
 
-`toArray`方法将集合转换为普通的PHP`数组`。 如果集合的值是[数据库模型](../database/model)，模型也将转换为数组：
+`toArray`方法将集合转换为普通的PHP`数组`。 如果集合的值是[数据库模型](database-model.md)，模型也将转换为数组：
 
     $collection = new Collection(['name' => 'Desk', 'price' => 200]);
 

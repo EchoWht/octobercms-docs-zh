@@ -227,13 +227,13 @@ Collection | 如上所述的收件人对象的集合。
 
 #### 邮件使用队列
 
-由于发送邮件消息可以大大延长应用程序的响应时间，因此许多开发人员选择将消息排队以进行后台发送。 使用内置的[统一队列API](../services/queues)很容易。 要对邮件消息进行排队，请在`Mail`facade上使用`queue`方法：
+由于发送邮件消息可以大大延长应用程序的响应时间，因此许多开发人员选择将消息排队以进行后台发送。 使用内置的[统一队列API](services-queues.md)很容易。 要对邮件消息进行排队，请在`Mail`facade上使用`queue`方法：
 
     Mail::queue('acme.blog::mail.welcome', $data, function ($message) {
         //
     });
 
-此方法将自动将作业推送到队列以在后台发送邮件消息。 当然，在使用此功能之前，您需要[配置队列](../services/queues)。
+此方法将自动将作业推送到队列以在后台发送邮件消息。 当然，在使用此功能之前，您需要[配置队列](services-queues.md)。
 
 #### 延迟消息排队
 
@@ -349,7 +349,7 @@ System | system | Used for internal, back-end mail
 <a name="mail-template-registration"></a>
 ### 注册邮件模板
 
-邮件视图可以注册为在后端自动生成的模板，以便进行自定义。 可以通过*设置>邮件模板*菜单自定义邮件模板。 可以通过覆盖[插件注册类](../plugin/registration #registration-file)的`registerMailTemplates`方法来注册模板。
+邮件视图可以注册为在后端自动生成的模板，以便进行自定义。 可以通过*设置>邮件模板*菜单自定义邮件模板。 可以通过覆盖[插件注册类](plugin-registration.md #registration-file)的`registerMailTemplates`方法来注册模板。
 
     public function registerMailTemplates()
     {
@@ -368,7 +368,7 @@ System | system | Used for internal, back-end mail
 
     View::share('site_name', 'OctoberCMS');
 
-可以在[插件注册文件](../plugin/registration)的寄存器或引导方法内调用此代码。 使用上面的示例，变量`{{site_name}}`将在所有邮件模板中可用。
+可以在[插件注册文件](plugin-registration.md)的寄存器或引导方法内调用此代码。 使用上面的示例，变量`{{site_name}}`将在所有邮件模板中可用。
 
 <a name="mail-and-local-development"></a>
 ## 邮件和本地开发

@@ -13,7 +13,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-连接到数据库和运行查询是一个简单的过程，可以使用原始SQL，[查询构建器](../database/query) 或[活动记录模型](../database/model)来支持。 管理数据库表和填充种子数据由[migration and seeder process](../database/structure)处理。
+连接到数据库和运行查询是一个简单的过程，可以使用原始SQL，[查询构建器](database-query.md) 或[活动记录模型](database-model.md)来支持。 管理数据库表和填充种子数据由[migration and seeder process](database-structure.md)处理。
 
 原始SQL和使用查询构建器将执行得更快，应该用于简单的任务。 Active Record是流行框架Ruby On Rails使用的一种方法。 它允许一个简单的界面来执行重复的任务，如创建，读取，更新和删除数据库记录。 您可以了解有关[维基百科上的活动记录模式](http://en.wikipedia.org/wiki/Active_record_pattern)的更多信息。
 
@@ -134,7 +134,7 @@
 
     Db::commit();
 
-> **注意:** 使用`Db` facade的事务方法还控制[query builder](../database/query) 和[model queries](../database/model)的事务。
+> **注意:** 使用`Db` facade的事务方法还控制[query builder](database-query.md) 和[model queries](database-model.md)的事务。
 
 <a name="database-events"></a>
 ## 数据库事件
@@ -145,7 +145,7 @@
         //
     });
 
-就像[事件注册](../services/events#event-registration),一样，你可以在[插件注册文件](../plugin/registration#registration-methods)的`boot`方法中注册你的查询监听器。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置此逻辑。
+就像[事件注册](services-events.md#event-registration),一样，你可以在[插件注册文件](plugin-registration.md#registration-methods)的`boot`方法中注册你的查询监听器。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置此逻辑。
 
 <a name="query-logging"></a>
 ### 查询日志记录
@@ -162,4 +162,4 @@
 
     Db::connection()->disableQueryLog();
 
-> **注意**: 为了更快地调试，调用`trace_sql` [帮助方法](../services/error-log#helpers) 可能更有用。
+> **注意**: 为了更快地调试，调用`trace_sql` [帮助方法](services-error-log.md#helpers) 可能更有用。

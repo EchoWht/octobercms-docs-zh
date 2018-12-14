@@ -15,13 +15,13 @@
 
 #### 将模型转换为数组
 
-要将模型及其加载的[relationships](relations)转换为数组，可以使用`toArray`方法。 此方法是递归的，因此所有属性和所有关系(包括关系关系)都将转换为数组：
+要将模型及其加载的[relationships](database-relations.md)转换为数组，可以使用`toArray`方法。 此方法是递归的，因此所有属性和所有关系(包括关系关系)都将转换为数组：
 
     $user = User::with('roles')->first();
 
     return $user->toArray();
 
-您还可以将[collections](collections) 转换为数组：
+您还可以将[collections](database-collections.md) 转换为数组：
 
     $users = User::all();
 
@@ -81,7 +81,7 @@
 <a name="appending-values-to-json"></a>
 ## 将值附加到JSON
 
-有时，您可能需要添加数据库中没有相应列的数组属性。 为此，首先为值定义[转换器](../database/mutators)：
+有时，您可能需要添加数据库中没有相应列的数组属性。 为此，首先为值定义[转换器](database-mutators.md)：
 
     class User extends Model
     {

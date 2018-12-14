@@ -40,7 +40,7 @@
         'password_confirmation' => 'changeme'
     ]);
 
-`BackendAuth::check`方法是检查用户是否已登录的快速方法。要返回已登录的用户模型，请改用“BackendAuth::getUser”。 此外，活动用户将在任何[后端控制器](../backend/controllers-ajax)中以`$this->user`的形式提供。
+`BackendAuth::check`方法是检查用户是否已登录的快速方法。要返回已登录的用户模型，请改用“BackendAuth::getUser”。 此外，活动用户将在任何[后端控制器](backend-controllers-ajax.md)中以`$this->user`的形式提供。
 
     // 如果已登录，则返回true。
     $loggedIn = BackendAuth::check();
@@ -69,7 +69,7 @@
 <a name="permission-registration"></a>
 ## 注册权限
 
-插件可以通过覆盖[Plugin注册类](../plugin/registration#registration-file)中的`registerPermissions`方法来注册后端用户权限。 权限被定义为一个数组，其中的键对应于权限键，而值对应于权限描述。 权限密钥由作者姓名，插件名称和功能名称组成。 这是一个示例代码：
+插件可以通过覆盖[Plugin注册类](plugin-registration.md#registration-file)中的`registerPermissions`方法来注册后端用户权限。 权限被定义为一个数组，其中的键对应于权限键，而值对应于权限描述。 权限密钥由作者姓名，插件名称和功能名称组成。 这是一个示例代码：
 
     acme.blog.access_categories
 
@@ -138,7 +138,7 @@
         // ...
     }
 
-您还可以使用后端视图中的方法隐藏用户界面元素。 下面的示例演示了如何隐藏编辑类别[后端表单](forms)上的按钮：
+您还可以使用后端视图中的方法隐藏用户界面元素。 下面的示例演示了如何隐藏编辑类别[后端表单](backend-forms.md)上的按钮：
 
     <?php if ($this->user->hasAccess('acme.blog.delete_categories')): ?>
         <button

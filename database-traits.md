@@ -63,7 +63,7 @@ Model特征用于实现通用功能。译者注：《Modern PHP(中文版)》书
         protected $encryptable = ['api_key', 'api_secret'];
     }
     
-> **注意:** 加密属性将作为加密/解密过程的一部分进行序列化和反序列化。 不要同时创建一个`encryptable`属性[`jsonable`](model#standard-properties) ，因为`jsonable`进程将尝试解码已经被加密器反序列化的值。
+> **注意:** 加密属性将作为加密/解密过程的一部分进行序列化和反序列化。 不要同时创建一个`encryptable`属性[`jsonable`](database-model.md#standard-properties) ，因为`jsonable`进程将尝试解码已经被加密器反序列化的值。
 
 <a name="sluggable"></a>
 ## Sluggable
@@ -105,7 +105,7 @@ Slugs仅在首次创建Model实例时生成。 要覆盖或禁用此功能，只
 <a name="revisionable"></a>
 ## Revisionable
 
-OctoberModel实例可以通过存储修订来记录值的变化历史。 要存储Model实例的修订版，请应用`October\Rain\Database\Traits\Revisionable`特征并声明一个`$revisionable`属性，该属性包含一个包含要监视更改的属性的数组。 您还需要定义一个名为`revision_history`的`$morphMany` [Model实例关系](relations)，它引用名为`revisionable`的`System\Models\Revision`类，这是存储修订历史数据的地方。
+OctoberModel实例可以通过存储修订来记录值的变化历史。 要存储Model实例的修订版，请应用`October\Rain\Database\Traits\Revisionable`特征并声明一个`$revisionable`属性，该属性包含一个包含要监视更改的属性的数组。 您还需要定义一个名为`revision_history`的`$morphMany` [Model实例关系](database-relations.md)，它引用名为`revisionable`的`System\Models\Revision`类，这是存储修订历史数据的地方。
 
     class User extends Model
     {
@@ -183,7 +183,7 @@ OctoberModel实例可以通过存储修订来记录值的变化历史。 要存�
         use \October\Rain\Database\Traits\SimpleTree;
     }
 
-这个特性会自动注入两个名为`parent`和`children`的[Model实例关系](../database/relations)，它相当于以下定义：
+这个特性会自动注入两个名为`parent`和`children`的[Model实例关系](database-relations.md)，它相当于以下定义：
 
     public $belongsTo = [
         'parent'    => ['User', 'key' => 'parent_id'],
@@ -257,7 +257,7 @@ OctoberModel实例可以通过存储修订来记录值的变化历史。 要存�
 
 ###删除节点
 
-使用`delete`方法删除节点时，该节点的所有后代也将被删除。 请注意，不会为子Model实例触发delete [Model实例事件](../database/model#model-events) 。
+使用`delete`方法删除节点时，该节点的所有后代也将被删除。 请注意，不会为子Model实例触发delete [Model实例事件](database-model.md#model-events) 。
 
     $child1->delete();
 
@@ -282,7 +282,7 @@ OctoberModel实例可以通过存储修订来记录值的变化历史。 要存�
 <a name="validation"></a>
 ## 验证
 
-OctoberModel实例使用内置的[Validator类](../services/validation)。 验证规则在Model实例类中定义为名为`$rules`的属性，类必须使用特性`October\Rain\Database\Traits\Validation`：
+OctoberModel实例使用内置的[Validator类](services-validation.md)。 验证规则在Model实例类中定义为名为`$rules`的属性，类必须使用特性`October\Rain\Database\Traits\Validation`：
 
     class User extends Model
     {
@@ -296,7 +296,7 @@ OctoberModel实例使用内置的[Validator类](../services/validation)。 验�
         ];
     }
 
-> **注意**: 您也可以将[数组语法](../services/validation#basic-usage) 用于验证规则。
+> **注意**: 您也可以将[数组语法](services-validation.md#basic-usage) 用于验证规则。
 
 Model实例在调用`save`方法时自动验证。
 
@@ -315,7 +315,7 @@ Model实例在调用`save`方法时自动验证。
 
 当Model实例无法验证时，“Illuminate\Support\MessageBag”对象将附加到Model实例。 包含验证失败消息的对象。 使用`errors`方法或`$validationErrors`属性检索验证错误消息集合实例。 使用`errors()->all()`检索所有验证错误。 使用`validationErrors->get('attribute')`检索*specific*属性的错误。
 
-> **注意:** 该Model实例利用了MessagesBag对象，该对象具有格式错误的[简单而优雅的方法](../services/validation#working-with-error-messages) 。
+> **注意:** 该Model实例利用了MessagesBag对象，该对象具有格式错误的[简单而优雅的方法](services-validation.md#working-with-error-messages) 。
 
 <a name="overriding-validation"></a>
 ### 覆盖验证
@@ -330,7 +330,7 @@ Model实例在调用`save`方法时自动验证。
 <a name="custom-error-messages"></a>
 ### 自定义错误消息
 
-与Validator类一样，您可以使用[相同语法](../services/validation#custom-error-messages)设置自定义错误消息。
+与Validator类一样，您可以使用[相同语法](services-validation.md#custom-error-messages)设置自定义错误消息。
 
     class User extends Model
     {
@@ -356,7 +356,7 @@ Model实例在调用`save`方法时自动验证。
 <a name="dynamic-validation-rules"></a>
 ### 动态验证规则
 
-您可以通过覆盖`beforeValidate` [Model实例事件](../database/model#events) 方法动态应用规则。 在这里，我们检查`is_remote`属性是否为'false`，然后动态地将`latitude`和`longitude`属性设置为必需字段。
+您可以通过覆盖`beforeValidate` [Model实例事件](database-model.md#events) 方法动态应用规则。 在这里，我们检查`is_remote`属性是否为'false`，然后动态地将`latitude`和`longitude`属性设置为必需字段。
 
     public function beforeValidate()
     {
@@ -369,7 +369,7 @@ Model实例在调用`save`方法时自动验证。
 <a name="custom-validation-rules"></a>
 ### 自定义验证规则
 
-您还可以使用[相同方式](../services/validation#custom-validation-rules)为Validator服务创建自定义验证规则。
+您还可以使用[相同方式](services-validation.md#custom-validation-rules)为Validator服务创建自定义验证规则。
 
 <a name="soft-deleting"></a>
 ## 软删除
@@ -406,7 +406,7 @@ Model实例在调用`save`方法时自动验证。
 
     $users = User::withTrashed()->where('account_id', 1)->get();
 
-`withTrashed`方法也可用于[关系](relations)查询：
+`withTrashed`方法也可用于[关系](database-relations.md)查询：
 
     $flight->history()->withTrashed()->get();
 
@@ -443,7 +443,7 @@ Model实例在调用`save`方法时自动验证。
 <a name="soft-deleting-relations"></a>
 ### 软删除关系
 
-当两个相关Model实例启用了软删除时，您可以通过在[关系定义](../database/relations#detailed-relationships)中定义`softDelete`选项来级联delete事件。 在此示例中，如果用户Model实例被软删除，则属于该用户的注释也将被软删除。
+当两个相关Model实例启用了软删除时，您可以通过在[关系定义](database-relations.md#detailed-relationships)中定义`softDelete`选项来级联delete事件。 在此示例中，如果用户Model实例被软删除，则属于该用户的注释也将被软删除。
 
     class User extends Model
     {

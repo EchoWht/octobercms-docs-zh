@@ -23,7 +23,7 @@
     - [启用DotEnv配置](#october-env-command)
     - [其他命令](#october-util-command)
 
-October包括几个命令行界面(CLI)命令和实用程序，允许安装October，更新它，以及加快开发过程。 控制台命令基于Laravel的[Artisan](http://laravel.com/docs/artisan) 工具。 您可以[开发自己的控制台命令](../console/development)或使用提供的[脚手架命令](../console/scaffolding)加速开发。
+October包括几个命令行界面(CLI)命令和实用程序，允许安装October，更新它，以及加快开发过程。 控制台命令基于Laravel的[Artisan](http://laravel.com/docs/artisan) 工具。 您可以[开发自己的控制台命令](console-development.md)或使用提供的[脚手架命令](console-scaffolding.md)加速开发。
 
 <a name="console-install"></a>
 ## 控制台安装
@@ -94,7 +94,7 @@ Composer被配置为查看插件目录内部的composer依赖，这些将包含�
 <a name="console-up-command"></a>
 ### 数据库迁移
 
-`october:up`命令将执行数据库迁移，创建数据库表并执行由系统提供的数据脚本和[插件版本历史](../plugin/updates)。 迁移命令可以多次运行，它只会执行一次迁移或脚本，这意味着只应用新的更改。
+`october:up`命令将执行数据库迁移，创建数据库表并执行由系统提供的数据脚本和[插件版本历史](plugin-updates.md)。 迁移命令可以多次运行，它只会执行一次迁移或脚本，这意味着只应用新的更改。
 
     php artisan october:up
 

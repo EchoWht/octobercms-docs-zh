@@ -12,7 +12,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-除了提供的控制台命令之外，您还可以构建自己的自定义命令以使用您的应用程序。 您可以将自定义命令存储在插件**控制台**目录中。 您可以使用[命令行脚手架工具](../console/scaffolding#scaffold-create-command)生成类文件。
+除了提供的控制台命令之外，您还可以构建自己的自定义命令以使用您的应用程序。 您可以将自定义命令存储在插件**控制台**目录中。 您可以使用[命令行脚手架工具](console-scaffolding.md#scaffold-create-command)生成类文件。
 
 <a name="building-a-command"></a>
 ## 建立一个命令
@@ -200,7 +200,7 @@
 
 #### 注册控制台命令
 
-命令类完成后，您需要注册它以便可以使用它。 这通常使用`registerConsoleCommand`辅助方法在[插件注册文件](../plugin/registration#registration-methods)的`register`方法中完成。
+命令类完成后，您需要注册它以便可以使用它。 这通常使用`registerConsoleCommand`辅助方法在[插件注册文件](plugin-registration.md#registration-methods)的`register`方法中完成。
 
     class Blog extends PluginBase
     {
@@ -221,13 +221,13 @@
 
 #### 在应用程序容器中注册命令
 
-如果您的命令在[应用程序容器](../services/application#app-container),中注册，您可以使用`Artisan::resolve`方法将其提供给Artisan：
+如果您的命令在[应用程序容器](services-application.md#app-container),中注册，您可以使用`Artisan::resolve`方法将其提供给Artisan：
 
     Artisan::resolve('binding.name');
 
 #### 在服务提供商中注册命令
 
-如果需要在[服务提供者](application#service-providers)中注册命令，则应该从提供者的`boot`方法调用`commands`方法，传递[container](application#app-container)绑定 对于命令：
+如果需要在[服务提供者](database-application.md#service-providers)中注册命令，则应该从提供者的`boot`方法调用`commands`方法，传递[container](database-application.md#app-container)绑定 对于命令：
 
     public function boot()
     {

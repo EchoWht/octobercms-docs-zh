@@ -14,7 +14,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-`Relation behavior` 是一个控制器修饰符，用于轻松管理页面上的复杂[模型](../database/model) 关系。 不要与仅提供简单管理的 [List relation columns](lists#column-types) or [Form relation fields](forms#widget-relation) 混淆。
+`Relation behavior` 是一个控制器修饰符，用于轻松管理页面上的复杂[模型](database-model.md) 关系。 不要与仅提供简单管理的 [List relation columns](backend-lists.md#column-types) or [Form relation fields](backend-forms.md#widget-relation) 混淆。
 
 关系行为取决于[关系定义](#relation-definitions)。 为了使用关系行为，您应该将`Backend.Behaviors.RelationController`定义添加到控制器类的`$implement`字段中。 此外，应定义`$relationConfig`类属性，其值应引用用于[配置行为选项](#configuring-relation)的YAML文件。
 
@@ -71,20 +71,20 @@
 **pivot**| 表单字段定义文件的引用，用于[与数据透视表数据的关系](#belongs-to-many-pivot)。
 **emptyMessage**| 关系为空时显示的消息，可选。
 **readOnly**| 禁用添加，更新，删除或创建关系的功能。 默认值：false
-**deferredBinding**| [可以使用会话密钥延迟所有绑定操作](../database/model#deferred-binding)。 默认值：false
+**deferredBinding**| [可以使用会话密钥延迟所有绑定操作](database-model.md#deferred-binding)。 默认值：false
 
 可以为**view**或**manage**选项指定这些配置值，适用于列表，表单或两者的呈现类型。
 
 选项 | 类型 | 描述
 ------------- | ------------- | -------------
-**form**| Form | 对表单字段定义文件的引用，请参见[后端表单字段](forms#form-fields)。
-**list**| List | 列表列定义文件的引用，请参见[后端列表列](lists#list-columns)。
+**form**| Form | 对表单字段定义文件的引用，请参见[后端表单字段](backend-forms.md#form-fields)。
+**list**| List | 列表列定义文件的引用，请参见[后端列表列](backend-lists.md#list-columns)。
 **showSearch**| List | 显示用于搜索记录的输入。 默认值：false
 **showSorting**| List | 显示每列的排序链接。 默认值：true
 **defaultSort**| List | 在未定义用户首选项时设置默认排序列和方向。 支持字符串或带有“column”和“direction”键的数组。
 **recordsPerPage**| List | 每页显示的最大行数。
 **conditions**| List | 指定要应用于列表模型查询的raw where查询语句。
-**scope**| List | 指定**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以始终应用于列表查询。 此关系将附加到的模型(即**父模型**)作为第二个参数(`$query`是第一个参数)传递给此范围方法。
+**scope**| List | 指定**相关表单模型**中定义的[查询范围方法](database-model.md#query-scopes)以始终应用于列表查询。 此关系将附加到的模型(即**父模型**)作为第二个参数(`$query`是第一个参数)传递给此范围方法。
 
 只能为**view**选项指定这些配置值。
 
@@ -100,7 +100,7 @@
 
 选项 | 类型 | 描述
 ------------- | ------------- | -------------
-**title**| Both | 一个弹出标题，可以参考[本地化字符串](../plugin/localization)。
+**title**| Both | 一个弹出标题，可以参考[本地化字符串](plugin-localization.md)。
 **context**| Form | 正在显示的表单的上下文。 可以是带有键的字符串或数组：create，update。
 
 <a name="relationship-types"></a>
@@ -212,7 +212,7 @@
                     pivot[team_color]:
                         label: Team color
 
->**注意:**[deferred bindings](../database/relations#deferred-binding)目前不支持数据透视数据，因此父模型应该存在。
+>**注意:**[deferred bindings](database-relations.md#deferred-binding)目前不支持数据透视数据，因此父模型应该存在。
 
 <a name="belongs-to"></a>
 ### Belongs to
@@ -272,9 +272,9 @@
     $post = Post::where('id', 7)->first();
     $this->initRelation($post);
 
->**注意:**[表单行为](forms)将在其创建，更新和预览操作上自动初始化模型。
+>**注意:**[表单行为](backend-forms.md)将在其创建，更新和预览操作上自动初始化模型。
 
-然后可以通过调用`relationRender`方法显示关系管理器以获得指定的关系定义。 例如，如果要在[预览](forms#form-preview-view) 页面上显示关系管理器，**preview.htm**视图内容可能如下所示：
+然后可以通过调用`relationRender`方法显示关系管理器以获得指定的关系定义。 例如，如果要在[预览](backend-forms.md#form-preview-view) 页面上显示关系管理器，**preview.htm**视图内容可能如下所示：
 
     <?= $this->formRenderPreview() ?>
 

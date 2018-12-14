@@ -75,7 +75,7 @@
 
 选项 | 描述
 ------------- | -------------
-**title** | 页面标题，可以参考[本地化字符串](../plugin/localization)。
+**title** | 页面标题，可以参考[本地化字符串](plugin-localization.md)。
 **list** | 定义可用于导入的列表列。
 **form** | 提供用作导入选项的其他字段，可选。
 **redirect** | 导入完成时的重定向页面，可选
@@ -96,7 +96,7 @@
 
 选项 | 描述
 ------------- | -------------
-**title** | 页面标题，可以参考[本地化字符串](../plugin/localization)。
+**title** | 页面标题，可以参考[本地化字符串](plugin-localization.md)。
 **fileName** | 用于导出文件的文件名，默认为** export.csv **。
 **list** | 定义可用于导出的列表列。
 **form** | 提供用作导入选项的其他字段，可选。
@@ -261,12 +261,12 @@
 <a name="list-behavior-integration"></a>
 ## 与列表行为集成
 
-有一种替代方法可以导出使用[list行为](lists) 来提供导出数据的数据。 要使用此功能，您应该将`Backend.Behaviors.ListController`定义到控制器类的`$implement`字段。 您不需要使用导出视图，所有设置都将从列表中提取。 这是唯一需要的配置：
+有一种替代方法可以导出使用[list行为](backend-lists.md) 来提供导出数据的数据。 要使用此功能，您应该将`Backend.Behaviors.ListController`定义到控制器类的`$implement`字段。 您不需要使用导出视图，所有设置都将从列表中提取。 这是唯一需要的配置：
 
     export:
         useList: true
 
-如果您使用[多个列表定义](lists#multiple-list-definitions)，那么您可以提供列表定义：
+如果您使用[多个列表定义](backend-lists.md#multiple-list-definitions)，那么您可以提供列表定义：
 
     export:
         useList: orders

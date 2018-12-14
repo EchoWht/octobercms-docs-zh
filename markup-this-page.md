@@ -1,6 +1,6 @@
 # this.page
 
-您可以通过`this.page`访问当前页面对象，它返回对象`Cms\Classes\Page`。 该对象也可以[在PHP代码中访问](../cms/pages/#page-variables).。
+您可以通过`this.page`访问当前页面对象，它返回对象`Cms\Classes\Page`。 该对象也可以[在PHP代码中访问](cms-pages.md/#page-variables).。
 
 ## 属性
 

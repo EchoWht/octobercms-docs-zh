@@ -72,7 +72,7 @@ October提供各种有用的函数与`Html`facade，用于处理HTML和表单。
         ]
     ])
 
-> **注意**: 通过删除`data-request -`前缀，大多数[来自AJAX框架的数据属性](../ajax/attributes-api)可用。
+> **注意**: 通过删除`data-request -`前缀，大多数[来自AJAX框架的数据属性](ajax-attributes-api.md)可用。
 
 <a name="form-tokens"></a>
 ## 表单令牌
@@ -85,7 +85,7 @@ October提供各种有用的函数与`Html`facade，用于处理HTML和表单。
 
 #### 延迟绑定会话密钥
 
-用于[延迟绑定](../database/relations#deferred-binding) 的会话密钥将作为隐藏字段添加到每个表单。 如果要手动生成此字段，可以使用`sessionKey`方法：
+用于[延迟绑定](database-relations.md#deferred-binding) 的会话密钥将作为隐藏字段添加到每个表单。 如果要手动生成此字段，可以使用`sessionKey`方法：
 
     <?= Form::sessionKey() ?>
 

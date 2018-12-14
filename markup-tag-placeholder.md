@@ -1,6 +1,6 @@
 # {% placeholder %}
 
-`{％placeholder％}`标签将呈现一个占位符部分，通常[在Layouts中使用](../cms/layouts#placeholders)。 此标记将返回使用`{％put％}`标记添加的任何占位符内容，或任何已定义的默认内容(可选)。
+`{％placeholder％}`标签将呈现一个占位符部分，通常[在Layouts中使用](cms-layouts.md#placeholders)。 此标记将返回使用`{％put％}`标记添加的任何占位符内容，或任何已定义的默认内容(可选)。
     
     {% placeholder name %}
 

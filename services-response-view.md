@@ -17,7 +17,7 @@
 <a name="basic-responses"></a>
 ## 基础响应
 
-可以从页面使用的几乎PHP方法返回响应。 这包括[布局执行生命周期](../cms/layouts#layout-life-cycle)和[AJAX处理程序定义](../ajax/handlers)中包含的所有CMS方法。
+可以从页面使用的几乎PHP方法返回响应。 这包括[布局执行生命周期](cms-layouts.md#layout-life-cycle)和[AJAX处理程序定义](ajax-handlers.md)中包含的所有CMS方法。
 
 #### 从CMS方法返回字符串
 
@@ -40,7 +40,7 @@
 
 #### 从路由返回字符串
 
-从[路由定义](../services/router) 返回字符串将与CMS方法相同，并将字符串显示为响应。
+从[路由定义](services-router.md) 返回字符串将与CMS方法相同，并将字符串显示为响应。
 
     Route::get('/', function() {
         return 'Hello World';
@@ -126,7 +126,7 @@
 <a name="redirect-flash-data"></a>
 ### 返回带有Flash数据的重定向
 
-重定向到新URL和[向会话flash数据](../services/session)通常是同时完成的。 因此，为方便起见，您可以在单个方法链中创建一个`RedirectResponse`实例并将数据闪存到会话中：
+重定向到新URL和[向会话flash数据](services-session.md)通常是同时完成的。 因此，为方便起见，您可以在单个方法链中创建一个`RedirectResponse`实例并将数据闪存到会话中：
 
     return Redirect::to('user/login')->with('message', 'Login Failed');
 
@@ -161,12 +161,12 @@
 
     return Response::caps('foo');
 
-您可以在[插件注册文件]的`boot`方法中定义您的宏(../plugin/registration#registration-methods)。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置宏注册。
+您可以在[插件注册文件]的`boot`方法中定义您的宏(plugin-registration.md#registration-methods)。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件来放置宏注册。
 
 <a name="views"></a>
 ## 视图
 
-视图是存储基于系统的表示逻辑的好方法，例如API或端点使用的标记，或与CMS和后端区域共享的标记。 [邮件服务](../services/mail) 也使用视图来提供默认模板内容。 视图通常存储在插件的`views`目录中。
+视图是存储基于系统的表示逻辑的好方法，例如API或端点使用的标记，或与CMS和后端区域共享的标记。 [邮件服务](services-mail.md) 也使用视图来提供默认模板内容。 视图通常存储在插件的`views`目录中。
 
 一个简单的视图可能看起来像这样：
 

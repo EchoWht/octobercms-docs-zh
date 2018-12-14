@@ -18,12 +18,12 @@
 <a name="extending-with-events"></a>
 ## 根据事件扩展
 
-插件主要使用[事件服务](../services/events)进行扩展，以注入或修改核心类和其他插件的功能。
+插件主要使用[事件服务](services-events.md)进行扩展，以注入或修改核心类和其他插件的功能。
 
 <a name="subscribing-to-events"></a>
 ### 订阅事件
 
-订阅事件最常见的地方是[插件注册文件](registration#registration-methods)的`boot`方法。 例如，当用户首次注册时，您可能希望将它们添加到第三方邮件列表，这可以通过订阅**rainlab.user.register**全局事件来实现。
+订阅事件最常见的地方是[插件注册文件](plugin-registration.md#registration-methods)的`boot`方法。 例如，当用户首次注册时，您可能希望将它们添加到第三方邮件列表，这可以通过订阅**rainlab.user.register**全局事件来实现。
 
     public function boot()
     {
@@ -98,7 +98,7 @@
 <a name="extending-user-model"></a>
 ### 扩展用户模型
 
-此示例将通过绑定到其本地事件来修改`User`模型的`model.getAttribute`事件。 这是在[插件注册文件](registration#routing-initialization)的`boot`方法内执行的。 在两种情况下，当访问`$model-> foo`属性时，它将返回值*bar*。
+此示例将通过绑定到其本地事件来修改`User`模型的`model.getAttribute`事件。 这是在[插件注册文件](plugin-registration.md#routing-initialization)的`boot`方法内执行的。 在两种情况下，当访问`$model-> foo`属性时，它将返回值*bar*。
 
     class Plugin extends PluginBase
     {
@@ -135,7 +135,7 @@
 <a name="extending-backend-form"></a>
 ### 扩展后端表单
 
-此示例将修改`Backend\Widget\Form`类的`backend.form.extendFields`全局事件，并在表单用于修改用户的条件下注入一些额外的字段值。 此事件也在[插件注册文件](registration#routing-initialization)的`boot`方法内订阅。
+此示例将修改`Backend\Widget\Form`类的`backend.form.extendFields`全局事件，并在表单用于修改用户的条件下注入一些额外的字段值。 此事件也在[插件注册文件](plugin-registration.md#routing-initialization)的`boot`方法内订阅。
 
     class Plugin extends PluginBase
     {
@@ -206,7 +206,7 @@
 <a name="extending-backend-list"></a>
 ### 扩展后端列表
 
-此示例将修改`Backend\Widget\Lists`类的`backend.list.extendColumns`全局事件，并在使用列表修改用户的条件下注入一些额外的列值。 此事件也在[插件注册文件](registration#routing-initialization)的`boot`方法内订阅。
+此示例将修改`Backend\Widget\Lists`类的`backend.list.extendColumns`全局事件，并在使用列表修改用户的条件下注入一些额外的列值。 此事件也在[插件注册文件](plugin-registration.md#routing-initialization)的`boot`方法内订阅。
 
     class Plugin extends PluginBase
     {
@@ -245,7 +245,7 @@
 <a name="extending-component"></a>
 ### 扩展组件
 
-这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition](components#component-class-definition)中执行。
+这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition](cms-components.md#component-class-definition)中执行。
 
     class Topic extends ComponentBase
     {
@@ -261,7 +261,7 @@
         }
     }
 
-接下来，这将演示如何从[页面执行生命周期](../cms/layouts#dynamic-pages)中挂钩这个新事件。 当在`Topic`组件(上面)中调用`onPost`事件处理程序时，这将写入跟踪日志。
+接下来，这将演示如何从[页面执行生命周期](cms-layouts.md#dynamic-pages)中挂钩这个新事件。 当在`Topic`组件(上面)中调用`onPost`事件处理程序时，这将写入跟踪日志。
 
     [topic]
     slug = "{{ :slug }}"

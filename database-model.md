@@ -33,7 +33,7 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
             User.php          <=== 模型类
           Plugin.php
 
-模型配置目录可以包含模型的[list column](../backend/lists#list-columns) 和[form field](../backend/forms#form-fields) 定义。 模型配置目录名称与以小写形式写入的模型类名称匹配。
+模型配置目录可以包含模型的[list column](backend-lists.md#list-columns) 和[form field](backend-forms.md#form-fields) 定义。 模型配置目录名称与以小写形式写入的模型类名称匹配。
 
 <a name="defining-models"></a>
 ## 定义模型
@@ -59,7 +59,7 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 <a name="standard-properties"></a>
 ### 支持的属性
 
-除了[模型特征](traits)提供的标准属性之外，还可以在模型上找到一些标准属性。 例如：
+除了[模型特征](database-traits.md)提供的标准属性之外，还可以在模型上找到一些标准属性。 例如：
 
     class User extends Model
     {
@@ -86,8 +86,8 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 **$jsonable** | 值在保存之前编码为JSON，并在获取后转换为数组。
 **$fillable** | 值是[批量处理](#mass-assignment)可访问的字段。   
 **$guarded** | 值是从[批量处理](#mass-assignment)保护的字段。
-**$visible** | 值是[序列化模型数据](../database/serialization)时可见的字段。
-**$hidden** | 值是[序列化模型数据](../database/serialization)时隐藏的字段。
+**$visible** | 值是[序列化模型数据](database-serialization.md)时可见的字段。
+**$hidden** | 值是[序列化模型数据](database-serialization.md)时隐藏的字段。
 
 <a name="property-primary-key"></a>
 #### 主键
@@ -164,12 +164,12 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 
 从数据库请求数据时，模型将主要使用`get`或`first`方法检索值，具体取决于您是否[检索多个模型](#retrieving-multiple-models)或[检索单个模型](#retrieving-single-models) 。 从Model派生的查询返回[October\Rain\Database\Builder](../api/october/rain/database/builder)的实例。
 
-> **注意**: 默认情况下，所有模型查询都具已[启用内存缓存](../database/query#caching-queries) 。
+> **注意**: 默认情况下，所有模型查询都具已[启用内存缓存](database-query.md#caching-queries) 。
 
 <a name="retrieving-multiple-models"></a>
 ### 检索多个模型
 
-一旦创建了模型和[其关联的数据库表](../database/structure#migration-structure)，就可以开始从数据库中检索数据了。 将每个模型视为功能强大的[查询构建器](../database/query)，允许您查询与模型关联的数据库表。 例如：
+一旦创建了模型和[其关联的数据库表](database-structure.md#migration-structure)，就可以开始从数据库中检索数据了。 将每个模型视为功能强大的[查询构建器](database-query.md)，允许您查询与模型关联的数据库表。 例如：
 
     $flights = Flight::all();
 
@@ -185,19 +185,19 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 <a name="adding-constraints"></a>
 #### 添加其他约束
 
-`all`方法将返回模型表中的所有结果。 由于每个模型都用作[查询构建器](../database/query)，您还可以向查询添加约束，然后使用`get`方法检索结果：
+`all`方法将返回模型表中的所有结果。 由于每个模型都用作[查询构建器](database-query.md)，您还可以向查询添加约束，然后使用`get`方法检索结果：
 
     $flights = Flight::where('active', 1)
         ->orderBy('name', 'desc')
         ->take(10)
         ->get();
 
-> **注意:** 由于模型是查询构建器，因此您应该熟悉[query builder](../database/query)中可用的所有方法。 您可以在模型查询中使用任何这些方法。
+> **注意:** 由于模型是查询构建器，因此您应该熟悉[query builder](database-query.md)中可用的所有方法。 您可以在模型查询中使用任何这些方法。
 
 <a name="returning-collections"></a>
 #### 集合
 
-对于像检索多个结果的`all`和`get`这样的方法，将返回一个`Collection`的实例。 此类提供[各种有用的方法](../database/collection) 来处理结果。 当然，您可以像数组一样循环遍历此集合：
+对于像检索多个结果的`all`和`get`这样的方法，将返回一个`Collection`的实例。 此类提供[各种有用的方法](database-collection.md) 来处理结果。 当然，您可以像数组一样循环遍历此集合：
 
     foreach ($flights as $flight) {
         echo $flight->name;
@@ -236,7 +236,7 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 
     $model = Flight::where('legs', '>', 100)->firstOrFail();
 
-当[开发API](../services/router)时，如果未捕获到异常，则会自动将“404”HTTP响应发送回用户，因此不必编写显式检查来返回“404”。 使用这些方法时的响应：
+当[开发API](services-router.md)时，如果未捕获到异常，则会自动将“404”HTTP响应发送回用户，因此不必编写显式检查来返回“404”。 使用这些方法时的响应：
 
     Route::get('/api/flights/{id}', function ($id) {
         return Flight::findOrFail($id);
@@ -245,7 +245,7 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
 <a name="retrieving-aggregates"></a>
 ### 检索聚合
 
-您还可以使用查询构建器提供的`count`，`sum`，`max`和其他[aggregate functions](../database/query#aggregates) 。 这些方法返回适当的标量值而不是完整的模型实例：
+您还可以使用查询构建器提供的`count`，`sum`，`max`和其他[aggregate functions](database-query.md#aggregates) 。 这些方法返回适当的标量值而不是完整的模型实例：
 
     $count = Flight::where('active', 1)->count();
 
@@ -449,7 +449,7 @@ S有时您可能希望仅实例化模型的新实例。 您可以使用`make`方
         $this->slug = Str::slug($this->name);
     }
     
-> **注意:** 如果尚未提交，则在`afterSave`模型事件中将无法使用[延迟绑定](relations#deferred-binding)(即：文件附件)创建的关系。 要访问未提交的绑定，请在关系上使用`withDeferred($sessionKey)` 方法。 示例： `$this->images->withDeferred(post('_session_key'))->get();`
+> **注意:** 如果尚未提交，则在`afterSave`模型事件中将无法使用[延迟绑定](database-relations.md#deferred-binding)(即：文件附件)创建的关系。 要访问未提交的绑定，请在关系上使用`withDeferred($sessionKey)` 方法。 示例： `$this->images->withDeferred(post('_session_key'))->get();`
 
 <a name="basic-usage"></a>
 ### 使用示例
@@ -484,7 +484,7 @@ S有时您可能希望仅实例化模型的新实例。 您可以使用`make`方
         }
     }
 
-您可以使用`bindEvent`方法从外部绑定到[local events](../services/events)以获取模型的单个实例。 事件名称应与方法覆盖名称相同，前缀为“model.”。
+您可以使用`bindEvent`方法从外部绑定到[local events](services-events.md)以获取模型的单个实例。 事件名称应与方法覆盖名称相同，前缀为“model.”。
 
     $flight = new Flight;
     $flight->bindEvent('model.beforeCreate', function() use ($model) {
@@ -494,7 +494,7 @@ S有时您可能希望仅实例化模型的新实例。 您可以使用`make`方
 <a name="extending-models"></a>
 ## 扩展模型
 
-由于模型[配备使用行为]](../services/behaviors)，它们可以使用静态`extend`方法进行扩展。 该方法采用闭包并将模型对象传递给它。
+由于模型[配备使用行为]](services-behaviors.md)，它们可以使用静态`extend`方法进行扩展。 该方法采用闭包并将模型对象传递给它。
 
 在闭包内部，您可以向模型添加关系。 在这里，我们扩展`Backend\Models\User`模型以包含引用`Acme\Demo\Models\Profile`模型的配置文件(有一个)关系。
 

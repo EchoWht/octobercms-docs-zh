@@ -56,7 +56,7 @@ October CMS 对应的服务器要求:
 <a name="command-line-installation"></a>
 ## 命令行安装
 
-如果你更喜欢使用命令行或者使用composer来安装，程序提供了CLI进行安装[控制台页面](../console/commands#console-install)。
+如果你更喜欢使用命令行或者使用composer来安装，程序提供了CLI进行安装[控制台页面](console-commands.md#console-install)。
 
 <a name="post-install-steps"></a>
 ## 安装完成后

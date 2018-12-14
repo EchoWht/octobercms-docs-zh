@@ -10,9 +10,9 @@
 - [“查看包”组件](#viewbag-component)
 
 
-组件是可配置的、可以附加到任何页面，部分或布局构建元素。组件是October的主要特征。每个组件都实现了一些扩展您的网站的功能。组件可以在页面上输出HTML标签，但是没有必要 - 组件的其他重要功能是处理[AJAX请求](../ajax/introduction)处理表单提交的请求和处理页面执行周期，允许注入变量页面或提高网站的安全性。
+组件是可配置的、可以附加到任何页面，部分或布局构建元素。组件是October的主要特征。每个组件都实现了一些扩展您的网站的功能。组件可以在页面上输出HTML标签，但是没有必要 - 组件的其他重要功能是处理[AJAX请求](ajax-introduction.md)处理表单提交的请求和处理页面执行周期，允许注入变量页面或提高网站的安全性。
 
-本文介绍了组件的基础知识，并没有解释如何使用[AJAX组件](../ajax/handlers)或[开发组件](../plugin/components)作为插件的一部分。
+本文介绍了组件的基础知识，并没有解释如何使用[AJAX组件](ajax-handlers.md)或[开发组件](plugin-components.md)作为插件的一部分。
 
 > **注意:**  在partials中使用组件功能有限，这在[动态partials](cms-partials.md#dynamic-partials)文章中有更详细的描述。
 
@@ -93,7 +93,7 @@ When you refer a component, it automatically creates a page variable that matche
 <a name="component-variables"></a>
 ## 将变量传递给组件
 
-Components can be designed to use variables at the time they are rendered, similar to [Partial variables](cms-partials.md#partial-variables), they can be specified after the component name in the `{% component %}` tag. The specified variables will explicitly override the value of the [component properties](../plugin/components#component-properties), including [external property values](#external-property-values).
+Components can be designed to use variables at the time they are rendered, similar to [Partial variables](cms-partials.md#partial-variables), they can be specified after the component name in the `{% component %}` tag. The specified variables will explicitly override the value of the [component properties](plugin-components.md#component-properties), including [external property values](#external-property-values).
 组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md#partial-variables)，它们可以在`{％component％}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components#component-properties)的值，​​包括[外部属性值](#external-property-values)
 
 In this example, the **maxItems** property of the component will be set to *7* at the time the component is rendered:

@@ -17,7 +17,7 @@
 <a name="defining-schedules"></a>
 ## 定义时间表
 
-您可以通过覆盖[Plugin注册类](registration#registration-file)中的`registerSchedule`方法来定义所有计划任务。 该方法将采用单个`$schedule`参数，用于定义命令及其频率。
+您可以通过覆盖[Plugin注册类](plugin-registration.md#registration-file)中的`registerSchedule`方法来定义所有计划任务。 该方法将采用单个`$schedule`参数，用于定义命令及其频率。
 
 首先，我们来看一个安排任务的例子。 在这个例子中，我们将安排每天午夜调用`Closure`。 在`Closure`中，我们将执行数据库查询以清除表：
 
@@ -33,7 +33,7 @@
         }
     }
 
-除了调度`Closure`调用之外，您还可以安排[控制台命令](../console/commands) 和操作系统命令。 例如，您可以使用`command`方法来安排控制台命令：
+除了调度`Closure`调用之外，您还可以安排[控制台命令](console-commands.md) 和操作系统命令。 例如，您可以使用`command`方法来安排控制台命令：
 
     $schedule->command('cache:clear')->daily();
 
@@ -95,7 +95,7 @@
 
     $schedule->command('emails:send')->withoutOverlapping();
 
-在这个例子中，如果电子邮件：send` [console命令](../console/commands)尚未运行，它将每分钟运行一次。 如果您的任务执行时间变化很大，那么`withoutOverlapping`方法特别有用，可以防止您需要准确预测给定任务需要多长时间。
+在这个例子中，如果电子邮件：send` [console命令](console-commands.md)尚未运行，它将每分钟运行一次。 如果您的任务执行时间变化很大，那么`withoutOverlapping`方法特别有用，可以防止您需要准确预测给定任务需要多长时间。
 
 <a name="task-output"></a>
 ## 任务输出
@@ -106,7 +106,7 @@
              ->daily()
              ->sendOutputTo($filePath);
 
-使用`emailOutputTo`方法，您可以将输出通过电子邮件发送到您选择的电子邮件地址。 请注意，必须首先使用`sendOutputTo`方法将输出发送到文件。 在通过电子邮件发送任务输出之前，您应该配置[邮件服务](../services/mail)：
+使用`emailOutputTo`方法，您可以将输出通过电子邮件发送到您选择的电子邮件地址。 请注意，必须首先使用`sendOutputTo`方法将输出发送到文件。 在通过电子邮件发送任务输出之前，您应该配置[邮件服务](services-mail.md)：
 
     $schedule->command('foo')
              ->daily()

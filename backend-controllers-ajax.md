@@ -31,7 +31,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 <a name="class-definition"></a>
 ### 类定义
 
-控制器类必须扩展`\Backend\Classes\Controller`类。 与任何其他插件类一样，控制器应该属于[plugin namespace](../plugin/registration#namespaces)。 插件中使用的Controller的最基本表示如下所示：
+控制器类必须扩展`\Backend\Classes\Controller`类。 与任何其他插件类一样，控制器应该属于[plugin namespace](plugin-registration.md#namespaces)。 插件中使用的Controller的最基本表示如下所示：
 
     namespace Acme\Blog\Controllers;
 
@@ -58,7 +58,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 **$params** | 路由参数的数组。
 **$action** | 当前请求中正在执行的操作方法的名称。
 **$publicActions** | 定义了一个没有后端用户身份验证的可用操作数组。 可以在类定义中重写。
-**$requiredPermissions** | 查看此页面所需的权限。 可以在类定义或控制器构造函数中设置。 有关详细信息，请参阅[用户和权限](users)。
+**$requiredPermissions** | 查看此页面所需的权限。 可以在类定义或控制器构造函数中设置。 有关详细信息，请参阅[用户和权限](backend-users.md)。
 **$pageTitle** | 设置页面标题。 可以在action方法中设置。
 **$bodyClass** | 用于自定义布局的body类属性。 可以在控制器构造函数或操作方法中设置。
 **$guarded** | 控制器特定的方法，不能被称为动作。 可以在控制器构造函数中进行扩展。
@@ -93,7 +93,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 <a name="navigation-context"></a>
 ## 设置导航上下文
 
-插件可以在[插件注册文件](../plugin/registration#navigation-menus)中注册后端导航菜单和子菜单。 导航上下文确定当前后端页面的后端菜单和子菜单是活动的。 您可以使用`BackendMenu`类设置导航上下文：
+插件可以在[插件注册文件](plugin-registration.md#navigation-menus)中注册后端导航菜单和子菜单。 导航上下文确定当前后端页面的后端菜单和子菜单是活动的。 您可以使用`BackendMenu`类设置导航上下文：
 
     BackendMenu::setContext('Acme.Blog', 'blog', 'categories');
 
@@ -117,14 +117,14 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 <a name="ajax"></a>
 ## 使用AJAX处理程序
 
-后端AJAX框架使用相同的[AJAX库](../ajax/introduction) 作为前端页面。 库将自动加载到后端页面上。
+后端AJAX框架使用相同的[AJAX库](ajax-introduction.md) 作为前端页面。 库将自动加载到后端页面上。
 
 <a name="ajax-handlers"></a>
 ### 后端AJAX处理程序
 
-后端AJAX处理程序可以在控制器类或[小部件](widgets)中定义。 在控制器类中，AJAX处理程序被定义为公共方法，名称以`on`字符串开头：**onCreateTemplate**，**onGetTemplateList**等。
+后端AJAX处理程序可以在控制器类或[小部件](backend-widgets.md)中定义。 在控制器类中，AJAX处理程序被定义为公共方法，名称以`on`字符串开头：**onCreateTemplate**，**onGetTemplateList**等。
 
-后端AJAX处理程序可以返回数据数组，抛出异常或重定向到另一个页面(请参阅[AJAX事件处理程序](../ajax/handlers))。 您可以使用`$this->vars`来设置变量，使用控制器的`makePartial`方法来呈现部分并将其内容作为响应数据的一部分返回。
+后端AJAX处理程序可以返回数据数组，抛出异常或重定向到另一个页面(请参阅[AJAX事件处理程序](ajax-handlers.md))。 您可以使用`$this->vars`来设置变量，使用控制器的`makePartial`方法来呈现部分并将其内容作为响应数据的一部分返回。
 
     public function onOpenTemplate()
     {
@@ -142,7 +142,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 <a name="triggering-ajax-requests"></a>
 ### 触发AJAX请求
 
-可以使用数据属性API或JavaScript API触发AJAX请求。 有关详细信息，请参阅[前端AJAX库](../ajax/introduction)。 以下示例显示如何使用后端按钮触发请求。
+可以使用数据属性API或JavaScript API触发AJAX请求。 有关详细信息，请参阅[前端AJAX库](ajax-introduction.md)。 以下示例显示如何使用后端按钮触发请求。
 
     <button
         type="button"
@@ -151,4 +151,4 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
         Do something
     </button>
 
-> **注意**: 您可以使用前缀`widget::onName`专门定位窗口小部件的AJAX处理程序。 有关更多详细信息，请参阅[widget AJAX处理程序文章](../backend/widgets#generic-ajax-handlers)。
+> **注意**: 您可以使用前缀`widget::onName`专门定位窗口小部件的AJAX处理程序。 有关更多详细信息，请参阅[widget AJAX处理程序文章](backend-widgets.md#generic-ajax-handlers)。

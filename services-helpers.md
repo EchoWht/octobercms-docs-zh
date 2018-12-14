@@ -561,7 +561,7 @@ October包含各种PHP“帮助”函数。 其中许多函数在October内部�
 <a name="method-trans"></a>
 #### `trans()` 
 
-`trans`函数使用[本地化文件](../plugin/localization)转换给定的语言行：
+`trans`函数使用[本地化文件](plugin-localization.md)转换给定的语言行：
 
     echo trans('validation.required'):
 
@@ -636,21 +636,21 @@ October包含各种PHP“帮助”函数。 其中许多函数在October内部�
 <a name="method-redirect"></a>
 #### `redirect()` 
 
-`redirect`函数返回重定向器的一个实例来做[重定向响应](../services/response-view#redirects):：
+`redirect`函数返回重定向器的一个实例来做[重定向响应](services-response-view.md#redirects):：
 
     return redirect('/home');
 
 <a name="method-request"></a>
 #### `request()` 
 
-`request`函数返回当前的[request instance](../services/request-input)：
+`request`函数返回当前的[request instance](services-request-input.md)：
 
     $referer = request()->header('referer');
 
 <a name="method-response"></a>
 #### `response()` 
 
-`response`函数创建[response](../services/response-view)实例或获取响应工厂的实例：
+`response`函数创建[response](services-response-view.md)实例或获取响应工厂的实例：
 
     return response('Hello World', 200, $headers);
 
@@ -659,7 +659,7 @@ October包含各种PHP“帮助”函数。 其中许多函数在October内部�
 <a name="method-route"></a>
 #### `route()` 
 
-`route`函数为给定的[命名路由](../services/router)生成一个URL：
+`route`函数为给定的[命名路由](services-router.md)生成一个URL：
 
     $url = route('routeName');
 

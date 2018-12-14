@@ -1,6 +1,6 @@
 # {% partial %}
 
-`{％partial％}`标签将解析[CMS partial](../cms/partials)并在页面上呈现partial内容。 要显示名为**footer.htm**的partial，只需在引用为字符串的`partial`标记后面传递名称即可。
+`{％partial％}`标签将解析[CMS partial](cms-partials.md)并在页面上呈现partial内容。 要显示名为**footer.htm**的partial，只需在引用为字符串的`partial`标记后面传递名称即可。
 
     {% partial "footer" %}
 
@@ -8,7 +8,7 @@
 
     {% partial "sidebar/menu" %}
 
-> **注意**: [主题文档](../cms/themes#subdirectories) 有关于子目录用法的更多详细信息。
+> **注意**: [主题文档](cms-themes.md#subdirectories) 有关于子目录用法的更多详细信息。
 
 partial名称也可以是变量：
 

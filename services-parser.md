@@ -15,7 +15,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-October使用多种标准来处理标记，模板和配置。 每个都经过精心挑选，以尽可能简化您的开发过程和学习曲线。 例如，[主题中找到的对象](../cms/themes) 在其模板结构中使用[Twig](#twig-parser)和[INI格式](#ini-parser) 。 下面更详细地描述每个解析器。
+October使用多种标准来处理标记，模板和配置。 每个都经过精心挑选，以尽可能简化您的开发过程和学习曲线。 例如，[主题中找到的对象](cms-themes.md) 在其模板结构中使用[Twig](#twig-parser)和[INI格式](#ini-parser) 。 下面更详细地描述每个解析器。
 
 <a name="markdown-parser"></a>
 ## Markdown解析器
@@ -40,7 +40,7 @@ Markdown允许您编写易于阅读且易于编写的纯文本格式，然后转
 <a name="twig-parser"></a>
 ## Twig模板解析器
 
-Twig是一个简单但功能强大的模板引擎，它将HTML模板解析为优化的PHP代码，它是[前端标记](../markup)，[视图内容](../services/response-view#views)和[邮件消息内容](../services/mail#message-content)。
+Twig是一个简单但功能强大的模板引擎，它将HTML模板解析为优化的PHP代码，它是[前端标记](../markup)，[视图内容](services-response-view.md#views)和[邮件消息内容](services-mail.md#message-content)。
 
 `Twig` facade用于解析Twig语法，你可以使用`Twig::parse`方法将Twig渲染为HTML。
 
@@ -50,12 +50,12 @@ Twig是一个简单但功能强大的模板引擎，它将HTML模板解析为优
 
     $html = Twig::parse($twig, ['foo' => 'bar']);
 
-可以通过[插件注册文件](../plugin/registration#extending-twig).扩展Twig解析器以注册自定义功能。
+可以通过[插件注册文件](plugin-registration.md#extending-twig).扩展Twig解析器以注册自定义功能。
 
 <a name="bracket-parser"></a>
 ## Bracket解析器
 
-October还附带了一个简单的括号模板解析器，作为Twig解析器的替代，目前用于将变量传递给[主题内容块](../cms/content#content-variables)。 此引擎可以更快地呈现HTML，并且更适合非技术用户。 这个解析器没有facade，因此完全限定的`October\Rain\Parse\Bracket`类应该与`parse`方法一起使用。
+October还附带了一个简单的括号模板解析器，作为Twig解析器的替代，目前用于将变量传递给[主题内容块](cms-content.md#content-variables)。 此引擎可以更快地呈现HTML，并且更适合非技术用户。 这个解析器没有facade，因此完全限定的`October\Rain\Parse\Bracket`类应该与`parse`方法一起使用。
 
     use October\Rain\Parse\Bracket;
 
@@ -84,7 +84,7 @@ October还附带了一个简单的括号模板解析器，作为Twig解析器的
 <a name="yaml-parser"></a>
 ## YAML配置解析器
 
-YAML(“YAML不是标记语言”)是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于October的后端开发，例如[表单字段](../backend/forms#form-fields)和[list column](../backend/lists##list-columns) 定义。 一些YAML的例子：
+YAML(“YAML不是标记语言”)是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于October的后端开发，例如[表单字段](backend-forms.md#form-fields)和[list column](backend-lists.md##list-columns) 定义。 一些YAML的例子：
 
     receipt:     Acme Purchase Invoice
     date:        2015-10-02
@@ -107,7 +107,7 @@ YAML(“YAML不是标记语言”)是一种配置格式，类似于Markdown，�
 <a name="ini-parser"></a>
 ## 初始化(INI)配置解析器
 
-INI文件格式是用于定义简单配置文件的标准，通常由[主题模板内的组件](../cms/components)使用。 它可以被认为是YAML格式的堂兄，虽然与YAML不同，它非常简单，对拼写错误不太敏感，也不依赖于缩进。 它支持带有节的基本键值对，例如：
+INI文件格式是用于定义简单配置文件的标准，通常由[主题模板内的组件](cms-components.md)使用。 它可以被认为是YAML格式的堂兄，虽然与YAML不同，它非常简单，对拼写错误不太敏感，也不依赖于缩进。 它支持带有节的基本键值对，例如：
 
     receipt = "Acme Purchase Invoice"
     date = "2015-10-02"
@@ -195,7 +195,7 @@ October使用*October风格的INI*扩展了此功能，以允许无限深度的�
     //     'type' => 'text'
     // ]
 
-您可能会注意到这些属性与 [表格字段定义](../backend/forms#form-fields)中的选项非常相似。 这是故意的，因此这两个特征相互补充。 我们现在可以轻松地将上面的数组转换为YAML并写入`fields.yaml`文件：
+您可能会注意到这些属性与 [表格字段定义](backend-forms.md#form-fields)中的选项非常相似。 这是故意的，因此这两个特征相互补充。 我们现在可以轻松地将上面的数组转换为YAML并写入`fields.yaml`文件：
 
     $form = [
         'fields' => $syntax->toEditor()
@@ -206,7 +206,7 @@ October使用*October风格的INI*扩展了此功能，以允许无限深度的�
 <a name="syntax-supported-tags"></a>
 ### 支持的标签
 
-动态语法分析器可以使用各种标记类型，这些标记类型旨在匹配常见的[表单字段类型](../backend/forms#field-types)。
+动态语法分析器可以使用各种标记类型，这些标记类型旨在匹配常见的[表单字段类型](backend-forms.md#field-types)。
 
 #### Text
 
@@ -354,4 +354,4 @@ Markdown内容的文本输入。
                 label: Details
                 type: textarea
                 
-有关转发器组模式的更多信息，请参阅[Repeater Widget](../backend/forms#widget-repeater)。       
+有关转发器组模式的更多信息，请参阅[Repeater Widget](backend-forms.md#widget-repeater)。       

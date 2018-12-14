@@ -50,7 +50,7 @@
 <a name="event-registration"></a>
 ### 在哪里注册监听器
 
-最常见的地方是[插件注册文件](../plugin/registration#registration-methods)的`boot`方法。
+最常见的地方是[插件注册文件](plugin-registration.md#registration-methods)的`boot`方法。
 
     class Plugin extends PluginBase
     {
@@ -158,7 +158,7 @@
 <a name="queued-events"></a>
 ### 排队的事件
 
-可以在[与队列结合](../services/queues)中推迟触发事件。 使用`Event::queue`方法将事件“排队”以进行触发但不立即触发它。
+可以在[与队列结合](services-queues.md)中推迟触发事件。 使用`Event::queue`方法将事件“排队”以进行触发但不立即触发它。
 
     Event::queue('foo', [$user]);
 
@@ -169,7 +169,7 @@
 <a name="using-classes-as-listeners"></a>
 ## 使用类作为监听器
 
-在某些情况下，您可能希望使用类来处理事件而不是Closure。 类事件监听器将从[Application IoC容器](application)中解析出来，为您的监听器提供依赖注入的全部功能。
+在某些情况下，您可能希望使用类来处理事件而不是Closure。 类事件监听器将从[Application IoC容器](database-application.md)中解析出来，为您的监听器提供依赖注入的全部功能。
 
 <a name="event-class-method"></a>
 ### 订阅个别方法
@@ -233,7 +233,7 @@
 
     Event::subscribe(new UserEventHandler);
 
-您也可以使用[Application IoC容器](application)来解析您的订阅者。 为此，只需将订阅者的名称传递给`subscribe`方法即可。
+您也可以使用[Application IoC容器](database-application.md)来解析您的订阅者。 为此，只需将订阅者的名称传递给`subscribe`方法即可。
 
     Event::subscribe('UserEventHandler');
 

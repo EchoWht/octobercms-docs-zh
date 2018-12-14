@@ -20,7 +20,7 @@
     $user->password = Hash::make('mypassword');
     $user->save();
 
-或者，模型可以实现[Hashable trait](../database/traits#hashable) 来自动哈希属性。
+或者，模型可以实现[Hashable trait](database-traits.md#hashable) 来自动哈希属性。
 
 #### 根据哈希验证密码
 
@@ -43,7 +43,7 @@
 
 您可以使用`Crypt`facade加密值。 所有加密值都使用OpenSSL和`AES-256-CBC`密码加密。 此外，所有加密值都使用消息验证代码(MAC)进行签名，以检测对加密字符串的任何修改。
 
-例如，我们可以使用`encrypt`方法加密并将其存储在[数据库模型](../database/model)中：
+例如，我们可以使用`encrypt`方法加密并将其存储在[数据库模型](database-model.md)中：
 
     $user = new User;
     $user->secret = Crypt::encrypt('shhh no telling');

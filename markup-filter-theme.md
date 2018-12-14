@@ -23,7 +23,7 @@
 <a name="combiner-aliases"></a>
 ### 合并器别名
 
-合并组合器支持替换文件路径的常用别名，这些别名将以`@`符号开头。 例如，[AJAX框架资产](../ajax/introduction#framework-script)可以包含在合并器中：
+合并组合器支持替换文件路径的常用别名，这些别名将以`@`符号开头。 例如，[AJAX框架资产](ajax-introduction.md#framework-script)可以包含在合并器中：
 
     <script src="{{ [
         '@jquery',

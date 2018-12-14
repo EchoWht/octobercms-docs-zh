@@ -31,7 +31,7 @@
 
 **表单行为** 是一个控制器修饰符，用于轻松地将表单功能添加到后端页面。 该行为提供了三个名为Create，Update和Preview的页面。 “预览”页面是“更新”页面的只读版本。 当您使用表单行为时，您不需要在控制器中定义`create`，`update`和`preview`操作 - 行为就是为您完成的。 但是，您应该提供相应的视图文件。
 
-表单行为取决于表单[字段定义](#form-fields)和[模型类](../database/model)。 为了使用表单行为，您应该将它添加到控制器类的`$implement`属性中。 此外，应定义`$formConfig`类属性，其值应引用用于配置行为选项的YAML文件。
+表单行为取决于表单[字段定义](#form-fields)和[模型类](database-model.md)。 为了使用表单行为，您应该将它添加到控制器类的`$implement`属性中。 此外，应定义`$formConfig`类属性，其值应引用用于配置行为选项的YAML文件。
 
     namespace Acme\Blog\Controllers;
 
@@ -42,7 +42,7 @@
         public $formConfig = 'form_config.yaml';
     }
 
-> **注意:** 表单和[列表行为](lists)通常在同一个控制器中一起使用。
+> **注意:** 表单和[列表行为](backend-lists.md)通常在同一个控制器中一起使用。
 
 <a name="configuring-form"></a>
 ## 配置表单行为
@@ -98,10 +98,10 @@ The following fields are required in the form configuration file:
 
 选项 | 描述
 ------------- | -------------
-**title** | 页面标题，可以参考[本地化字符串](../plugin/localization).。
+**title** | 页面标题，可以参考[本地化字符串](plugin-localization.md).。
 **redirect** | 保存记录时的重定向页面。
 **redirectClose** | 保存记录时的重定向页面，并随请求一起发送**close** post变量。
-**flashSave** | 保存记录时显示的flash消息，可以参考[本地化字符串](../plugin/localization)。
+**flashSave** | 保存记录时显示的flash消息，可以参考[本地化字符串](plugin-localization.md)。
 **form** | 仅覆盖创建页面的默认表单字段定义。
 
 <a name="form-update-page"></a>
@@ -180,7 +180,7 @@ The following fields are required in the form configuration file:
         fields:
             [...]
 
-可以使用[Relation Widget](#widget-relation)或[Relation Manager](relations#relationship-types)呈现相关模型中的字段。 例外是OneToOne或morphOne相关字段，必须定义为**relation[field]**，然后可以指定为模型的任何其他字段：
+可以使用[Relation Widget](#widget-relation)或[Relation Manager](backend-relations.md#relationship-types)呈现相关模型中的字段。 例外是OneToOne或morphOne相关字段，必须定义为**relation[field]**，然后可以指定为模型的任何其他字段：
 
         user_name:
             label: User Name
@@ -497,7 +497,7 @@ The following fields are required in the form configuration file:
 <a name="form-widgets"></a>
 ## 表单小部件
 
-标准中包含各种表单小部件，但插件通常提供自己的自定义表单小部件。 您可以在[Form Widgets](widgets#form-widgets)文章上阅读更多内容。
+标准中包含各种表单小部件，但插件通常提供自己的自定义表单小部件。 您可以在[Form Widgets](backend-widgets.md#form-widgets)文章上阅读更多内容。
 
 <div class="content-list collection-method-list" markdown="1">
 - [Code editor](#widget-codeeditor)
@@ -614,12 +614,12 @@ The following fields are required in the form configuration file:
 **descriptionFrom**  |用于显示描述的关系中使用的列名。默认值：说明。
 **title**  |要在弹出窗口的标题部分显示的文本。
 **prompt**  |没有选择记录时显示的文本。 `％s`字符代表搜索图标。
-**list**  |配置数组或对列表列定义文件的引用，请参阅[list columns](lists#list-columns)。
+**list**  |配置数组或对列表列定义文件的引用，请参阅[list columns](backend-lists.md#list-columns)。
 **recordsPerPage**  |每页显示的记录，没有页面使用0。默认值：10
 **conditions**  |指定要应用于列表模型查询的raw where查询语句。
-**scope**  |指定**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以始终应用于列表查询。第一个参数将包含窗口小部件将其值附加到的模型，即父模型。
+**scope**  |指定**相关表单模型**中定义的[查询范围方法](database-model.md#query-scopes)以始终应用于列表查询。第一个参数将包含窗口小部件将其值附加到的模型，即父模型。
 **searchMode**  |将搜索策略定义为包含所有单词，任何单词或精确短语。支持的选项：all，any，exact。默认值：全部。
-**searchScope**  |指定在**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
+**searchScope**  |指定在**相关表单模型**中定义的[查询范围方法](database-model.md#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
 
 <a name="widget-mediafinder"></a>
 ### Media finder
@@ -662,7 +662,7 @@ The following fields are required in the form configuration file:
 **nameFrom** | 用于显示关系标签的模型属性名称。 默认值：名称。
 **select** | 用于名称的自定义SQL select语句。
 **emptyOption** | 没有可用选择时显示的文本。
-**scope** | 指定**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以始终应用于列表查询。
+**scope** | 指定**相关表单模型**中定义的[查询范围方法](database-model.md#query-scopes)以始终应用于列表查询。
 
 <a name="widget-repeater"></a>
 ### Repeater
@@ -793,7 +793,7 @@ The following fields are required in the form configuration file:
             - Blue
             - Orange
 
-您可以使用名为**relation**的`mode`，其中字段名称是[多对多关系](../database/relations#many-to-many)。 这将通过关系自动获取和分配标签。 如果支持自定义标记，则会在分配之前创建它们。
+您可以使用名为**relation**的`mode`，其中字段名称是[多对多关系](database-relations.md#many-to-many)。 这将通过关系自动获取和分配标签。 如果支持自定义标记，则会在分配之前创建它们。
 
     tags:
         type: taglist
@@ -1032,7 +1032,7 @@ The following fields are required in the form configuration file:
 <a name="extend-model-query"></a>
 ### 扩展表单模型查询
 
-可以通过覆盖控制器类中的`formExtendQuery`方法来扩展表单[数据库模型](../database/model)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保仍可以找到并更新软删除的记录：
+可以通过覆盖控制器类中的`formExtendQuery`方法来扩展表单[数据库模型](database-model.md)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保仍可以找到并更新软删除的记录：
 
     public function formExtendQuery($query)
     {
@@ -1117,5 +1117,5 @@ $form对象提供以下方法。
 <a name="validate-form-fields"></a>
 ## 验证表单字段
 
-可以通过覆盖控制器类中的`formExtendQuery`方法来扩展表单[数据库模型](../database/model)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保仍可以找到并更新软删除的记录：
+可以通过覆盖控制器类中的`formExtendQuery`方法来扩展表单[数据库模型](database-model.md)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保仍可以找到并更新软删除的记录：
 

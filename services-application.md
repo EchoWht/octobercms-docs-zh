@@ -55,14 +55,14 @@ IoC容器有两种方法可以解决依赖关系：通过Closure回调或自动�
 <a name="where-to-register"></a>
 ### 在哪里注册绑定
 
-IoC绑定，如[事件处理程序](events)，通常属于“引导代码(bootstrap code)”类别。 换句话说，它们准备应用程序以实际处理请求，并且通常需要在实际调用路由或控制器之前执行。 最常见的地方是[插件注册文件](../plugin/registration#registration-methods).的`boot`方法。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件放置IoC注册逻辑。
+IoC绑定，如[事件处理程序](services-error-log.md)，通常属于“引导代码(bootstrap code)”类别。 换句话说，它们准备应用程序以实际处理请求，并且通常需要在实际调用路由或控制器之前执行。 最常见的地方是[插件注册文件](plugin-registration.md#registration-methods).的`boot`方法。 或者，插件可以在插件目录中提供名为**init.php**的文件，您可以使用该文件放置IoC注册逻辑。
 
 <a name="service-providers"></a>
 ## 服务提供者
 
 服务提供者是在单个位置创建库和执行与组相关的IoC注册的好方法。 在服务提供程序中，您可以注册自定义身份验证驱动程序，使用IoC容器注册应用程序的存储库类，甚至可以设置自定义Artisan命令。
 
-实际上，[插件注册文件](../plugin/registration)继承了服务提供者，而大多数核心组件都包含服务提供者。 您的应用程序的所有注册服务提供程序都列在`config/app.php`配置文件的`providers`数组中。
+实际上，[插件注册文件](plugin-registration.md)继承了服务提供者，而大多数核心组件都包含服务提供者。 您的应用程序的所有注册服务提供程序都列在`config/app.php`配置文件的`providers`数组中。
 
 #### 定义服务提供者
 
@@ -139,6 +139,6 @@ IoC绑定，如[事件处理程序](events)，通常属于“引导代码(bootst
 
     App::runningInBackend();
 
-您还可以使用`runningInConsole`方法检查执行代码是否在[命令行界面](../console/commands)中进行：
+您还可以使用`runningInConsole`方法检查执行代码是否在[命令行界面](console-commands.md)中进行：
 
     App::runningInConsole();

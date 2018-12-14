@@ -27,7 +27,7 @@
 
 **列表行为**是一个控制器修饰符，用于轻松地将记录列表添加到页面。 该行为提供可排序和可搜索的列表，其列表中包含可选链接。 该行为提供了控制器操作`index`，但是列表可以在任何地方呈现，并且可以使用多个列表定义。
 
-列表行为取决于列表[列定义](#list-columns)和[模型类](../database/model)。 为了使用列表行为，您应该将它添加到控制器类的`$implement`属性中。 此外，应定义`$listConfig`类属性，其值应引用用于配置行为选项的YAML文件。
+列表行为取决于列表[列定义](#list-columns)和[模型类](database-model.md)。 为了使用列表行为，您应该将它添加到控制器类的`$implement`属性中。 此外，应定义`$listConfig`类属性，其值应引用用于配置行为选项的YAML文件。
 
     namespace Acme\Blog\Controllers;
 
@@ -69,7 +69,7 @@
 **filter**| 过滤器配置，请参阅[过滤列表](#adds-filters)。
 **recordUrl**| 将每个列表记录链接到另一个页面。例如:**users/update:id**。 `:id`部分被记录标识符替换。这允许您链接列表行为和[表单行为](form)。
 **recordOnClick**| 单击记录时要执行的自定义JavaScript代码。
-**noRecordsMessage**| 当没有找到记录时显示的消息，可以参考[本地化字符串](../plugin/localization)。
+**noRecordsMessage**| 当没有找到记录时显示的消息，可以参考[本地化字符串](plugin-localization.md)。
 **recordsPerPage**| 每页显示的记录，没有页面使用0。默认值:0
 **showPageNumbers**| 显示带分页的页码。在处理大型表时，禁用此选项可提高列表性能。默认值:true
 **toolbar**| 引用Toolbar Widget配置文件或带配置的数组(参见下文)。
@@ -104,7 +104,7 @@
 ------------- | -------------
 **prompt**| 当没有活动搜索时显示的占位符，可以参考[本地化字符串](../插件/本地化)。
 **mode**| 将搜索策略定义为包含所有单词，任何单词或精确短语。 支持的选项:all，any，exact。 默认值:全部。
-**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
+**scope**| 指定在**列表模型**中定义的[查询范围方法](database-model.md#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
 **searchOnEnter**| 将此设置为true将使搜索小部件在开始搜索之前等待按下Enter键(默认行为是，在有人在搜索字段中输入内容然后暂停一小段时间后，它会自动开始搜索)。 默认值:false。
 
 上面提到的工具栏按钮部分应该包含带有一些按钮的工具栏控件定义。 部分还可以包含带有图表的[记分板控件](控制#记分板)。 使用**New Post**按钮引用由[form behavior](表单)提供的**create**操作的工具栏部分示例:
@@ -289,7 +289,7 @@
 <a name="column-relation"></a>
 ### Relation
 
-`relation`  - 允许显示相关列，可以提供关系选项。 此选项的值必须是模型上Active Record [relationship](../database/relations)的名称。 在下一个示例中，**name**值将转换为相关模型中的name属性(例如:`$model-> name`)。
+`relation`  - 允许显示相关列，可以提供关系选项。 此选项的值必须是模型上Active Record [relationship](database-relations.md)的名称。 在下一个示例中，**name**值将转换为相关模型中的name属性(例如:`$model-> name`)。
 
     group:
         label: Group
@@ -420,7 +420,7 @@
 **label**| 向用户显示过滤器范围时的名称。
 **type**| 定义如何呈现此范围(请参阅下面的[范围类型](#scope-types))。 默认值:组。
 **conditions**| 指定要应用于列表模型查询的raw where查询语句，`:filtered`参数表示已过滤的值。
-**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于列表查询，第一个参数将包含过滤的值。
+**scope**| 指定在**列表模型**中定义的[查询范围方法](database-model.md#query-scopes)以应用于列表查询，第一个参数将包含过滤的值。
 **options**| 如果通过多个项过滤使用的选项，此选项可以在`modelClass`模型中指定数组或方法名称。
 **nameFrom**| 如果按多个项过滤，则显示名称的属性，取自`modelClass`模型的所有记录。
 **default**| 可以是整数(开关，复选框，数字)或数组(组，日期范围，数字范围)或字符串(日期)。
@@ -733,7 +733,7 @@ $filter对象提供了以下方法。
 <a name="extend-model-query"></a>
 ### 扩展模型查询
 
-可以通过覆盖控制器类中的`listExtendQuery`方法来扩展列表[数据库模型](../database/model)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保列表数据中包含软删除的记录:
+可以通过覆盖控制器类中的`listExtendQuery`方法来扩展列表[数据库模型](database-model.md)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保列表数据中包含软删除的记录:
 
     public function listExtendQuery($query)
     {
@@ -752,7 +752,7 @@ $filter对象提供了以下方法。
 <a name="extend-records-collection"></a>
 ### 扩展记录集
 
-可以通过覆盖控制器类中的`listExtendRecords`方法来扩展列表使用的记录集合。 此示例使用[记录集合](../database/collection)上的`sort`方法更改记录的排序顺序。
+可以通过覆盖控制器类中的`listExtendRecords`方法来扩展列表使用的记录集合。 此示例使用[记录集合](database-collection.md)上的`sort`方法更改记录的排序顺序。
 
     public function listExtendRecords($records)
     {
@@ -764,7 +764,7 @@ $filter对象提供了以下方法。
 <a name="custom-column-types"></a>
 ### 自定义列类型
 
-自定义列表列类型可以使用[插件注册类](../plugin/registration#registration-methods)的“registerListColumnTypes”方法在后端注册。 该方法应返回一个数组，其中键是类型名称，值是可调用函数。 可调用函数接收三个参数，原生`$value`，`$column`定义对象和模型`$record`对象。
+自定义列表列类型可以使用[插件注册类](plugin-registration.md#registration-methods)的“registerListColumnTypes”方法在后端注册。 该方法应返回一个数组，其中键是类型名称，值是可调用函数。 可调用函数接收三个参数，原生`$value`，`$column`定义对象和模型`$record`对象。
 
     public function registerListColumnTypes()
     {

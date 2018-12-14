@@ -33,14 +33,14 @@
 选项 | 描述
 ------------- | -------------
 **method** | 请求方法。 对应**method**FORM标签属性。 例如：POST，GET，PUT，DELETE
-**request** | 发布表单时在服务器上执行的处理程序名称。 有关事件处理程序的详细信息，请参阅[处理表单](../cms/pages#handling-forms) 文章。
+**request** | 发布表单时在服务器上执行的处理程序名称。 有关事件处理程序的详细信息，请参阅[处理表单](cms-pages.md#handling-forms) 文章。
 **url** | 指定将表单发布到的URL。 对应**action** FORM标签属性。
 **files** | 确定表单是否将提交文件。 可接受的值：**true**和**false**。
 **model** | 表单模型绑定的模型对象。
 
 ## form_ajax()
 
-输出启用AJAX的FORM开始标签。 `form_ajax()`函数的第一个参数是AJAX处理程序名称。 处理程序可以在布局或页面[PHP部分](../cms/themes#php-section) 代码中定义，也可以在组件中定义。 您可以在[AJAX Framework](../ajax/introduction) 文章中找到有关AJAX的更多信息。
+输出启用AJAX的FORM开始标签。 `form_ajax()`函数的第一个参数是AJAX处理程序名称。 处理程序可以在布局或页面[PHP部分](cms-themes.md#php-section) 代码中定义，也可以在组件中定义。 您可以在[AJAX Framework](ajax-introduction.md) 文章中找到有关AJAX的更多信息。
 
     {{ form_ajax('onUpdate') }}
 
