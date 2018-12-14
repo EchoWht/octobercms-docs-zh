@@ -16,7 +16,7 @@
 ## 介绍
 
 
-所有网站都有网页。October的页面用页面模板表示。页面模板文件位于主题目录的 **/pages** 子目录中。页面文件名称不会影响路由，但最好根据页面功能命名页面。文件以 **htm** 作为扩展名。页面需要[Configuration](themes#configuration-section)和[Twig](themes＃twig-section)模板部分，但[PHP部分](themes#php-section)是可选的。您可以在下面看到最简单的主页示例。
+所有网站都有网页。October的页面用页面模板表示。页面模板文件位于主题目录的 **/pages** 子目录中。页面文件名称不会影响路由，但最好根据页面功能命名页面。文件以 **htm** 作为扩展名。页面需要[Configuration](cms-themes.md#configuration-section)和[Twig](cms-themes.md＃twig-section)模板部分，但[PHP部分](cms-themes.md#php-section)是可选的。您可以在下面看到最简单的主页示例。
     url = "/"
     ==
     <h1>Hello, world!</h1>
@@ -24,7 +24,7 @@
 <a name="configuration"></a>
 ## 页面配置
 
-页面配置在页面模板文件的[配置部分](themes#configuration-section)中定义。页面配置定义了路由和呈现页面和页面[组件](components)所需的页面参数，这在另一篇文章中有解释。页面支持以下配置参数：
+页面配置在页面模板文件的[配置部分](cms-themes.md#configuration-section)中定义。页面配置定义了路由和呈现页面和页面[组件](components)所需的页面参数，这在另一篇文章中有解释。页面支持以下配置参数：
 
 参数 | 描述
 ------------- | -------------
@@ -40,7 +40,7 @@
 
     url = "/blog"
 
-带参数的URL更灵活。对于任何地址，例如`/blog/post/something`，将显示以下示例中定义的URL模式的页面。 URL参数可以通过October组件或页面[PHP代码](themes#php-section)部分访问。
+带参数的URL更灵活。对于任何地址，例如`/blog/post/something`，将显示以下示例中定义的URL模式的页面。 URL参数可以通过October组件或页面[PHP代码](cms-themes.md#php-section)部分访问。
 
     url = "/blog/post/:post_id"
 
@@ -90,8 +90,8 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 <a name="dynamic-pages"></a>
 ## 动态页面
 
-Inside the [Twig section](themes#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](themes#php-section) or by [Components](components). In this article we describe how to prepare variables in the PHP section.
-在页面模板的[Twig部分](themes#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup)）。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](themes#php-section)或[Components](components)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
+Inside the [Twig section](cms-themes.md#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](cms-themes.md#php-section) or by [Components](components). In this article we describe how to prepare variables in the PHP section.
+在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup)）。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](components)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
 
 <a name="page-life-cycle"></a>
 ### 页面执行的生命周期
@@ -148,7 +148,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 <a name="handling-forms"></a>
 ### 处理表单
 
-您可以使用页面或布局中定义的方法处理标准表单[PHP部分](themes#php-section) (处理AJAX请求在[AJAX Framework](../ajax/introduction) 文章中进行了解释). 使用[form_open()](markup#standard-form) 函数定义一个引用事件方法的表单。例如：
+您可以使用页面或布局中定义的方法处理标准表单[PHP部分](cms-themes.md#php-section) (处理AJAX请求在[AJAX Framework](../ajax/introduction) 文章中进行了解释). 使用[form_open()](markup#standard-form) 函数定义一个引用事件方法的表单。例如：
 
     {{ form_open({ request: 'onHandleForm' }) }}
         请输入一些文字<input type="text" name="value"/>
@@ -156,7 +156,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
     {{ form_close() }}
     <p>最后一次提交的内容是: {{ lastValue }}</p>
 
-可以通过以下方式在页面或布局[PHP部分](themes#php-section) 中定义onHandleForm函数:
+可以通过以下方式在页面或布局[PHP部分](cms-themes.md#php-section) 中定义onHandleForm函数:
 
     function onHandleForm()
     {
@@ -200,7 +200,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 <a name="injecting-assets"></a>
 ## 以编程方式注入页面资源
 
-如有需要，您可以使用控制器的`addCss`和`addJs`方法将资源（CSS和JavaScript文件）注入页面。它可以在页面的[PHP部分](themes#php-section)中定义的`onStart`函数或[layout](layout)模板。 例如:
+如有需要，您可以使用控制器的`addCss`和`addJs`方法将资源（CSS和JavaScript文件）注入页面。它可以在页面的[PHP部分](cms-themes.md#php-section)中定义的`onStart`函数或[layout](layout)模板。 例如:
 
     function onStart()
     {

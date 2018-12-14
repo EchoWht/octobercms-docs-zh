@@ -17,8 +17,8 @@
 
 对象 | 描述
 ------------- | -------------
-[Pages](pages) |网站的页面
-[Partials](partials) | 可以复用的 HTML标记.
+[Pages](cms-pages.md) |网站的页面
+[Partials](cms-partials.md) | 可以复用的 HTML标记.
 [Layouts](layouts) | 页面脚手架.
 [Content files](content) | 可以与页面或布局分开编辑的文本，HTML或[Markdown](http://daringfireball.net/projects/markdown/syntax)块。
 **Asset files（资源文件夹）** |  图片, CSS 和 JavaScript 文件。

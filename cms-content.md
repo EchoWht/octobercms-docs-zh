@@ -5,7 +5,7 @@
 - [将变量传递给内容模块](#content-variables)
     - [全局变量](#content-global-variables)
 
-内容块是文本，HTML或[Markdown](http://daringfireball.net/projects/markdown/syntax)，可以与页面或布局分开编辑。它们旨在仅保存静态内容并支持基本模板变量。而[Partials](partials)更灵活，应该用于生成动态内容。
+内容块是文本，HTML或[Markdown](http://daringfireball.net/projects/markdown/syntax)，可以与页面或布局分开编辑。它们旨在仅保存静态内容并支持基本模板变量。而[Partials](cms-partials.md)更灵活，应该用于生成动态内容。
 
 <a name="introduction"></a>
 ## 介绍
@@ -24,7 +24,7 @@
 <a name="rendering-content-blocks"></a>
 ## 渲染内容
 
-使用`{% content 'file.htm' %}` 标签在[page](pages), [partial](partials) 或 [layout](layouts)中渲染内容块。 例如：
+使用`{% content 'file.htm' %}` 标签在[page](cms-pages.md), [partial](cms-partials.md) 或 [layout](layouts)中渲染内容块。 例如：
 
     url = "/contacts"
     ==

@@ -16,7 +16,7 @@ Partial模板文件驻留在主题目录的 **/partials** 子目录中。 Partia
 
     <p>This is a partial</p>
 
-[配置](themes#configuration-section) 部分对于Partial是可选的，，可以包含后端用户界面中显示的可选 **description** 。参数。下一个示例显示了Partial描述:
+[配置](cms-themes.md#configuration-section) 部分对于Partial是可选的，，可以包含后端用户界面中显示的可选 **description** 。参数。下一个示例显示了Partial描述:
 
     description = "partial示例"
     ==
@@ -27,7 +27,7 @@ partial配置部分还可以包含组件定义。 [组件](components)在另一�
 <a name="rendering-partials"></a>
 ## 渲染partials
 
-`{% partial "partial-name" %}` Twig 标签渲染partial。 T标签有一个必需参数 - 没有扩展名的partial文件名。请记住，如果从[子目录](themes#subdirectories)中引用partial，则应指定子目录名称。  `{% partial %}`标签可以在页面，布局或其他部分内使用。引用partial页面的示例：
+`{% partial "partial-name" %}` Twig 标签渲染partial。 T标签有一个必需参数 - 没有扩展名的partial文件名。请记住，如果从[子目录](cms-themes.md#subdirectories)中引用partial，则应指定子目录名称。  `{% partial %}`标签可以在页面，布局或其他部分内使用。引用partial页面的示例：
 
     <div class="sidebar">
         {% partial "sidebar-contacts" %}
@@ -56,7 +56,7 @@ partial配置部分还可以包含组件定义。 [组件](components)在另一�
 <a name="dynamic-partials"></a>
 ## 动态partials
 
-Partials像页面一样，也可以使用任何Twig功能。有关详细信息，请参阅[动态页面](pages#dynamic-pages) 文档。
+Partials像页面一样，也可以使用任何Twig功能。有关详细信息，请参阅[动态页面](cms-pages.md#dynamic-pages) 文档。
 
 <a name="partial-life-cycle"></a>
 ### Partial执行生命周期

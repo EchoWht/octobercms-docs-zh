@@ -13,7 +13,7 @@
     - [页面周期响应](#page-cycle-response)
 - [AJAX处理](#ajax-handlers)
 - [默认标签](#default-markup)
-- [组件部分(partials)](#component-partials)
+- [组件部分(cms-partials.md)](#component-partials)
     - [引用自身 "self"](#referencing-self)
     - [唯一标识符](#unique-identifier)
 - [在代码里引用partials](#render-partial-method)
@@ -353,7 +353,7 @@
     }
 
 <a name="component-partials"></a>
-## 组件部分(partials)
+## 组件部分(cms-partials.md)
 
 除了默认标记之外，组件还可以提供可以在前端或默认标记本身内使用的其他部分。 如果Demo ToDo组件具有**分页**部分，它将位于 **/plugins/october/demo/components/todo/pagination.htm** 中并使用以下内容显示在页面上：
 
