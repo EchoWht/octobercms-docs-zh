@@ -21,7 +21,7 @@
 [Partials](cms-partials.md) | 可以复用的 HTML标记.
 [Layouts](layouts) | 页面脚手架.
 [Content files](content) | 可以与页面或布局分开编辑的文本，HTML或[Markdown](http://daringfireball.net/projects/markdown/syntax)块。
-**Asset files（资源文件夹）** |  图片, CSS 和 JavaScript 文件。
+**Asset files(资源文件夹)** |  图片, CSS 和 JavaScript 文件。
 
 <a name="directory-structure"></a>
 ## 目录结构
@@ -49,7 +49,7 @@
 <a name="subdirectories"></a>
 ### 子目录
 
-October支持pages, partials, layouts 和 content 文件的单级子目录（ **assets** 目录可以具有任何结构）。简化组织大型网站的目录。在下面的示例目录结构中，您可以看到pages和partials目录包含 **blog** 子目录，而content目录包含 **home** 子目录。
+October支持pages, partials, layouts 和 content 文件的单级子目录( **assets** 目录可以具有任何结构)。简化组织大型网站的目录。在下面的示例目录结构中，您可以看到pages和partials目录包含 **blog** 子目录，而content目录包含 **home** 子目录。
 
     themes/
       website/
@@ -94,9 +94,9 @@ Pages, partials 和 layout 模板最多可包含3个部分： **configuration**,
     {% endfor %}
 
 <a name="configuration-section"></a>
-### Configuration（配置）部分
+### Configuration(配置)部分
 
-配置部分设置模板参数。支持的配置参数特定于不同的CMS模板，并在相应的文档文章中进行了描述。配置部分使用简单的[INI格式]（http://en.wikipedia.org/wiki/INI_file），其中字符串参数值包含在引号内。例如下面page模板的配置:
+配置部分设置模板参数。支持的配置参数特定于不同的CMS模板，并在相应的文档文章中进行了描述。配置部分使用简单的[INI格式](http://en.wikipedia.org/wiki/INI_file)，其中字符串参数值包含在引号内。例如下面page模板的配置:
 
     url = "/blog"
     layout = "default"
@@ -156,7 +156,7 @@ Pages, partials 和 layout 模板最多可包含3个部分： **configuration**,
 
 The Twig section defines the markup to be rendered by the template. In the Twig section you can use functions, tags and filters [provided by October](../markup), all the [native Twig features](http://twig.sensiolabs.org/documentation), or those [provided by plugins](../plugin/registration#extending-twig). The content of the Twig section depends on the template type (page, layout or partial). You will find more information about specific Twig objects further in the documentation.
 
-Twig部分定义了模板要呈现的标记。在Twig部分，您可以使用函数，标签和过滤器[October提供]（../markup），所有[原生Twig功能]（http://twig.sensiolabs.org/documentation），或者[插件]（../plugin/registration#extending-twig）。 Twig部分的内容取决于模板类型（页面，布局或部分）。您可以在文档中找到有关特定Twig对象的更多信息。
+Twig部分定义了模板要呈现的标记。在Twig部分，您可以使用函数，标签和过滤器[October提供](../markup)，所有[原生Twig功能](http://twig.sensiolabs.org/documentation)，或者[插件](../plugin/registration#extending-twig)。 Twig部分的内容取决于模板类型(页面，布局或部分)。您可以在文档中找到有关特定Twig对象的更多信息。
 
 
 <a name="theme-logging"></a>

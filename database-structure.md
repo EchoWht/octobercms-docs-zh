@@ -16,12 +16,12 @@
 <a name="introduction"></a>
 ## 介绍
 
-迁移和填充文件允许您构建/修改和填充数据库表。 它们主要由[插件更新文件]（../ plugin/updates）使用，并与插件的版本历史配对。 所有类都存储在插件的`updates`目录中。 迁移应该讲述一个关于您的数据库历史的故事，这个故事可以向前和向后播放，以构建和拆除表格。
+迁移和填充文件允许您构建/修改和填充数据库表。 它们主要由[插件更新文件](../ plugin/updates)使用，并与插件的版本历史配对。 所有类都存储在插件的`updates`目录中。 迁移应该讲述一个关于您的数据库历史的故事，这个故事可以向前和向后播放，以构建和拆除表格。
 
 <a name="migration-structure"></a>
 ## 迁移结构
 
-迁移文件应该定义一个扩展`October\Rain\Database\Updates\Migration`类的类，它包含两个方法：`up`和`down`。 `up`方法用于向数据库添加新的表，列或索引，而`down`方法是`up`的逆向操作。 在这两种方法中，您可以使用[schema builder（表格一整天的人如果生成器）](#creating-tables) 来表达式创建和修改表。 例如，让我们看一下创建`october_blog_posts`表的示例迁移：
+迁移文件应该定义一个扩展`October\Rain\Database\Updates\Migration`类的类，它包含两个方法：`up`和`down`。 `up`方法用于向数据库添加新的表，列或索引，而`down`方法是`up`的逆向操作。 在这两种方法中，您可以使用[schema builder(表格一整天的人如果生成器)](#creating-tables) 来表达式创建和修改表。 例如，让我们看一下创建`october_blog_posts`表的示例迁移：
 
     <?php namespace Acme\Blog\Updates;
 
@@ -119,7 +119,7 @@
 
 命令  | 描述
 ------------- | -------------
-`$table->bigIncrements('id');`  |  使用“UNSIGNED BIG INTEGER”等效增加ID（主键）。
+`$table->bigIncrements('id');`  |  使用“UNSIGNED BIG INTEGER”等效增加ID(主键)。
 `$table->bigInteger('votes');`  |  对应数据库中的BIGINT类型 
 `$table->binary('data');`  |  对应数据库中的BLOB类型。
 `$table->boolean('confirmed');`  | 对应数据库中的 BOOLEAN类型。
@@ -130,7 +130,7 @@
 `$table->double('column', 15, 8);`  |  对应数据库中的DOUBLE精度，总共15位，小数点后8位。
 `$table->enum('choices', ['foo', 'bar']);` | 对应数据库中的ENUM类型。
 `$table->float('amount');`  |  对应数据库中的FLOAT类型。
-`$table->increments('id');`  |  使用“UNSIGNED INTEGER”等效增加ID（主键）。
+`$table->increments('id');`  |  使用“UNSIGNED INTEGER”等效增加ID(主键)。
 `$table->integer('votes');`  |  对应数据库中的INTEGER类型。
 `$table->json('options');`  |  对应数据库中的JSON类型。
 `$table->jsonb('options');`  |  对应数据库中的JSONB类型。
@@ -165,8 +165,8 @@
 `->nullable()`  | 允许将NULL值插入列中
 `->default($value)`  |  为列指定“默认”值
 `->unsigned()`  |  将`integer`列设置为`UNSIGNED`
-`->first()`  |  将列放在表的首列（仅限MySQL）
-`->after('column')`  |  将列放在某一列之后（仅限MySQL）
+`->first()`  |  将列放在表的首列(仅限MySQL)
+`->after('column')`  |  将列放在某一列之后(仅限MySQL)
 
 <a name="modifying-columns"></a>
 ### 修改列

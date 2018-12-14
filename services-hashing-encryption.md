@@ -41,7 +41,7 @@
 <a name="encryption"></a>
 ## 加密
 
-您可以使用`Crypt`facade加密值。 所有加密值都使用OpenSSL和`AES-256-CBC`密码加密。 此外，所有加密值都使用消息验证代码（MAC）进行签名，以检测对加密字符串的任何修改。
+您可以使用`Crypt`facade加密值。 所有加密值都使用OpenSSL和`AES-256-CBC`密码加密。 此外，所有加密值都使用消息验证代码(MAC)进行签名，以检测对加密字符串的任何修改。
 
 例如，我们可以使用`encrypt`方法加密并将其存储在[数据库模型](../database/model)中：
 

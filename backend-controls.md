@@ -10,7 +10,7 @@
 <a name="scoreboards"></a>
 ## 记分牌
 
-记分板控件通常显示在后端列表上方，并显示一些摘要或最重要的数据。 控件可以包含任何图表和指标（见下文）。 列表小部件上方显示的记分板控件标签示例：
+记分板控件通常显示在后端列表上方，并显示一些摘要或最重要的数据。 控件可以包含任何图表和指标(见下文)。 列表小部件上方显示的记分板控件标签示例：
 
     <div class="scoreboard">
         <div data-control="toolbar">
@@ -81,7 +81,7 @@
 
 ![image](https://github.com/octobercms/docs/blob/master/images/name-title-indicators.png?raw=true) {.img-responsive .frame}
 
-> **注意:** 该示例在记分板区域的上下文中给出。 如果使用[报告窗口小部件]（窗口小部件#report-widgets）partial中的指示符，则不应使用类**scoreboard-item**。
+> **注意:** 该示例在记分板区域的上下文中给出。 如果使用[报告窗口小部件](窗口小部件#report-widgets)partial中的指示符，则不应使用类**scoreboard-item**。
 
 <a name="pie-chart"></a>
 ## 饼形图

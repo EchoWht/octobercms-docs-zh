@@ -31,7 +31,7 @@
 这将使用组件定义的属性来初始化这个组件。某些属性是必需的，某些属性具有默认值。如果您不确定组件支持哪些属性，请参阅组件开发人员提供的文档，或使用October后端的Inspector。单击页面或布局组件面板中的组件时，将打开Inspector。
 
 When you refer a component, it automatically creates a page variable that matches the component name (`demoTodo` in the previous example). Components that provide HTML markup can be rendered on a page with the `{% component %}` tag, like this:
-当您引用组件时，它会自动创建一个与组件名称匹配的页面变量（前一个示例中的“demoTodo”）。通过`{％component％}`标签将组件在页面中展示出来，如下所示：
+当您引用组件时，它会自动创建一个与组件名称匹配的页面变量(前一个示例中的“demoTodo”)。通过`{％component％}`标签将组件在页面中展示出来，如下所示：
 
     {% component 'demoTodo' %}
 
@@ -66,7 +66,7 @@ When you refer a component, it automatically creates a page variable that matche
     ==
     ...
 
-但是，有一种方法可以使用外部参数来初始化属性，URL参数或[partial](cms-partials.md)参数（对于partials中定义的组件）。对于应从partials变量加载的值，请使用`{{paramName}}`语法：
+但是，有一种方法可以使用外部参数来初始化属性，URL参数或[partial](cms-partials.md)参数(对于partials中定义的组件)。对于应从partials变量加载的值，请使用`{{paramName}}`语法：
 
     [demoTodo]
     maxItems = {{ maxItems }}
@@ -77,7 +77,7 @@ When you refer a component, it automatically creates a page variable that matche
 
     {% partial 'my-todo-partial' maxItems='10' %}
 
-要从URL参数加载属性值，请使用`{{：paramName}}`语法，其中名称以冒号（`:`）开头，例如：
+要从URL参数加载属性值，请使用`{{：paramName}}`语法，其中名称以冒号(`:`)开头，例如：
 
     [demoTodo]
     maxItems = {{ :maxItems }}
@@ -154,7 +154,7 @@ All component partials can be overridden using the theme partials. If a componen
 文件夹名称 |描述
 ------------- | -------------
 **partials** | 主题部分目录
-**channel** | 组件别名（partial部分子目录）
+**channel** | 组件别名(partial部分子目录)
 **title.htm** | 部分要覆盖的组件
 
 通过简单地为组件分配同名别名，可以将partial部分子目录名称自定义为任何名称。例如，为**channel**组件分配不同的别名**foobar**，覆盖目录也会更改：

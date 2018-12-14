@@ -46,7 +46,7 @@
 <a name="accessing-strings"></a>
 ## 访问本地化字符串
 
-可以使用`Lang`类加载本地化字符串。 它接受的参数是本地化键字符串，它由插件名称，本地化文件名和从文件返回的数组内的本地化字符串的路径组成。 下一个示例从*plugins/acme/blog/lang/en/lang.php*文件加载**app.name**字符串（该语言在`config/app.php`配置中使用`locale`参数设置 文件）：
+可以使用`Lang`类加载本地化字符串。 它接受的参数是本地化键字符串，它由插件名称，本地化文件名和从文件返回的数组内的本地化字符串的路径组成。 下一个示例从*plugins/acme/blog/lang/en/lang.php*文件加载**app.name**字符串(该语言在`config/app.php`配置中使用`locale`参数设置 文件)：
 
     echo Lang::get('acme.blog::lang.app.name');
 

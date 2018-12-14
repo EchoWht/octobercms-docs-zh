@@ -11,7 +11,7 @@
 <a name="users-and-permissions"></a>
 ## 用户和权限
 
-对权限系统控制对OctoberCMS实例的所有部分的访问。在最低级别，有超级用户(`is_superuser`标志设置为true的用户），管理员(用户）和权限。 `\Backend\Models\User`模型是容纳有关用户的所有重要信息的容器。
+对权限系统控制对OctoberCMS实例的所有部分的访问。在最低级别，有超级用户(`is_superuser`标志设置为true的用户)，管理员(用户)和权限。 `\Backend\Models\User`模型是容纳有关用户的所有重要信息的容器。
 
 超级用户可以访问系统中的所有内容，只能由他们自己或其他超级用户管理;即使管理员具有`backend.manage_users`权限，常规管理员也看不到它们，也不能编辑它们。
 
@@ -19,13 +19,13 @@
 
 检查用户是否具有特定权限时，将继承该用户角色的权限设置，然后由直接应用于该用户的任何权限进行覆盖。例如，如果用户**Bob**有角色**Genius**，角色**Genius**有`eat_cake`权限，但 **Bob** 有`eat_cake`权限专门设置为拒绝然后**Bob**不会去`eat_cake`。但是，如果**Bob**拥有直接分配给他的权限`eat_vegetables`，但**Genius**角色没有，那么**Bob**仍然会进入`eat_vegetables`。
 
-角色(`\Backend\Models\UserRole`）是权限分组，其名称和描述用于标识角色。管理员一次只能为其分配一个角色。可以将角色分配给多个管理员。 October默认发布了两个系统角色，`developer`和`publisher`。可以创建具有自己的权限组合的任意数量的自定义角色并将其应用于用户。
+角色(`\Backend\Models\UserRole`)是权限分组，其名称和描述用于标识角色。管理员一次只能为其分配一个角色。可以将角色分配给多个管理员。 October默认发布了两个系统角色，`developer`和`publisher`。可以创建具有自己的权限组合的任意数量的自定义角色并将其应用于用户。
 
-> **注意：** 具有`manage_users`权限的任何用户都可以管理角色的分配，但只能管理其他用户(而不是自己），并且只能由超级用户创建或修改角色。
+> **注意：** 具有`manage_users`权限的任何用户都可以管理角色的分配，但只能管理其他用户(而不是自己)，并且只能由超级用户创建或修改角色。
 
-> **注意：** 系统角色(`developer`，`publisher`，以及`is_system`设置为`true`的任何角色）不能通过后端更改其权限，它们在代码中定义，并附加到任何权限 它们也直接在代码中定义。
+> **注意：** 系统角色(`developer`，`publisher`，以及`is_system`设置为`true`的任何角色)不能通过后端更改其权限，它们在代码中定义，并附加到任何权限 它们也直接在代码中定义。
 
-组(`\Backend\Models\UserGroup`）是用于对管理员进行分组的组织工具，可以将它们视为“用户类别”。 它们与权限无关，严格用于组织目的。 例如，如果您想向“总部员工”组中的所有用户发送电子邮件，您只需执行`Mail::sendTo(UserGroup::where('code'，'head-office-staff'）)->get(）->users，'author.plugin::mail.important_notification'，$data）;`
+组(`\Backend\Models\UserGroup`)是用于对管理员进行分组的组织工具，可以将它们视为“用户类别”。 它们与权限无关，严格用于组织目的。 例如，如果您想向“总部员工”组中的所有用户发送电子邮件，您只需执行`Mail::sendTo(UserGroup::where('code'，'head-office-staff'))->get()->users，'author.plugin::mail.important_notification'，$data);`
 
 <a name="backend-auth-facade"></a>
 ## 后端用户帮助器
@@ -123,9 +123,9 @@
 <a name="features"></a>
 ## 限制对功能的访问
 
-后端用户模型具有允许确定用户是否具有特定权限的方法。 您可以使用此功能来限制后端用户界面的功能。 后端用户支持的权限方法是`hasAccess`和`hasPermission`。 这两种方法都有两个参数：权限键字符串（或键字符串数组）和一个可选参数，指示需要使用第一个参数列出的所有权限。
+后端用户模型具有允许确定用户是否具有特定权限的方法。 您可以使用此功能来限制后端用户界面的功能。 后端用户支持的权限方法是`hasAccess`和`hasPermission`。 这两种方法都有两个参数：权限键字符串(或键字符串数组)和一个可选参数，指示需要使用第一个参数列出的所有权限。
 
-如果用户是超级用户（`is_superuser`设置为`true`），`hasAccess`方法返回** true **表示任何权限。 `hasPermission`方法更严格，只有当用户在其帐户中或通过其角色实际具有指定的权限时才返回true。 通常，`hasAccess`是首选方法，因为它尊重超级用户的绝对能力。 以下示例显示如何使用控制器代码中的方法：
+如果用户是超级用户(`is_superuser`设置为`true`)，`hasAccess`方法返回** true **表示任何权限。 `hasPermission`方法更严格，只有当用户在其帐户中或通过其角色实际具有指定的权限时才返回true。 通常，`hasAccess`是首选方法，因为它尊重超级用户的绝对能力。 以下示例显示如何使用控制器代码中的方法：
 
     if ($this->user->hasAccess('acme.blog.*')) {
         // ...

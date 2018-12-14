@@ -1,21 +1,21 @@
 # 数据库特征
 
-- [Hashable（可哈希）](#hashable)
-- [Purgeable（可清除）](#purgeable)
-- [Encryptable（可加密）](#encryptable)
+- [Hashable(可哈希)](#hashable)
+- [Purgeable(可清除)](#purgeable)
+- [Encryptable(可加密)](#encryptable)
 - [Sluggable](#sluggable)
 - [Revisionable](#revisionable)
-- [Sortable（可排序）](#sortable)
+- [Sortable(可排序)](#sortable)
 - [简单的树](#simple-tree)
 - [嵌套树](#nested-tree)
 - [验证](#validation)
 - [软删除](#soft-deleting)
-- [Nullable（可为空）](#nullable)
+- [Nullable(可为空)](#nullable)
 
-Model特征用于实现通用功能。译者注：《Modern PHP(中文版)》书中第23页中，将trait译为`性状`，trait定义为是类的部分实现（即常量，属性和方法），可以混入一个或者多个现有的PHP类中，性状有两个作用：表明类可以做什么（像是接口）；提供模块化实现（像是类）
+Model特征用于实现通用功能。译者注：《Modern PHP(中文版)》书中第23页中，将trait译为`性状`，trait定义为是类的部分实现(即常量，属性和方法)，可以混入一个或者多个现有的PHP类中，性状有两个作用：表明类可以做什么(像是接口)；提供模块化实现(像是类)
 
 <a name="hashable"></a>
-## Hashable（可哈希）
+## Hashable(可哈希)
 
 在Model实例上首次设置属性时，会立即对哈希属性进行哈希处理。 要在Model实例中散列属性，请应用`October\Rain\Database\Traits\Hashable`特征并使用包含要散列的属性的数组声明`$hashable`属性。
 
@@ -30,7 +30,7 @@ Model特征用于实现通用功能。译者注：《Modern PHP(中文版)》书
     }
 
 <a name="purgeable"></a>
-## Purgeable（可清除）
+## Purgeable(可清除)
 
 创建或更新Model实例时，Purged属性不会保存到数据库中。 要清除Model实例中的属性，请应用`October\Rain\Database\Traits\Purgeable`特征并使用包含要清除的属性的数组声明`$purgeable`属性。
 
@@ -151,7 +151,7 @@ OctoberModel实例可以通过存储修订来记录值的变化历史。 要存�
 <a name="sortable"></a>
 ## Sortable
 
-排序Model实例将在“sort_order”中存储一个数值，该值维护集合中每个单独Model实例的排序顺序。 要存储Model实例的排序顺序，请应用`October\Rain\Database\Traits\Sortable`特征并确保您的模式已定义了要使用的列（例如：`$table->integer('sort_order')->default(0);`）。
+排序Model实例将在“sort_order”中存储一个数值，该值维护集合中每个单独Model实例的排序顺序。 要存储Model实例的排序顺序，请应用`October\Rain\Database\Traits\Sortable`特征并确保您的模式已定义了要使用的列(例如：`$table->integer('sort_order')->default(0);`)。
 
     class User extends Model
     {
@@ -171,7 +171,7 @@ OctoberModel实例可以通过存储修订来记录值的变化历史。 要存�
     // 分别设置记录1,2,3到3,2,1的顺序......
     $user->setSortableOrder([1, 2, 3], [3, 2, 1]);
     
-> **注意:** 如果将此特征添加到先前已存在数据（行）的Model实例中，则可能需要初始化该特征，然后该特征才能正常工作。 为此，手动更新每一行的`sort_order`列或对数据运行查询，将记录的`id`列复制到`sort_order`列（例如`UPDATE myvendor_myplugin_mymodelrecords SET sort_order = id`）。
+> **注意:** 如果将此特征添加到先前已存在数据(行)的Model实例中，则可能需要初始化该特征，然后该特征才能正常工作。 为此，手动更新每一行的`sort_order`列或对数据运行查询，将记录的`id`列复制到`sort_order`列(例如`UPDATE myvendor_myplugin_mymodelrecords SET sort_order = id`)。
 
 <a name="simple-tree"></a>
 ## Simple Tree

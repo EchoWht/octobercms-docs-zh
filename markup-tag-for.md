@@ -64,10 +64,10 @@
 
 变量 | 描述
 ------------- | -------------
-`loop.index` | 循环的当前迭代。 （1索引）
-`loop.index0` | 循环的当前迭代。 （0索引）
-`loop.revindex` |  循环结束时的迭代次数（1个索引）
-`loop.revindex0` | 循环结束时的迭代次数（0索引）
+`loop.index` | 循环的当前迭代。 (1索引)
+`loop.index0` | 循环的当前迭代。 (0索引)
+`loop.revindex` |  循环结束时的迭代次数(1个索引)
+`loop.revindex0` | 循环结束时的迭代次数(0索引)
 `loop.first` | 如果是第一次迭代，则为True
 `loop.last` |  如果是最后一次迭代，则为True
 `loop.length` | 集合的长度

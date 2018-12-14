@@ -90,7 +90,7 @@
         protected $dates = ['created_at', 'updated_at', 'disabled_at'];
     }
 
-当列被视为日期时，您可以将其值设置为UNIX时间戳，日期字符串（`Ymd`），日期时间字符串，当然还有`DateTime`/`Carbon`实例，日期值将自动 正确存储在您的数据库中：
+当列被视为日期时，您可以将其值设置为UNIX时间戳，日期字符串(`Ymd`)，日期时间字符串，当然还有`DateTime`/`Carbon`实例，日期值将自动 正确存储在您的数据库中：
 
     $user = User::find(1);
 
@@ -121,7 +121,7 @@
 
 模型上的`$casts`属性提供了将属性转换为常见数据类型的便捷方法。 `$casts`属性应该是一个数组，其中键是要转换的属性的名称，而值是您希望转换为列的类型。 支持的强制类型是：`integer`，`real`，`float`，`double`，`string`，`boolean`，`object`和`array`。
 
-例如，让我们将`is_admin`属性转换为一个布尔值，该属性作为整数（`0`或`1`）存储在我们的数据库中：
+例如，让我们将`is_admin`属性转换为一个布尔值，该属性作为整数(`0`或`1`)存储在我们的数据库中：
 
     class User extends Model
     {

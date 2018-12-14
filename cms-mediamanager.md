@@ -18,7 +18,7 @@
 
 要将Amazon S3与OctoberCMS一起使用，您应该在bucket和API用户中创建S3 bucket，文件夹。
 
-注册Amazon AWS账户或使用现有帐户登录AWS控制台。打开S3管理面板。创建一个新bucket并为其分配其名称（bucket的名称将是您的公共文件URL的一部分）
+注册Amazon AWS账户或使用现有帐户登录AWS控制台。打开S3管理面板。创建一个新bucket并为其分配其名称(bucket的名称将是您的公共文件URL的一部分)
 
 在bucket中创建 **media** 文件夹。文件夹名称无关紧要。此文件夹将是媒体库的根目录。
 
@@ -57,7 +57,7 @@
 **bucket** | your bucket name.
 **region** | the bucket region code, see below.
 
-您可以在存储区属性中的S3管理控制台中找到存储区域。 “属性”选项卡显示区域名称，例如Oregon。 S3驱动程序配置需要bucket代码。使用此表查找bucket的代码（您还可以查看[AWS文档]（http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region））
+您可以在存储区属性中的S3管理控制台中找到存储区域。 “属性”选项卡显示区域名称，例如Oregon。 S3驱动程序配置需要bucket代码。使用此表查找bucket的代码(您还可以查看[AWS文档](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region))
 
 Region | Code
 ------------- | -------------
@@ -109,7 +109,7 @@ Example storage configuration:
 Congratulations! Now you're ready to use Amazon S3 with OctoberCMS. Note that you can also configure Amazon CloudFront CDN  to work with your bucket. This topic is not covered in this document, please refer to [CloudFront documentation](http://aws.amazon.com/cloudfront/). After you configure CloudFront, you will need to update the **path** parameter in the storage configuration.
 
 <a name="rackspace-cdn"></a>
-## Configuring Rackspace CDN acces 这段先不翻了，国内网络应该用不了吧（🐶手动狗头）。
+## Configuring Rackspace CDN acces 这段先不翻了，国内网络应该用不了吧(🐶手动狗头)。
 
 To use Rackspace CDN with OctoberCMS, you should create Rackspace CDN container, folder in the container and API user.
 
@@ -244,7 +244,7 @@ There are several options that allow you to fine-tune the Media Manager. All of 
         });
     });
     
-**或者通过`Event` facade来全局监听（每个事件都以`media`为前缀，并将实例化的`Backend\Widgets\MediaManager`对象作为第一个参数传递）：**
+**或者通过`Event` facade来全局监听(每个事件都以`media`为前缀，并将实例化的`Backend\Widgets\MediaManager`对象作为第一个参数传递)：**
 
     Event::listen('media.file.rename', function($widget, $originalPath, $newPath) {
         // Update custom references to path here
@@ -253,4 +253,4 @@ There are several options that allow you to fine-tune the Media Manager. All of 
 <a name="troubleshooting"></a>
 ## 问题处理
 
-使用远程服务的最常见问题是SSL连接问题。如果您收到SSL错误，请确保您的服务器具有公共证书颁发机构（CA）的新SSL证书。
+使用远程服务的最常见问题是SSL连接问题。如果您收到SSL错误，请确保您的服务器具有公共证书颁发机构(CA)的新SSL证书。

@@ -29,7 +29,7 @@
         myplugin/
           components/
             componentname/       <=== 组件partials目录
-              default.htm        <=== 组件默认标记（可选）
+              default.htm        <=== 组件默认标记(可选)
             ComponentName.php    <=== 组件类文件
           Plugin.php
 
@@ -213,7 +213,7 @@
 <a name="page-list-properties"></a>
 ### 页面列表属性
 
-有时组件需要创建指向网站页面的链接。 例如，博客帖子列表包含指向博客帖子详细信息页面的链接。 在这种情况下，组件应该知道帖子详细信息页面文件名（然后它可以使用[页面Twig过滤器](../cms/markup#page-filter)）。 October包含一个用于创建动态下拉页面列表的帮助程序。 下一个示例定义了postPage属性，该属性显示了一个页面列表：
+有时组件需要创建指向网站页面的链接。 例如，博客帖子列表包含指向博客帖子详细信息页面的链接。 在这种情况下，组件应该知道帖子详细信息页面文件名(然后它可以使用[页面Twig过滤器](../cms/markup#page-filter))。 October包含一个用于创建动态下拉页面列表的帮助程序。 下一个示例定义了postPage属性，该属性显示了一个页面列表：
 
     public function defineProperties()
     {
@@ -430,11 +430,11 @@
 <a name="component-assets"></a>
 ## 使用组件注入页面资源
 
-组件可以将静态文件（CSS和JavaScript文件）注入它们所附加的页面或布局。 使用控制器的`addCss`和`addJs`方法将静态文件添加到CMS控制器。 它可以在组件的`onRun`方法中完成。 请阅读有关[在页面文章中注入静态文件](../cms/page#injecting-assets).的更多详细信息。 例：
+组件可以将静态文件(CSS和JavaScript文件)注入它们所附加的页面或布局。 使用控制器的`addCss`和`addJs`方法将静态文件添加到CMS控制器。 它可以在组件的`onRun`方法中完成。 请阅读有关[在页面文章中注入静态文件](../cms/page#injecting-assets).的更多详细信息。 例：
 
     public function onRun()
     {
         $this->addJs('/plugins/acme/blog/assets/javascript/blog-controls.js');
     }
 
-如果`addCss`和`addJs`方法参数中指定的路径以斜杠（/）开头，那么它将相对于网站根目录。 如果资产路径不以斜杠开头，则它相对于组件目录。
+如果`addCss`和`addJs`方法参数中指定的路径以斜杠(/)开头，那么它将相对于网站根目录。 如果资产路径不以斜杠开头，则它相对于组件目录。

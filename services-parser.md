@@ -5,7 +5,7 @@
 - [Twig模板解析器](#twig-parser)
 - [Bracket解析器](#bracket-parser)
 - [YAML配置解析器](#yaml-parser)
-- [初始化（INI）配置解析器](#ini-parser)
+- [初始化(INI)配置解析器](#ini-parser)
     - [October风格的INI](#october-ini)
 - [动态语法解析器](#dynamic-syntax-parser)
     - [查看模式](#syntax-view-mode)
@@ -84,7 +84,7 @@ October还附带了一个简单的括号模板解析器，作为Twig解析器的
 <a name="yaml-parser"></a>
 ## YAML配置解析器
 
-YAML（“YAML不是标记语言”）是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于October的后端开发，例如[表单字段](../backend/forms#form-fields)和[list column](../backend/lists##list-columns) 定义。 一些YAML的例子：
+YAML(“YAML不是标记语言”)是一种配置格式，类似于Markdown，它被设计成易于阅读且易于编写的格式，可转换为PHP数组。 实际上它几乎用于October的后端开发，例如[表单字段](../backend/forms#form-fields)和[list column](../backend/lists##list-columns) 定义。 一些YAML的例子：
 
     receipt:     Acme Purchase Invoice
     date:        2015-10-02
@@ -105,7 +105,7 @@ YAML（“YAML不是标记语言”）是一种配置格式，类似于Markdown�
     $yamlString = Yaml::render($array);
 
 <a name="ini-parser"></a>
-## 初始化（INI）配置解析器
+## 初始化(INI)配置解析器
 
 INI文件格式是用于定义简单配置文件的标准，通常由[主题模板内的组件](../cms/components)使用。 它可以被认为是YAML格式的堂兄，虽然与YAML不同，它非常简单，对拼写错误不太敏感，也不依赖于缩进。 它支持带有节的基本键值对，例如：
 
@@ -242,7 +242,7 @@ October使用*October风格的INI*扩展了此功能，以允许无限深度的�
 
 #### Rich editor
 
-富内容的文本输入（WYSIWYG）。
+富内容的文本输入(WYSIWYG)。
 
     {richeditor name="content" label="Main content"}Default text{/richeditor}
 
@@ -263,7 +263,7 @@ Markdown内容的文本输入。
 <!--
 #### Checkbox
 
-在内部呈现条件内容（仍在开发中）
+在内部呈现条件内容(仍在开发中)
 
     {checkbox name="showHeader" label="Show heading" default="true"}
         <p>This content will be shown if the checkbox is ticked</p>

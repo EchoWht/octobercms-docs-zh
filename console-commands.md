@@ -23,7 +23,7 @@
     - [启用DotEnv配置](#october-env-command)
     - [其他命令](#october-util-command)
 
-October包括几个命令行界面（CLI）命令和实用程序，允许安装October，更新它，以及加快开发过程。 控制台命令基于Laravel的[Artisan](http://laravel.com/docs/artisan) 工具。 您可以[开发自己的控制台命令](../console/development)或使用提供的[脚手架命令](../console/scaffolding)加速开发。
+October包括几个命令行界面(CLI)命令和实用程序，允许安装October，更新它，以及加快开发过程。 控制台命令基于Laravel的[Artisan](http://laravel.com/docs/artisan) 工具。 您可以[开发自己的控制台命令](../console/development)或使用提供的[脚手架命令](../console/scaffolding)加速开发。
 
 <a name="console-install"></a>
 ## 控制台安装
@@ -205,7 +205,7 @@ October包含许多实用程序命令。
 
 #### 编译资源
 
-编译输出JavaScript（js），StyleSheets（less），语言（lang）或所有（静态资源）文件。
+编译输出JavaScript(js)，StyleSheets(less)，语言(lang)或所有(静态资源)文件。
 
     php artisan october:util compile assets
     php artisan october:util compile lang

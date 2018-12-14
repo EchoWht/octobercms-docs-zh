@@ -1,6 +1,6 @@
 # {% placeholder %}
 
-`{％placeholder％}`标签将呈现一个占位符部分，通常[在Layouts中使用](../cms/layouts#placeholders)。 此标记将返回使用`{％put％}`标记添加的任何占位符内容，或任何已定义的默认内容（可选）。
+`{％placeholder％}`标签将呈现一个占位符部分，通常[在Layouts中使用](../cms/layouts#placeholders)。 此标记将返回使用`{％put％}`标记添加的任何占位符内容，或任何已定义的默认内容(可选)。
     
     {% placeholder name %}
 
@@ -49,7 +49,7 @@
 <a name="custom-placeholder-attributes"></a>
 ## 自定义属性
 
-`placeholder`标签接受两个可选属性 ＆mdash; `title`和`type`。 CMS本身不使用`title`属性，但可以被其他插件使用。 type属性管理占位符类型。 目前支持两种类型＆mdash; **text**和**html**。 文本占位符的内容在显示之前进行转义。 标题和类型属性应在占位符名称和`default`属性之后定义（如果已显示）。 例：
+`placeholder`标签接受两个可选属性 ＆mdash; `title`和`type`。 CMS本身不使用`title`属性，但可以被其他插件使用。 type属性管理占位符类型。 目前支持两种类型＆mdash; **text**和**html**。 文本占位符的内容在显示之前进行转义。 标题和类型属性应在占位符名称和`default`属性之后定义(如果已显示)。 例：
 
     {% placeholder ordering title="Ordering information" type="text" %}
 

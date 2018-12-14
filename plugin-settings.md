@@ -177,7 +177,7 @@
         'maxItems' => 20
     ];
 
-如果你想在不同的环境中使用单独的配置（例如：**dev**，**production**），只需在`config/author/plugin/environment/config.php`中创建另一个文件。 用环境名称替换**环境**。 这将与`config/author/plugin/config.php`合并。
+如果你想在不同的环境中使用单独的配置(例如：**dev**，**production**)，只需在`config/author/plugin/environment/config.php`中创建另一个文件。 用环境名称替换**环境**。 这将与`config/author/plugin/config.php`合并。
 
 例如:
 

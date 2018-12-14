@@ -72,7 +72,7 @@ October扩展了[Twig模板语言](http://twig.sensiolabs.org/documentation) ，
 
 1. 检查`foo`是否为数组，`bar`是否为有效元素。
 1. 如果没有，如果`foo`是一个对象，检查`bar`是否为有效属性。
-1. 如果没有，如果`foo`是一个对象，检查`bar`是一个有效的方法（即使bar是构造函数 - 使用`__construct（）`代替）。
+1. 如果没有，如果`foo`是一个对象，检查`bar`是一个有效的方法(即使bar是构造函数 - 使用`__construct()`代替)。
 1. 如果没有，如果`foo`是一个对象，检查`getBar`是否是一个有效的方法。
 1. 如果没有，如果`foo`是一个对象，检查`isBar`是否是一个有效的方法。
 1. 如果不是，则返回“null”值。

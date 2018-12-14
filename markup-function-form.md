@@ -12,7 +12,7 @@
 
 ## form_open()
 
-输出标准FORM开口标签（非AJAX）。
+输出标准FORM开口标签(非AJAX)。
 
     {{ form_open() }}
 

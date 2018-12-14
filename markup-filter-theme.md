@@ -36,9 +36,9 @@
 
 别名 | 描述
 ------------- | -------------
-`@jquery` | 引用后端使用的jQuery库（v2.1.3）。（JavaScript）
-`@framework` | AJAX框架附加，替换为`{％framework％}`标签。（JavaScript）
-`@framework.extras` | AJAX框架附加组件，替换为`{％framework extras％}`标签。 （JavaScript，CSS）
+`@jquery` | 引用后端使用的jQuery库(v2.1.3)。(JavaScript)
+`@framework` | AJAX框架附加，替换为`{％framework％}`标签。(JavaScript)
+`@framework.extras` | AJAX框架附加组件，替换为`{％framework extras％}`标签。 (JavaScript，CSS)
 
 相同的别名可用于JavaScript或CSS，例如`@framework.extras`。 在列表中至少需要一个带有文件扩展名的显式引用来确定使用哪个。
 

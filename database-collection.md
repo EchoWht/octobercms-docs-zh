@@ -11,7 +11,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-模型返回的所有多结果集都是`Illuminate\Database\Eloquent\Collection`对象的实例，包括通过`get`方法检索的结果或通过关系访问的结果。 `Collection`对象扩展了[base collection]（../ services/collections），因此它自然地继承了许多用于流畅地处理底层模型数组的方法。
+模型返回的所有多结果集都是`Illuminate\Database\Eloquent\Collection`对象的实例，包括通过`get`方法检索的结果或通过关系访问的结果。 `Collection`对象扩展了[base collection](../ services/collections)，因此它自然地继承了许多用于流畅地处理底层模型数组的方法。
 
 当然，所有集合也可以作为迭代器，允许您循环遍历它们，就像它们是简单的PHP数组一样：
 
@@ -149,7 +149,7 @@
     // 根据id排序
     $feed->add('comments', new Comment, 'id');
 
-    // 按名称排序（下面指定默认值）
+    // 按名称排序(下面指定默认值)
     $feed->add('posts', new Post);
 
     // 指定默认列和排序方向

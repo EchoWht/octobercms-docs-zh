@@ -62,12 +62,12 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 **$pageTitle** | 设置页面标题。 可以在action方法中设置。
 **$bodyClass** | 用于自定义布局的body类属性。 可以在控制器构造函数或操作方法中设置。
 **$guarded** | 控制器特定的方法，不能被称为动作。 可以在控制器构造函数中进行扩展。
-**$layout** | 为控制器视图指定自定义布局（请参阅下面的[layouts](#layouts)）。
+**$layout** | 为控制器视图指定自定义布局(请参阅下面的[layouts](#layouts))。
 
 <a name="actions-views-routing"></a>
 ## 动作，视图和路由(Actions, views and routing)
 
-公共控制器方法（称为**动作**）耦合到**视图文件**，其表示对应于动作的页面。 后端视图文件使用PHP语法。 **index.htm**视图文件内容的示例，对应于**index**动作方法：
+公共控制器方法(称为**动作**)耦合到**视图文件**，其表示对应于动作的页面。 后端视图文件使用PHP语法。 **index.htm**视图文件内容的示例，对应于**index**动作方法：
 
     <h1>Hello World</h1>
 
@@ -110,7 +110,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
         BackendMenu::setContext('Acme.Blog', 'blog', 'categories');
     }
 
-您可以使用控制器类的`$pageTitle`属性设置后端页面的标题（请注意，表单和列表行为可以执行此操作）：
+您可以使用控制器类的`$pageTitle`属性设置后端页面的标题(请注意，表单和列表行为可以执行此操作)：
 
     $this->pageTitle = 'Blog categories';
 
@@ -124,7 +124,7 @@ October后端实现了MVC模式。 控制器管理后端页面并实现表单和
 
 后端AJAX处理程序可以在控制器类或[小部件](widgets)中定义。 在控制器类中，AJAX处理程序被定义为公共方法，名称以`on`字符串开头：**onCreateTemplate**，**onGetTemplateList**等。
 
-后端AJAX处理程序可以返回数据数组，抛出异常或重定向到另一个页面（请参阅[AJAX事件处理程序](../ajax/handlers)）。 您可以使用`$this->vars`来设置变量，使用控制器的`makePartial`方法来呈现部分并将其内容作为响应数据的一部分返回。
+后端AJAX处理程序可以返回数据数组，抛出异常或重定向到另一个页面(请参阅[AJAX事件处理程序](../ajax/handlers))。 您可以使用`$this->vars`来设置变量，使用控制器的`makePartial`方法来呈现部分并将其内容作为响应数据的一部分返回。
 
     public function onOpenTemplate()
     {

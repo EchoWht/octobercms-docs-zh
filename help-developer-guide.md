@@ -117,7 +117,7 @@ PSR-2没有明确声明后续表达式应与右括号位于同一行。
 <a name="repository-naming"></a>
 ### 仓库命名
 
-将工作发布到版本管理库（例如Git）时，请使用以下命名作为约定。 插件应该用`-plugin`后缀和可选的`oc -`前缀命名。
+将工作发布到版本管理库(例如Git)时，请使用以下命名作为约定。 插件应该用`-plugin`后缀和可选的`oc -`前缀命名。
 
     blog-plugin
     oc-blog-plugin
@@ -139,7 +139,7 @@ PSR-2没有明确声明后续表达式应与右括号位于同一行。
 <a name="element-naming"></a>
 ### HTML元素命名
 
-Form元素名称应该使用snake_case（下划线）
+Form元素名称应该使用snake_case(下划线)
 
     <input name="first_name">
 
@@ -148,7 +148,7 @@ Form元素名称应该使用snake_case（下划线）
     <input name="ForumMember[first_name]">
     <input name="forum_member[first_name]">
 
-元素ID应为驼峰式或连字符（短划线）
+元素ID应为驼峰式或连字符(短划线)
 
     <div id="firstNameGroup">
         <input id="firstName">
@@ -158,7 +158,7 @@ Form元素名称应该使用snake_case（下划线）
         <input id="first-name">
     </div>
 
-元素类名称应使用连字符（破折号）
+元素类名称应使用连字符(破折号)
 
     <div class="form-group">
         <input class="form-control">
@@ -167,7 +167,7 @@ Form元素名称应该使用snake_case（下划线）
 <a name="view-naming"></a>
 ### 视图文件命名
 
-Partial视图应以下划线字符开头。 而Controller和Layout视图不以下划线字符开头。 由于视图通常位于单个文件夹中，因此下划线（_）和短划线（ - ）字符可用于组织文件。 短划线用作空格字符的替代。 下划线用作斜杠字符（文件夹或命名空间）的替代。
+Partial视图应以下划线字符开头。 而Controller和Layout视图不以下划线字符开头。 由于视图通常位于单个文件夹中，因此下划线(_)和短划线( - )字符可用于组织文件。 短划线用作空格字符的替代。 下划线用作斜杠字符(文件夹或命名空间)的替代。
 
     index_fancy-layout.htm       <== Index\Fancy layout
     form-with-sidebar.htm        <== Form with sidebar
@@ -345,8 +345,8 @@ Partial视图应以下划线字符开头。 而Controller和Layout视图不以�
 这些要点应以轻松的方式考虑：
 
 1. 在类中，属性和方法应声明为`protected`，以支持`private`。 所以所有类都可以用作基类。
-1. 如果属性包含单个值（不是数组），则使属性“public”而不是get/set方法。
-1. 如果属性包含集合（是一个数组），则使用get`getProperties`，`getProperty`和`setProperty`创建属性`protected`。
+1. 如果属性包含单个值(不是数组)，则使属性“public”而不是get/set方法。
+1. 如果属性包含集合(是一个数组)，则使用get`getProperties`，`getProperty`和`setProperty`创建属性`protected`。
 
 <a name="environment-config"></a>
 ## 环境配置
@@ -354,6 +354,6 @@ Partial视图应以下划线字符开头。 而Controller和Layout视图不以�
 <a name="strict-trans-tables"></a>
 ### 使用MySQL的严格模式
 
-当启用MySQL[STRICT_TRANS_TABLES模式](http://dev.mysql.com/doc/refman/5.0/en/sql-mode.html) 时，服务器将执行严格的数据类型验证。 强烈建议在开发期间在MySQL中启用此模式。 这允许您在代码使用enabled strict模式到达客户端服务器之前查找错误。 可以在my.cnf（Unix）或my.ini（Windows）文件中启用该模式：
+当启用MySQL[STRICT_TRANS_TABLES模式](http://dev.mysql.com/doc/refman/5.0/en/sql-mode.html) 时，服务器将执行严格的数据类型验证。 强烈建议在开发期间在MySQL中启用此模式。 这允许您在代码使用enabled strict模式到达客户端服务器之前查找错误。 可以在my.cnf(Unix)或my.ini(Windows)文件中启用该模式：
 
     sql_mode=STRICT_TRANS_TABLES

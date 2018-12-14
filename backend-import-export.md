@@ -193,11 +193,11 @@
 
 方法 | 描述
 ------------- | -------------
-`logUpdated()` | 更新记录时调用。（Called when a record is updated.）
-`logCreated()` | 当创建记录时调用。（Called when a record is created.）
+`logUpdated()` | 更新记录时调用。(Called when a record is updated.)
+`logCreated()` | 当创建记录时调用。(Called when a record is created.)
 `logError(rowIndex, message)` | 导入记录时出现问题。
 `logWarning(rowIndex, message)` | 用于提供软警告，例如修改值。
-`logSkipped(rowIndex, message)` | 在未导入（跳过）整行数据时使用。
+`logSkipped(rowIndex, message)` | 在未导入(跳过)整行数据时使用。
 
 <a name="export-model"></a>
 ## 定义导出模型

@@ -270,7 +270,7 @@
 **/combine** | 资源组合器生成器URL
 **/backend/system/updates** | 网站更新上下文
 **/backend/system/install** | 安装路径
-**/backend/backend/auth** | 后端认证路径（登录，注销）
+**/backend/backend/auth** | 后端认证路径(登录，注销)
 **october:up** | 运行所有挂起的迁移的CLI命令
 **october:update** | 用于触发更新过程的CLI命令
 

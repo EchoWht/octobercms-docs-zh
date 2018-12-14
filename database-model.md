@@ -449,7 +449,7 @@ S有时您可能希望仅实例化模型的新实例。 您可以使用`make`方
         $this->slug = Str::slug($this->name);
     }
     
-> **注意:** 如果尚未提交，则在`afterSave`模型事件中将无法使用[延迟绑定](relations#deferred-binding)（即：文件附件）创建的关系。 要访问未提交的绑定，请在关系上使用`withDeferred($sessionKey)` 方法。 示例： `$this->images->withDeferred(post('_session_key'))->get();`
+> **注意:** 如果尚未提交，则在`afterSave`模型事件中将无法使用[延迟绑定](relations#deferred-binding)(即：文件附件)创建的关系。 要访问未提交的绑定，请在关系上使用`withDeferred($sessionKey)` 方法。 示例： `$this->images->withDeferred(post('_session_key'))->get();`
 
 <a name="basic-usage"></a>
 ### 使用示例
@@ -496,7 +496,7 @@ S有时您可能希望仅实例化模型的新实例。 您可以使用`make`方
 
 由于模型[配备使用行为]](../services/behaviors)，它们可以使用静态`extend`方法进行扩展。 该方法采用闭包并将模型对象传递给它。
 
-在闭包内部，您可以向模型添加关系。 在这里，我们扩展`Backend\Models\User`模型以包含引用`Acme\Demo\Models\Profile`模型的配置文件（有一个）关系。
+在闭包内部，您可以向模型添加关系。 在这里，我们扩展`Backend\Models\User`模型以包含引用`Acme\Demo\Models\Profile`模型的配置文件(有一个)关系。
 
     \Backend\Models\User::extend(function($model) {
         $model->hasOne['profile'] = ['Acme\Demo\Models\Profile', 'key' => 'user_id'];

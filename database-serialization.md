@@ -15,7 +15,7 @@
 
 #### 将模型转换为数组
 
-要将模型及其加载的[relationships](relations)转换为数组，可以使用`toArray`方法。 此方法是递归的，因此所有属性和所有关系（包括关系关系）都将转换为数组：
+要将模型及其加载的[relationships](relations)转换为数组，可以使用`toArray`方法。 此方法是递归的，因此所有属性和所有关系(包括关系关系)都将转换为数组：
 
     $user = User::with('roles')->first();
 
@@ -50,7 +50,7 @@
 <a name="hiding-attributes-from-json"></a>
 ## 隐藏JSON中的属性
 
-有时，您可能希望限制模型数组或JSON表示中包含的属性（如密码）。 为此，请在模型中添加`$hidden`属性定义：
+有时，您可能希望限制模型数组或JSON表示中包含的属性(如密码)。 为此，请在模型中添加`$hidden`属性定义：
 
     <?php namespace Acme\Blog\Models;
 

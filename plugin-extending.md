@@ -82,7 +82,7 @@
         return '<a href="#">Sign in with Google!</a>';
     });
 
-> **注意**: 事件处理程序中的第一个参数将始终是调用对象（控制器）。
+> **注意**: 事件处理程序中的第一个参数将始终是调用对象(控制器)。
 
 上面的示例将输出以下标记：
 
@@ -245,7 +245,7 @@
 <a name="extending-component"></a>
 ### 扩展组件
 
-这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition]（components#component-class-definition）中执行。
+这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition](components#component-class-definition)中执行。
 
     class Topic extends ComponentBase
     {
@@ -261,7 +261,7 @@
         }
     }
 
-接下来，这将演示如何从[页面执行生命周期](../cms/layouts#dynamic-pages)中挂钩这个新事件。 当在`Topic`组件（上面）中调用`onPost`事件处理程序时，这将写入跟踪日志。
+接下来，这将演示如何从[页面执行生命周期](../cms/layouts#dynamic-pages)中挂钩这个新事件。 当在`Topic`组件(上面)中调用`onPost`事件处理程序时，这将写入跟踪日志。
 
     [topic]
     slug = "{{ :slug }}"

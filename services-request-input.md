@@ -39,7 +39,7 @@
 
     $input = Input::get('products.0.name');
 
-> **注意:** 一些JavaScript库（如Backbone）可以将输入作为JSON发送到应用程序。 您可以通过`Input::get`访问此数据，就像正常一样。
+> **注意:** 一些JavaScript库(如Backbone)可以将输入作为JSON发送到应用程序。 您可以通过`Input::get`访问此数据，就像正常一样。
 
 <a name="cookies"></a>
 ## Cookies

@@ -12,9 +12,9 @@
 <a name="configuration"></a>
 ## 配置
 
-队列允许您将处理耗时的任务（例如发送电子邮件）推迟到稍后的时间，从而大大加快了对应用程序的Web请求。
+队列允许您将处理耗时的任务(例如发送电子邮件)推迟到稍后的时间，从而大大加快了对应用程序的Web请求。
 
-队列配置文件存储在`config/queue.php`中。 在此文件中，您将找到包含的每个队列驱动程序的连接配置，例如数据库， [Beanstalkd](http://kr.github.com/beanstalkd), [IronMQ](http://iron.io), [Amazon SQS](http://aws.amazon.com/sqs), [Redis](http://redis.io),，null和同步（用于本地使用）驱动程序。 `null`队列驱动程序只是丢弃排队的作业，因此永远不会执行它们。
+队列配置文件存储在`config/queue.php`中。 在此文件中，您将找到包含的每个队列驱动程序的连接配置，例如数据库， [Beanstalkd](http://kr.github.com/beanstalkd), [IronMQ](http://iron.io), [Amazon SQS](http://aws.amazon.com/sqs), [Redis](http://redis.io),，null和同步(用于本地使用)驱动程序。 `null`队列驱动程序只是丢弃排队的作业，因此永远不会执行它们。
 
 ### 先决条件
 
@@ -63,7 +63,7 @@
 
 在此示例中，我们使用[Carbon](https://github.com/briannesbitt/Carbon) 日期库来指定我们希望分配给作业的延迟。 或者，您可以将要延迟的秒数作为整数传递。
 
-> **注意:** Amazon SQS服务的延迟限制为900秒（15分钟）。
+> **注意:** Amazon SQS服务的延迟限制为900秒(15分钟)。
 
 #### 队列和模型
 
@@ -135,7 +135,7 @@ October 包括一些将处理队列中的作业的[控制台命令](../console/c
 
     php artisan queue:work
 
-此任务启动后，它将继续运行，直到手动停止。 您可以使用[Supervisor]（#supervisor-configuration）等进程监视器来确保队列工作程序不会停止运行。
+此任务启动后，它将继续运行，直到手动停止。 您可以使用[Supervisor](#supervisor-configuration)等进程监视器来确保队列工作程序不会停止运行。
 
 队列工作进程将引导的应用程序状态存储在内存中。 它们在启动后无法识别代码中的更改。 部署更改时，请重新启动队列工作程序。
 
@@ -160,7 +160,7 @@ October 包括一些将处理队列中的作业的[控制台命令](../console/c
 
 #### 指定作业超时参数
 
-您还可以设置允许每个作业运行的时间长度（以秒为单位）:
+您还可以设置允许每个作业运行的时间长度(以秒为单位):
 
     php artisan queue:work --timeout=60
 

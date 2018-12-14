@@ -19,7 +19,7 @@
 **md** | 支持markdown语法
 
 
-文件后缀名会影响内容块在后端用户界面（使用WYSIWYG编辑器或纯文本编辑器）中的显示方式以及块在网站上的呈现方式。 Markdown块在显示之前会转换为HTML。
+文件后缀名会影响内容块在后端用户界面(使用WYSIWYG编辑器或纯文本编辑器)中的显示方式以及块在网站上的呈现方式。 Markdown块在显示之前会转换为HTML。
 
 <a name="rendering-content-blocks"></a>
 ## 渲染内容

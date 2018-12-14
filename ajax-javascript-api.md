@@ -15,11 +15,11 @@ JavaScript API比数据属性API更强大。 `request`方法可以与表单内�
     <form onsubmit="$(this).request('onProcess'); return false;">
         ...
 
-`request`方法的第二个参数是options对象。您可以使用与[jQuery AJAX函数]（http://api.jquery.com/jQuery.ajax/）兼容的任何选项和方法。以下选项特定于October框架：
+`request`方法的第二个参数是options对象。您可以使用与[jQuery AJAX函数](http://api.jquery.com/jQuery.ajax/)兼容的任何选项和方法。以下选项特定于October框架：
 
 选项 | 描述
 ------------- | -------------
-**update** | 一个对象，指定要更新的列表部分和页面元素（作为CSS选择器）：{'partial'：'#select'}。 如果选择器字符串前面带有“@”符号，则从服务器接收的内容将附加到元素，而不是替换现有内容。
+**update** | 一个对象，指定要更新的列表部分和页面元素(作为CSS选择器)：{'partial'：'#select'}。 如果选择器字符串前面带有“@”符号，则从服务器接收的内容将附加到元素，而不是替换现有内容。
 **confirm** | 确认字符串。 如果设置，则在发送请求之前显示确认。 如果用户单击“取消”按钮，则取消请求。
 **data** | 一个可选对象，指定要与表单数据一起发送到服务器的数据：{key：'value'}。
 **redirect** | string，指定在成功请求后将浏览器重定向到的URL。
@@ -39,7 +39,7 @@ JavaScript API比数据属性API更强大。 `request`方法可以与表单内�
 **handleConfirmMessage(message)** | 在请求用户确认时调用。
 **handleErrorMessage(message)** | 应在显示错误消息时调用。
 **handleValidationMessage(message, fields)** | 使用验证时，会聚焦第一个无效字段。
-**handleFlashMessage(message, type)** | 使用**flash**选项提供flash消息时调用（参见上文）。
+**handleFlashMessage(message, type)** | 使用**flash**选项提供flash消息时调用(参见上文)。
 **handleRedirectResponse(url)** | 当浏览器重定向到另一个位置时调用。
 
 <a name="javascript-examples"></a>
@@ -95,7 +95,7 @@ JavaScript API比数据属性API更强大。 `request`方法可以与表单内�
 <a name="global-events"></a>
 ## 全局AJAX事件
 
-AJAX框架在更新的元素，触发元素，窗体和窗口对象上触发多个事件。 无论使用哪种API（数据属性API或JavaScript API），都会触发事件。
+AJAX框架在更新的元素，触发元素，窗体和窗口对象上触发多个事件。 无论使用哪种API(数据属性API或JavaScript API)，都会触发事件。
 
 事件 | 描述
 ------------- | -------------

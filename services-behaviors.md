@@ -102,13 +102,13 @@ ExtendableTrait。
 这将返回一个关联数组[key => value]，其中键是动态属性名称
 而值是属性值。
 
-如果我们知道我们想要什么属性，我们可以简单地将键（属性名称）附加到函数：
+如果我们知道我们想要什么属性，我们可以简单地将键(属性名称)附加到函数：
 
     $model->getDynamicProperties()[$key];
 
 #### 动态创建方法
 
-可以通过调用“addDynamicMethod”并传递方法名称和可调用对象（如“Closure”）来为可扩展对象创建方法。
+可以通过调用“addDynamicMethod”并传递方法名称和可调用对象(如“Closure”)来为可扩展对象创建方法。
 
     Post::extend(function($model) {
         $model->addDynamicProperty('tagsCache', null);
@@ -173,7 +173,7 @@ ExtendableTrait。
 
 #### 继承类
 
-这个`Controller`类将实现`FormController`行为，然后这些方法将可用（混入）到类中。 我们将覆盖`otherMethod`方法。
+这个`Controller`类将实现`FormController`行为，然后这些方法将可用(混入)到类中。 我们将覆盖`otherMethod`方法。
 
     <?php namespace MyNamespace;
 
@@ -221,7 +221,7 @@ ExtendableTrait。
             $controller->implement[] = 'Backend.Behaviors.RelationController';
         }
 
-        // 定义属性（如果尚未定义）
+        // 定义属性(如果尚未定义)
         if (!isset($controller->relationConfig)) {
             $controller->addDynamicProperty('relationConfig');
         }
@@ -238,7 +238,7 @@ ExtendableTrait。
 
 ### 软定义
 
-如果行为类不存在（如特征trait），则会抛出*Class not found*错误。 在某些情况下，如果系统中存在某种行为，您可能希望禁止此错误，以用于条件实现。 您可以通过在类名的开头放置一个`@`符号来完成此操作。
+如果行为类不存在(如特征trait)，则会抛出*Class not found*错误。 在某些情况下，如果系统中存在某种行为，您可能希望禁止此错误，以用于条件实现。 您可以通过在类名的开头放置一个`@`符号来完成此操作。
 
     class User extends \October\Rain\Extension\Extendable
     {

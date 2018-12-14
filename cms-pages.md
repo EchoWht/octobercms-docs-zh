@@ -44,7 +44,7 @@
 
     url = "/blog/post/:post_id"
 
-您可以从页面PHP部分访问URL参数的方法（有关详细信息，请参阅[动态页面](#dynamic-pages)部分）例如：
+您可以从页面PHP部分访问URL参数的方法(有关详细信息，请参阅[动态页面](#dynamic-pages)部分)例如：
 
     url = "/blog/post/:post_id"
     ==
@@ -66,7 +66,7 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 
     url = "/blog/category/:category_id?10"
 
-您还可以使用正则表达式来验证参数。要添加验证表达式，请在参数名称（或问号）后面添加管道符号并指定表达式。表达式中不允许使用正斜杠符号。例子：
+您还可以使用正则表达式来验证参数。要添加验证表达式，请在参数名称(或问号)后面添加管道符号并指定表达式。表达式中不允许使用正斜杠符号。例子：
 
     url = "/blog/:post_id|^[0-9]+$/comments" - 对应例子 /blog/10/comments
     ...
@@ -91,7 +91,7 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 ## 动态页面
 
 Inside the [Twig section](cms-themes.md#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](cms-themes.md#php-section) or by [Components](components). In this article we describe how to prepare variables in the PHP section.
-在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup)）。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](components)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
+在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup))。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](components)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
 
 <a name="page-life-cycle"></a>
 ### 页面执行的生命周期
@@ -107,7 +107,7 @@ Inside the [Twig section](cms-themes.md#twig-section) of a page template you can
     ==
     <h3>{{ hello }}</h3>
 
-下一个例子更复杂。它展示了如何从数据库加载博客文章集合并在页面上显示（Acme\Blog插件是虚构的）
+下一个例子更复杂。它展示了如何从数据库加载博客文章集合并在页面上显示(Acme\Blog插件是虚构的)
 
     url = "/blog"
     ==
@@ -200,7 +200,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 <a name="injecting-assets"></a>
 ## 以编程方式注入页面资源
 
-如有需要，您可以使用控制器的`addCss`和`addJs`方法将资源（CSS和JavaScript文件）注入页面。它可以在页面的[PHP部分](cms-themes.md#php-section)中定义的`onStart`函数或[layout](layout)模板。 例如:
+如有需要，您可以使用控制器的`addCss`和`addJs`方法将资源(CSS和JavaScript文件)注入页面。它可以在页面的[PHP部分](cms-themes.md#php-section)中定义的`onStart`函数或[layout](layout)模板。 例如:
 
     function onStart()
     {
@@ -208,7 +208,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
         $this->addJs('assets/js/app.js');
     }
 
-如果`addCss`和`addJs`方法参数中指定的路径以斜杠（/）开头，那么它将相对于网站的根目录。如果文件路径不是以斜杠开头，那么它的路径相对于主题目录。
+如果`addCss`和`addJs`方法参数中指定的路径以斜杠(/)开头，那么它将相对于网站的根目录。如果文件路径不是以斜杠开头，那么它的路径相对于主题目录。
 
 注入的文件可以通过数组的形式，例如：
 

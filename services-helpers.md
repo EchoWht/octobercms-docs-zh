@@ -578,7 +578,7 @@ October包含各种PHP“帮助”函数。 其中许多函数在October内部�
 <a name="method-asset"></a>
 #### `asset()` 
 
-使用当前的请求方案（HTTP或HTTPS）为资源生成URL：
+使用当前的请求方案(HTTP或HTTPS)为资源生成URL：
 
     $url = asset('img/photo.jpg');
 

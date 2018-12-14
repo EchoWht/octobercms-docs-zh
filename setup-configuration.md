@@ -208,7 +208,7 @@ October和一些商店扩展会有实施两两种分支，以确保平台的整�
 
     'edgeUpdates' => false,
 
-> **注意:** 对于插件开发人员，我们建议通过插件设置页面为市场上列出的插件启用 **Test updates（更新测试）** 
+> **注意:** 对于插件开发人员，我们建议通过插件设置页面为市场上列出的插件启用 **Test updates(更新测试)** 
 
 > **注意:** 如果使用[Composer](../console/commands#console-install-composer)管理更新, 然后使用以下内容替换`composer.json`文件中的默认OctoberCMS要求，以便直接从开发分支上下载更新。
 
@@ -284,7 +284,7 @@ October支持使用特定hostname检测到的环境。您可以将这些主机�
 <a name="dotenv-configuration"></a>
 ### 切换为DotEnv配置
 
-作为[基本环境配置]（#base-environment）的替代方法，您可以在环境中放置常用值，而不是使用配置文件。然后使用[DotEnv]（https://github.com/vlucas/phpdotenv）语法访问配置。运行`october：env`命令将公共配置值移动到环境中:
+作为[基本环境配置](#base-environment)的替代方法，您可以在环境中放置常用值，而不是使用配置文件。然后使用[DotEnv](https://github.com/vlucas/phpdotenv)语法访问配置。运行`october：env`命令将公共配置值移动到环境中:
 
     php artisan october:env
 
