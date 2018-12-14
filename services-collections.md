@@ -251,7 +251,7 @@
 
     //[3, 4]
 
-对于“filter”的反转，请参见[reject](＃method-reject)方法。
+对于“filter”的反转，请参见[reject](#method-reject)方法。
 
 <a name="method-first"></a>
 #### `first()`
@@ -542,7 +542,7 @@
 
     //[2, 4, 6, 8, 10]
 
-> **注意:** 像大多数其他集合方法一样，`map`返回一个新的集合实例; 它不会修改他调用的原集合。 如果要转换原始集合，请使用[`transform`](＃method-transform)方法。
+> **注意:** 像大多数其他集合方法一样，`map`返回一个新的集合实例; 它不会修改他调用的原集合。 如果要转换原始集合，请使用[`transform`](#method-transform)方法。
 
 <a name="method-merge"></a>
 #### `merge()`
@@ -715,7 +715,7 @@
 
     //[1, 2]
 
-对于`reject`方法的反转，请参见[`filter`](＃method-filter)方法。
+对于`reject`方法的反转，请参见[`filter`](#method-filter)方法。
 
 <a name="method-reverse"></a>
 #### `reverse()` {.collection-method}
@@ -819,9 +819,9 @@
 
     //[1, 2, 3, 4, 5]
 
-已排序的集合保留原始数组键。 在这个例子中，我们使用[`values`](＃method-values)方法将键重置为连续编号的索引。
+已排序的集合保留原始数组键。 在这个例子中，我们使用[`values`](#method-values)方法将键重置为连续编号的索引。
 
-有关对嵌套数组或对象的集合进行排序，请参阅[`sortBy`](＃method-sortby)和[`sortByDesc`](＃method-sortbydesc)方法。
+有关对嵌套数组或对象的集合进行排序，请参阅[`sortBy`](#method-sortby)和[`sortByDesc`](#method-sortbydesc)方法。
 
 如果您的排序需求更高级，您可以使用自己的算法将回调传递给`sort`。 请参阅[`usort`](http://php.net/manual/en/function.usort.php#refsect1-function.usort-parameters)上的PHP文档，这是集合的`sort`方法调用的内容。 引擎盖。
 
@@ -848,7 +848,7 @@
         ]
     */
 
-已排序的集合保留原始数组键。 在这个例子中，我们使用[`values`](＃method-values)方法将键重置为连续编号的索引。
+已排序的集合保留原始数组键。 在这个例子中，我们使用[`values`](#method-values)方法将键重置为连续编号的索引。
 
 您还可以传递自己的回调以确定如何对集合值进行排序：
 
@@ -875,7 +875,7 @@
 <a name="method-sortbydesc"></a>
 #### `sortByDesc()` 
 
-此方法与[`sortBy`](＃method-sortby)方法具有相同的签名，但会以相反的顺序对集合进行排序。
+此方法与[`sortBy`](#method-sortby)方法具有相同的签名，但会以相反的顺序对集合进行排序。
 
 <a name="method-splice"></a>
 #### `splice()`
@@ -994,7 +994,7 @@
         ]
     */
 
-> **注意:** `toArray`还将其所有嵌套对象转换为数组。 如果要按原样获取底层数组，请改用[`all`](＃method-all)方法。
+> **注意:** `toArray`还将其所有嵌套对象转换为数组。 如果要按原样获取底层数组，请改用[`all`](#method-all)方法。
 
 <a name="method-tojson"></a>
 #### `toJson()`
@@ -1022,7 +1022,7 @@
 
     //[2, 4, 6, 8, 10]
 
-> **注意:** 与大多数其他集合方法不同，`transform`修改集合本身。 如果您希望改为创建新集合，请使用[`map`](＃method-map)方法。
+> **注意:** 与大多数其他集合方法不同，`transform`修改集合本身。 如果您希望改为创建新集合，请使用[`map`](#method-map)方法。
 
 <a name="method-unique"></a>
 #### `unique()` 
@@ -1037,7 +1037,7 @@
 
     //[1, 2, 3, 4]
 
-返回的集合保留原始数组键。 在这个例子中，我们使用[`values`](＃method-values)方法将键重置为连续编号的索引。
+返回的集合保留原始数组键。 在这个例子中，我们使用[`values`](#method-values)方法将键重置为连续编号的索引。
 
 处理嵌套数组或对象时，您可以指定用于确定唯一性的键：
 
@@ -1120,12 +1120,12 @@
     ]
     */
 
-检查项目值时，`where`方法使用严格的比较。 使用[`whereLoose`](＃where-loose)方法使用“松散”比较进行过滤。
+检查项目值时，`where`方法使用严格的比较。 使用[`whereLoose`](#where-loose)方法使用“松散”比较进行过滤。
 
 <a name="method-whereloose"></a>
 #### `whereLoose()`
 
-该方法与[`where`](＃method-where)方法具有相同的签名; 但是，所有值都使用“松散”比较进行比较。
+该方法与[`where`](#method-where)方法具有相同的签名; 但是，所有值都使用“松散”比较进行比较。
 
 <a name="method-zip"></a>
 #### `zip()`

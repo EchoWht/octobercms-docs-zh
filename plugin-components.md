@@ -77,7 +77,7 @@
 <a name="component-registration"></a>
 ### 组件注册
 
-必须通过覆盖[Plugin注册类](registration＃registration-file)中的`registerComponents`方法来注册组件。 这告诉CMS有关组件并提供**短名称**以便使用它。 注册组件的示例：
+必须通过覆盖[Plugin注册类](registration#registration-file)中的`registerComponents`方法来注册组件。 这告诉CMS有关组件并提供**短名称**以便使用它。 注册组件的示例：
 
     public function registerComponents()
     {
@@ -213,7 +213,7 @@
 <a name="page-list-properties"></a>
 ### 页面列表属性
 
-有时组件需要创建指向网站页面的链接。 例如，博客帖子列表包含指向博客帖子详细信息页面的链接。 在这种情况下，组件应该知道帖子详细信息页面文件名（然后它可以使用[页面Twig过滤器](../cms/markup＃page-filter)）。 October包含一个用于创建动态下拉页面列表的帮助程序。 下一个示例定义了postPage属性，该属性显示了一个页面列表：
+有时组件需要创建指向网站页面的链接。 例如，博客帖子列表包含指向博客帖子详细信息页面的链接。 在这种情况下，组件应该知道帖子详细信息页面文件名（然后它可以使用[页面Twig过滤器](../cms/markup#page-filter)）。 October包含一个用于创建动态下拉页面列表的帮助程序。 下一个示例定义了postPage属性，该属性显示了一个页面列表：
 
     public function defineProperties()
     {

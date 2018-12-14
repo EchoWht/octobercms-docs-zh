@@ -329,7 +329,7 @@ October将始终检查会话数据中的错误，并自动将它们绑定到视�
 <a name="rule-min"></a>
 #### min:_value_
 
-验证字段必须具有最小_value_。 字符串，数字和文件的评估方式与[`size`](＃rule-size)规则相同。
+验证字段必须具有最小_value_。 字符串，数字和文件的评估方式与[`size`](#rule-size)规则相同。
 
 <a name="rule-not-in"></a>
 #### not_in:_foo_,_bar_,...

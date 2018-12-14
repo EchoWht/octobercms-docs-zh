@@ -81,7 +81,7 @@
 
 ![image](https://github.com/octobercms/docs/blob/master/images/name-title-indicators.png?raw=true) {.img-responsive .frame}
 
-> **注意:** 该示例在记分板区域的上下文中给出。 如果使用[报告窗口小部件]（窗口小部件＃report-widgets）partial中的指示符，则不应使用类**scoreboard-item**。
+> **注意:** 该示例在记分板区域的上下文中给出。 如果使用[报告窗口小部件]（窗口小部件#report-widgets）partial中的指示符，则不应使用类**scoreboard-item**。
 
 <a name="pie-chart"></a>
 ## 饼形图

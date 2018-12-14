@@ -66,7 +66,7 @@
 **error** | 要在失败的结果上执行的JavaScript字符串。
 **confirm** | 发送请求之前要显示的确认消息。
 **redirect** | 成功结果后，重定向到URL。
-**update** | 成功更新的部分数组，格式如下：{'partial':'＃element'}。
+**update** | 成功更新的部分数组，格式如下：{'partial':'#element'}。
 **data** | 请求中包含的额外数据采用以下格式：{'myvar':'myvalue'}。
 
 ## form_close()

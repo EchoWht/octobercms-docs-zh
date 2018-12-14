@@ -180,7 +180,7 @@ The following fields are required in the form configuration file:
         fields:
             [...]
 
-可以使用[Relation Widget](＃widget-relation)或[Relation Manager](relations＃relationship-types)呈现相关模型中的字段。 例外是OneToOne或morphOne相关字段，必须定义为**relation[field]**，然后可以指定为模型的任何其他字段：
+可以使用[Relation Widget](#widget-relation)或[Relation Manager](relations#relationship-types)呈现相关模型中的字段。 例外是OneToOne或morphOne相关字段，必须定义为**relation[field]**，然后可以指定为模型的任何其他字段：
 
         user_name:
             label: User Name
@@ -617,9 +617,9 @@ The following fields are required in the form configuration file:
 **list**  |配置数组或对列表列定义文件的引用，请参阅[list columns](lists#list-columns)。
 **recordsPerPage**  |每页显示的记录，没有页面使用0。默认值：10
 **conditions**  |指定要应用于列表模型查询的raw where查询语句。
-**scope**  |指定**相关表单模型**中定义的[查询范围方法](../database/model＃query-scopes)以始终应用于列表查询。第一个参数将包含窗口小部件将其值附加到的模型，即父模型。
+**scope**  |指定**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以始终应用于列表查询。第一个参数将包含窗口小部件将其值附加到的模型，即父模型。
 **searchMode**  |将搜索策略定义为包含所有单词，任何单词或精确短语。支持的选项：all，any，exact。默认值：全部。
-**searchScope**  |指定在**相关表单模型**中定义的[查询范围方法](../database/model＃query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
+**searchScope**  |指定在**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
 
 <a name="widget-mediafinder"></a>
 ### Media finder
@@ -662,7 +662,7 @@ The following fields are required in the form configuration file:
 **nameFrom** | 用于显示关系标签的模型属性名称。 默认值：名称。
 **select** | 用于名称的自定义SQL select语句。
 **emptyOption** | 没有可用选择时显示的文本。
-**scope** | 指定**相关表单模型**中定义的[查询范围方法](../database/model＃query-scopes)以始终应用于列表查询。
+**scope** | 指定**相关表单模型**中定义的[查询范围方法](../database/model#query-scopes)以始终应用于列表查询。
 
 <a name="widget-repeater"></a>
 ### Repeater
@@ -793,7 +793,7 @@ The following fields are required in the form configuration file:
             - Blue
             - Orange
 
-您可以使用名为**relation**的`mode`，其中字段名称是[多对多关系](../database/relations＃many-to-many)。 这将通过关系自动获取和分配标签。 如果支持自定义标记，则会在分配之前创建它们。
+您可以使用名为**relation**的`mode`，其中字段名称是[多对多关系](../database/relations#many-to-many)。 这将通过关系自动获取和分配标签。 如果支持自定义标记，则会在分配之前创建它们。
 
     tags:
         type: taglist

@@ -766,7 +766,7 @@ October提供了为关系添加新模型的便捷方法。 主要模型可以添
         'message' => 'A new comment.',
     ]);
 
-在使用`create`方法之前，请务必查看属性[mass assignment](model＃mass-assignment)的文档，因为PHP数组中的属性受模型的“可填充”定义的限制。
+在使用`create`方法之前，请务必查看属性[mass assignment](model#mass-assignment)的文档，因为PHP数组中的属性受模型的“可填充”定义的限制。
 
 <a name="inserting-dynamic-property"></a>
 ### 通过动态属性插入
@@ -886,7 +886,7 @@ October提供了为关系添加新模型的便捷方法。 主要模型可以添
 <a name="deferred-session-key"></a>
 ### 生成会话密钥session key
 
-延迟绑定需要会话密钥。 您可以将会话密钥视为事务标识符。 应使用相同的会话密钥来绑定/解除绑定关系并保存主模型。 您可以使用PHP`unitqid()`函数生成会话密钥。 请注意，[表单助手](../cms/markup＃forms)会自动生成包含会话密钥的隐藏字段。
+延迟绑定需要会话密钥。 您可以将会话密钥视为事务标识符。 应使用相同的会话密钥来绑定/解除绑定关系并保存主模型。 您可以使用PHP`unitqid()`函数生成会话密钥。 请注意，[表单助手](../cms/markup#forms)会自动生成包含会话密钥的隐藏字段。
 
     $sessionKey = uniqid('session_key', true);
 

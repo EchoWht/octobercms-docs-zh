@@ -52,7 +52,7 @@ October提供SMTP，Mailgun，SparkPost，Amazon SES，PHP的`mail`功能和`sen
 <a name="sending-mail"></a>
 ## 发送邮件
 
-要发送消息，请在`Mail`facade上使用`send`方法，该方法接受三个参数。 第一个参数是一个唯一的*邮件代码*，用于定位[邮件视图](＃mail-views)或[邮件模板](#mail-templates)。 第二个参数是您希望传递给视图的数据数组。 第三个参数是一个`Closure`回调函数，它接收一个消息实例，允许您自定义邮件消息的收件人，主题和其他方面：
+要发送消息，请在`Mail`facade上使用`send`方法，该方法接受三个参数。 第一个参数是一个唯一的*邮件代码*，用于定位[邮件视图](#mail-views)或[邮件模板](#mail-templates)。 第二个参数是您希望传递给视图的数据数组。 第三个参数是一个`Closure`回调函数，它接收一个消息实例，允许您自定义邮件消息的收件人，主题和其他方面：
 
     //这些变量在消息中以Twig的形式提供
     $vars = ['name' => 'Joe', 'user' => 'Mary'];
@@ -260,7 +260,7 @@ Collection | 如上所述的收件人对象的集合。
 
 可以使用邮件视图或邮件模板在October发送邮件。 邮件视图由 **/views** 目录中文件系统中的应用程序或插件提供。 而使用后端界面通过 *系统>邮件模版* 管理邮件模板。 所有邮件消息都支持使用Twig进行标记。
 
-可选地，邮件视图可以[使用`registerMailTemplates`方法[在插件注册文件中注册](＃mail-template-registration)。 这将自动生成邮件模板，并允许使用后端界面对其进行自定义。
+可选地，邮件视图可以[使用`registerMailTemplates`方法[在插件注册文件中注册](#mail-template-registration)。 这将自动生成邮件模板，并允许使用后端界面对其进行自定义。
 
 <a name="mail-views"></a>
 ### 邮件视图
@@ -330,7 +330,7 @@ Collection | 如上所述的收件人对象的集合。
 
 #### 自动生成的模板
 
-邮件模板也可以通过[已注册的邮件视图](＃mail-template-registration)自动生成。 **code**值与邮件视图路径相同(例如：author.plugin：mail.message)。 如果邮件视图定义了 **layout** 参数，则将使用此参数为模板提供布局。
+邮件模板也可以通过[已注册的邮件视图](#mail-template-registration)自动生成。 **code**值与邮件视图路径相同(例如：author.plugin：mail.message)。 如果邮件视图定义了 **layout** 参数，则将使用此参数为模板提供布局。
 
 首次保存生成的模板时，将在为指定的代码发送邮件时使用自定义内容。 在此上下文中，邮件视图可以被视为*默认视图*。
 

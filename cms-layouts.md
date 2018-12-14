@@ -20,7 +20,7 @@
     </html>
 
 To use a layout for a [page](cms-pages.md) the page should refer the layout file name (without extension) in the [Configuration](cms-themes.md#configuration-section) section. Remember that if you refer a layout from a [subdirectory](cms-themes.md#subdirectories) you should specify the subdirectory name. Example page template using the default.htm layout:
-在[page页面](cms-pages.md)中使用布局时，page应该在[Configuration](cms-themes.md#configuration-section)部分中引用布局文件名称（不带扩展名）。请记住，如果从[子目录](cms-themes.md＃subdirectories)引用布局，则应指定子目录名称。使用default.htm布局的示例页面模板：
+在[page页面](cms-pages.md)中使用布局时，page应该在[Configuration](cms-themes.md#configuration-section)部分中引用布局文件名称（不带扩展名）。请记住，如果从[子目录](cms-themes.md#subdirectories)引用布局，则应指定子目录名称。使用default.htm布局的示例页面模板：
     url = "/"
     layout = "default"
     ==

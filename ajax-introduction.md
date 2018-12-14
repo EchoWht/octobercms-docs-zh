@@ -64,11 +64,11 @@ AJAX框架在您的[CMS主题](../cms/themes)中是可选的，要使用您应�
 
     结果是 {{ result }}
 
-**onTest**处理程序方法使用`input` 的[helper方法](../services/helper＃method-input)获取表单数据，结果传递给`result`页面变量。
+**onTest**处理程序方法使用`input` 的[helper方法](../services/helper#method-input)获取表单数据，结果传递给`result`页面变量。
 
     function onTest()
     {
         $this->page['result'] = input('value1') + input('value2');
     }
 
-这个例子可以这样理解：“当提交表单时，向**onTest**处理程序发出一个AJAX请求。当处理程序完成时，渲染**mypartial**partial并将其内容注入**＃myDiv**元素。“
+这个例子可以这样理解：“当提交表单时，向**onTest**处理程序发出一个AJAX请求。当处理程序完成时，渲染**mypartial**partial并将其内容注入**#myDiv**元素。“

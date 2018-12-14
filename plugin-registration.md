@@ -100,7 +100,7 @@
 **boot()** | 引导方法，在请求路由之前调用。
 **registerMarkupTags()** | 注册可在CMS中使用的[其他标记标记](#extended-twig)。
 **registerComponents()** | 注册此插件的[组件](components#component-registration)。
-**registerNavigation()** | 注册此插件的[后端导航菜单项](＃navigation-menus)。
+**registerNavigation()** | 注册此插件的[后端导航菜单项](#navigation-menus)。
 **registerPermissions()** | 注册此插件的[后端权限](../backend/users#permission-registration)。
 **registerSettings()** | 注册此插件的[后端设置链接](settings#link-registration)。
 **registerFormWidgets()** | 注册此插件的[后端表单小部件](../backend/widgets#form-widget-registration)。

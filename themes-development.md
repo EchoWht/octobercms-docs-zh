@@ -27,8 +27,8 @@
 **description** | 主题描述，必填。
 **previewImage** | 自定义预览图像，相对于主题目录的路径，例如：`assets/images/preview.png`，可选。
 **code** | 主题代码，可选。 该值在OctoberCMS市场上用于初始化主题代码值。 如果未提供主题代码，则主题目录名称将用作代码。 从Marketplace安装主题时，代码将用作新的主题目录名称。
-**form** | 表单字段定义文件的配置数组或引用，用于[主题自定义](＃customizeization)，可选。
-**require** | 用于[主题依赖项](＃dependencies)的插件名称数组，可选。
+**form** | 表单字段定义文件的配置数组或引用，用于[主题自定义](#customizeization)，可选。
+**require** | 用于[主题依赖项](#dependencies)的插件名称数组，可选。
 
 主题信息文件的示例：
 
@@ -70,7 +70,7 @@
 <a name="customization"></a>
 ## 主题定制
 
-主题可以通过在主题信息文件中定义`form`键来支持配置值。 此键应包含配置数组或对表单字段定义文件的引用，有关详细信息，请参阅[表单字段](../backend/forms＃form-fields )。
+主题可以通过在主题信息文件中定义`form`键来支持配置值。 此键应包含配置数组或对表单字段定义文件的引用，有关详细信息，请参阅[表单字段](../backend/forms#form-fields )。
 
 以下是如何定义名为**site_name**的网站名称配置字段的示例：
 
@@ -84,7 +84,7 @@
                 comment: The website name as it should appear on the front-end
                 default: My Amazing Site!
 
-然后可以使用名为`this.theme`的[默认页面变量](../cms/markup＃default-variables)在任何Theme模板中访问该值。
+然后可以使用名为`this.theme`的[默认页面变量](../cms/markup#default-variables)在任何Theme模板中访问该值。
 
     <h1>Welcome to {{ this.theme.site_name }}!</h1>
 

@@ -1,26 +1,26 @@
 # 后端列表
 
-- [简介](＃介绍)
+- [简介](#介绍)
 - [配置列表行为](#configuration-list)
     - [添加工具栏](#additional-toolbar)
-    - [过滤列表](＃adding-filters)
-- [定义列表列](＃list-columns)
-    - [列选项](＃column-options)
-- [可用列类型](＃column-types)
+    - [过滤列表](#adding-filters)
+- [定义列表列](#list-columns)
+    - [列选项](#column-options)
+- [可用列类型](#column-types)
 - [显示列表](#shisting-list)
-- [多个列表定义](＃multiple-list-definitions)
-- [使用列表过滤器](＃list-filters)
-    - [范围选项](＃filter-scope-options)
-    - [可用范围类型](＃范围类型)
+- [多个列表定义](#multiple-list-definitions)
+- [使用列表过滤器](#list-filters)
+    - [范围选项](#filter-scope-options)
+    - [可用范围类型](#范围类型)
 - [扩展列表行为](#extend-list-behavior)
-    - [覆盖控制器动作](＃覆盖动作)
-    - [覆盖视图](＃覆盖视图)
+    - [覆盖控制器动作](#覆盖动作)
+    - [覆盖视图](#覆盖视图)
     - [扩展列定义](#extend-list-columns)
     - [注入CSS class](#inject-row-class)
     - [扩展过滤器范围](#extend-filter-scopes)
     - [扩展模型查询](#extend-model-query)
     - [扩展记录集](#extend-records-collection)
-    - [自定义列类型](＃custom-column-types)
+    - [自定义列类型](#custom-column-types)
 
 <a name="introduction"></a>
 ## 简介
@@ -43,7 +43,7 @@
 <a name="configuring-list"></a>
 ## 配置列表行为
    
-`$listConfig`属性中引用的配置文件以YAML格式定义。 该文件应放入控制器的[views目录](controllers-views-ajax/＃introduction)。 以下是典型列表行为配置文件的示例:
+`$listConfig`属性中引用的配置文件以YAML格式定义。 该文件应放入控制器的[views目录](controllers-views-ajax/#introduction)。 以下是典型列表行为配置文件的示例:
 
     # ===================================
     #  List Behavior Config
@@ -59,14 +59,14 @@
 字段 | 描述
 ------------- | -------------
 **title**| 此列表的标题。
-**list**| 配置数组或对列列定义文件的引用，请参阅[列表列](＃list-columns)。
+**list**| 配置数组或对列列定义文件的引用，请参阅[列表列](#list-columns)。
 **modelClass**| 模型类名称，列表数据从此模型加载。
 
 下面列出的配置选项是可选的。
 
 选项 | 描述
 ------------- | -------------
-**filter**| 过滤器配置，请参阅[过滤列表](＃adds-filters)。
+**filter**| 过滤器配置，请参阅[过滤列表](#adds-filters)。
 **recordUrl**| 将每个列表记录链接到另一个页面。例如:**users/update:id**。 `:id`部分被记录标识符替换。这允许您链接列表行为和[表单行为](form)。
 **recordOnClick**| 单击记录时要执行的自定义JavaScript代码。
 **noRecordsMessage**| 当没有找到记录时显示的消息，可以参考[本地化字符串](../plugin/localization)。
@@ -104,10 +104,10 @@
 ------------- | -------------
 **prompt**| 当没有活动搜索时显示的占位符，可以参考[本地化字符串](../插件/本地化)。
 **mode**| 将搜索策略定义为包含所有单词，任何单词或精确短语。 支持的选项:all，any，exact。 默认值:全部。
-**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model＃query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
+**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于搜索查询，第一个参数将包含搜索项。
 **searchOnEnter**| 将此设置为true将使搜索小部件在开始搜索之前等待按下Enter键(默认行为是，在有人在搜索字段中输入内容然后暂停一小段时间后，它会自动开始搜索)。 默认值:false。
 
-上面提到的工具栏按钮部分应该包含带有一些按钮的工具栏控件定义。 部分还可以包含带有图表的[记分板控件](控制＃记分板)。 使用**New Post**按钮引用由[form behavior](表单)提供的**create**操作的工具栏部分示例:
+上面提到的工具栏按钮部分应该包含带有一些按钮的工具栏控件定义。 部分还可以包含带有图表的[记分板控件](控制#记分板)。 使用**New Post**按钮引用由[form behavior](表单)提供的**create**操作的工具栏部分示例:
 
     <div data-control="toolbar">
         <a
@@ -156,7 +156,7 @@
 选项 | 描述
 ------------- | -------------
 **label**| 向用户显示列表列时的名称。
-**type**| 定义如何呈现此列(请参阅下面的[列类型](＃column-types))。
+**type**| 定义如何呈现此列(请参阅下面的[列类型](#column-types))。
 **default**| 如果value为空，则指定列的默认值。
 **searchable**| 在列表搜索结果中包含此列。默认值:false。
 **invisible**| 指定默认情况下是否隐藏此列。默认值:false。
@@ -340,7 +340,7 @@
 <a name="displaying-list"></a>
 ## 显示列表
 
-通常列表显示在索引[view](controllers-views-ajax/＃introduction)文件中。 由于列表包含工具栏，因此视图文件将仅包含单个`listRender`方法调用。
+通常列表显示在索引[view](controllers-views-ajax/#introduction)文件中。 由于列表包含工具栏，因此视图文件将仅包含单个`listRender`方法调用。
 
     <?= $this->listRender() ?>
 
@@ -361,7 +361,7 @@
 <a name="list-filters"></a>
 ## 使用列表过滤器
 
-可以通过[添加过滤器定义](＃adds-filters)过滤列表配置来过滤列表。 类似地，过滤器由它们自己的包含过滤器范围的配置文件驱动，每个范围是可以过滤列表的方面。 下一个示例显示了过滤器定义文件的典型内容。
+可以通过[添加过滤器定义](#adds-filters)过滤列表配置来过滤列表。 类似地，过滤器由它们自己的包含过滤器范围的配置文件驱动，每个范围是可以过滤列表的方面。 下一个示例显示了过滤器定义文件的典型内容。
 
     # ===================================
     # Filter Scope Definitions
@@ -418,9 +418,9 @@
 选项 | 描述
 ------------- | -------------
 **label**| 向用户显示过滤器范围时的名称。
-**type**| 定义如何呈现此范围(请参阅下面的[范围类型](＃scope-types))。 默认值:组。
+**type**| 定义如何呈现此范围(请参阅下面的[范围类型](#scope-types))。 默认值:组。
 **conditions**| 指定要应用于列表模型查询的raw where查询语句，`:filtered`参数表示已过滤的值。
-**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model＃query-scopes)以应用于列表查询，第一个参数将包含过滤的值。
+**scope**| 指定在**列表模型**中定义的[查询范围方法](../database/model#query-scopes)以应用于列表查询，第一个参数将包含过滤的值。
 **options**| 如果通过多个项过滤使用的选项，此选项可以在`modelClass`模型中指定数组或方法名称。
 **nameFrom**| 如果按多个项过滤，则显示名称的属性，取自`modelClass`模型的所有记录。
 **default**| 可以是整数(开关，复选框，数字)或数组(组，日期范围，数字范围)或字符串(日期)。
@@ -570,13 +570,13 @@
 
 有时您可能希望修改默认列表行为，有几种方法可以执行此操作。
 
-- [覆盖控制器方法](＃overriding-action)
-- [覆盖视图](＃overriding-views)
+- [覆盖控制器方法](#overriding-action)
+- [覆盖视图](#overriding-views)
 - [扩展列定义](#extend-list-columns)
 - [注入CSS行类](#inject-row-class)
 - [扩展过滤器范围](#extend-filter-scopes)
 - [扩展模型查询](#extend-model-query)
-- [自定义列类型](＃custom-column-types)
+- [自定义列类型](#custom-column-types)
 
 <a name="overriding-action"></a>
 ### 覆盖控制器方法
@@ -676,7 +676,7 @@ $list对象提供以下方法。
 **addColumns**| 将新列添加到列表中
 **removeColumn**| 从列表中删除列
 
-每个方法都采用类似于[列列配置](＃list-columns)的列数组。
+每个方法都采用类似于[列列配置](#list-columns)的列数组。
 
 <a name="inject-row-class"></a>
 ### 注入CSS行 class
@@ -709,7 +709,7 @@ $list对象提供以下方法。
             ]);
         });
 
-> 提供的作用域数组类似于[列出过滤器配置](＃list-filters)。
+> 提供的作用域数组类似于[列出过滤器配置](#list-filters)。
 
 您还可以在内部将过滤器范围扩展到控制器类，只需覆盖`listFilterExtendScopes`方法。
 
@@ -740,7 +740,7 @@ $filter对象提供了以下方法。
         $query->withTrashed();
     }
 
-[列表过滤器](＃list-filters)模型查询也可以通过覆盖`listFilterExtendQuery`方法进行扩展:
+[列表过滤器](#list-filters)模型查询也可以通过覆盖`listFilterExtendQuery`方法进行扩展:
 
     public function listFilterExtendQuery($query, $scope)
     {

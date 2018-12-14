@@ -91,7 +91,7 @@
 
     {{ users.appends({sort: 'votes'}).render|raw }}
 
-如果您希望在分页器的URL中附加“哈希片段”，可以使用`fragment`方法。 例如，要将`＃foo`附加到每个分页链接的末尾，请对`fragment`方法进行以下调用：
+如果您希望在分页器的URL中附加“哈希片段”，可以使用`fragment`方法。 例如，要将`#foo`附加到每个分页链接的末尾，请对`fragment`方法进行以下调用：
 
     {{ users.fragment('foo').render|raw }}
 

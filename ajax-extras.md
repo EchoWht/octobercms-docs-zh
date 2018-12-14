@@ -34,7 +34,7 @@ T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的
 <a name="throw-validation-exception"></a>
 ### 抛出一个校验错误
 
-在服务器端AJAX处理程序中，您可以使用`ValidationException`类抛出[validation exception](../services/error-log＃validation-exception)以使字段无效，其中第一个参数是数组。 该数组应使用键的字段名称和值的错误消息。
+在服务器端AJAX处理程序中，您可以使用`ValidationException`类抛出[validation exception](../services/error-log#validation-exception)以使字段无效，其中第一个参数是数组。 该数组应使用键的字段名称和值的错误消息。
 
     function onSubmit()
     {

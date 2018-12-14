@@ -10,7 +10,7 @@
 <a name="ajax-handlers"></a>
 ## AJAX处理程序
 
-AJAX事件处理程序是PHP函数，可以在页面或布局[PHP部分](../cms/themes＃php-section)或[components](../cms/components)中定义。处理程序名称应具有以下格式：`onName`。所有处理程序都支持使用[更新partials](../ajax/update-partials)作为AJAX请求的一部分。
+AJAX事件处理程序是PHP函数，可以在页面或布局[PHP部分](../cms/themes#php-section)或[components](../cms/components)中定义。处理程序名称应具有以下格式：`onName`。所有处理程序都支持使用[更新partials](../ajax/update-partials)作为AJAX请求的一部分。
 
     function onSubmitContactForm()
     {
@@ -30,7 +30,7 @@ AJAX事件处理程序是PHP函数，可以在页面或布局[PHP部分](../cms/
     <!-- JavaScript API -->
     <script> $.request('onSubmitContactForm') </script>
 
-如果两个组件注册相同的处理程序名称，建议在处理程序前加上[组件短名称或别名](../cms/components＃aliases)。如果组件使用** mycomponent **的别名，则可以使用`mycomponent::onName`来定位处理程序。
+如果两个组件注册相同的处理程序名称，建议在处理程序前加上[组件短名称或别名](../cms/components#aliases)。如果组件使用** mycomponent **的别名，则可以使用`mycomponent::onName`来定位处理程序。
 
     <button data-request="mycomponent::onSubmitContactForm">Go</button>
 
@@ -97,14 +97,14 @@ AJAX事件处理程序是PHP函数，可以在页面或布局[PHP部分](../cms/
 <a name="before-handler"></a>
 ## 在处理程序之前运行代码
 
-有时您可能希望在处理程序执行之前执行代码。将[onInit]函数定义为[页面执行生命周期](../cms/layouts＃dynamic-pages)的一部分，允许代码在每个AJAX处理程序之前运行。
+有时您可能希望在处理程序执行之前执行代码。将[onInit]函数定义为[页面执行生命周期](../cms/layouts#dynamic-pages)的一部分，允许代码在每个AJAX处理程序之前运行。
 
     function onInit()
     {
        //来自页面或者布局
     }
 
-您可以在[组件类](../plugin/components＃page-cycle-init)或[后台小部件类](../backend/widgets)中定义`init`方法。
+您可以在[组件类](../plugin/components#page-cycle-init)或[后台小部件类](../backend/widgets)中定义`init`方法。
 
     function init()
     {

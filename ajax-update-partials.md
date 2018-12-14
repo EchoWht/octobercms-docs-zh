@@ -68,7 +68,7 @@
         ];
     }
 
-> **注意:** 键名必须以标识符`＃`或类`.`字符开头，以触发内容更新。(译者注：只用id或者class会不会扩展性不够高呢？)
+> **注意:** 键名必须以标识符`#`或类`.`字符开头，以触发内容更新。(译者注：只用id或者class会不会扩展性不够高呢？)
 
 <a name="passing-variables"></a>
 ## 将变量传递给partials
@@ -77,7 +77,7 @@
 
 - 在页面或布局[PHP部分](../cms/themes#php-section)中使用`$this []`。
 - 在[组件类](../plugin/components#ajax-handlers)中使用`$this-> page []`。
-- 在[后端区域](../backend/controllers-ajax＃ajax)中使用`$this-> vars []`。
+- 在[后端区域](../backend/controllers-ajax#ajax)中使用`$this-> vars []`。
 
 这些示例将为每个上下文的部分partials**结果**变量：
 

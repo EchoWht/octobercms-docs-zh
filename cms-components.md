@@ -14,12 +14,12 @@
 
 本文介绍了组件的基础知识，并没有解释如何使用[AJAX组件](../ajax/handlers)或[开发组件](../plugin/components)作为插件的一部分。
 
-> **注意:**  在partials中使用组件功能有限，这在[动态partials](cms-partials.md＃dynamic-partials)文章中有更详细的描述。
+> **注意:**  在partials中使用组件功能有限，这在[动态partials](cms-partials.md#dynamic-partials)文章中有更详细的描述。
 
 <a name="introduction"></a>
 ## 介绍
 
-如果使用后端用户界面，则可以通过单击“组件”面板中的组件，将其添加到页面，部分和布局中。如果使用文本编辑器，则可以通过将组件名称添加到模板文件的[配置](cms-themes.md＃configuration-section)部分来实现将组件附加到页面或布局。下一个示例演示如何将To-do组件添加到页面中：
+如果使用后端用户界面，则可以通过单击“组件”面板中的组件，将其添加到页面，部分和布局中。如果使用文本编辑器，则可以通过将组件名称添加到模板文件的[配置](cms-themes.md#configuration-section)部分来实现将组件附加到页面或布局。下一个示例演示如何将To-do组件添加到页面中：
     title = "Components demonstration"
     url = "/components"
 
@@ -94,7 +94,7 @@ When you refer a component, it automatically creates a page variable that matche
 ## 将变量传递给组件
 
 Components can be designed to use variables at the time they are rendered, similar to [Partial variables](cms-partials.md#partial-variables), they can be specified after the component name in the `{% component %}` tag. The specified variables will explicitly override the value of the [component properties](../plugin/components#component-properties), including [external property values](#external-property-values).
-组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md＃partial-variables)，它们可以在`{％component％}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components＃component-properties)的值，​​包括[外部属性值](#external-property-values)
+组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md#partial-variables)，它们可以在`{％component％}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components#component-properties)的值，​​包括[外部属性值](#external-property-values)
 
 In this example, the **maxItems** property of the component will be set to *7* at the time the component is rendered:
 在此示例中，组件的 **maxItems* *属性将设置为 *7*
@@ -106,7 +106,7 @@ In this example, the **maxItems** property of the component will be set to *7* a
 <a name="customizing-default-markup"></a>
 ## 自定义默认标记
 
-组件提供的标记通常用作组件的使用示例。在某些情况下，您可能希望修改组件的外观和内容。 [将默认标记移动到主题部分](＃moving-default-markup)修改这个组件。 [覆盖组件部分](#overriding-partials)对于改为自定义的内容是很方便的。
+组件提供的标记通常用作组件的使用示例。在某些情况下，您可能希望修改组件的外观和内容。 [将默认标记移动到主题部分](#moving-default-markup)修改这个组件。 [覆盖组件部分](#overriding-partials)对于改为自定义的内容是很方便的。
 
 <a name="moving-default-markup"></a>
 ### 将默认标签移动到partial

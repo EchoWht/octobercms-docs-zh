@@ -245,7 +245,7 @@
 <a name="extending-component"></a>
 ### 扩展组件
 
-这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition]（components＃component-class-definition）中执行。
+这个例子将在`Topic`组件中声明一个新的全局事件`rainlab.forum.topic.post`和名为`topic.post`的本地事件。 这在[Component class definition]（components#component-class-definition）中执行。
 
     class Topic extends ComponentBase
     {

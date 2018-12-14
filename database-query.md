@@ -31,7 +31,7 @@
 
     $users = Db::table('users')->get();
 
-与[raw queries](../database/basics＃running-queries)一样，`get`方法返回一个结果的`array`，其中每个结果都是PHP`stdClass`对象的一个实例。 您可以通过访问列作为对象的属性来访问每个列的值：
+与[raw queries](../database/basics#running-queries)一样，`get`方法返回一个结果的`array`，其中每个结果都是PHP`stdClass`对象的一个实例。 您可以通过访问列作为对象的属性来访问每个列的值：
 
     foreach ($users as $user) {
         echo $user->name;
@@ -428,7 +428,7 @@
 <a name="adding-constraints"></a>
 ### 内存缓存
 
-通过使用内存缓存可以防止同一请求中的重复查询。 默认情况下，对于[由模型准备的查询](../database/model＃retrievaling-models)启用此功能，但不启用直接使用`Db`facade生成的功能。
+通过使用内存缓存可以防止同一请求中的重复查询。 默认情况下，对于[由模型准备的查询](../database/model#retrievaling-models)启用此功能，但不启用直接使用`Db`facade生成的功能。
 
     Db::table('users')->get(); //Result from database
     Db::table('users')->get(); //Result from database

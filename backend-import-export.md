@@ -106,7 +106,7 @@
 <a name="import-export-views"></a>
 ## 导入和导出视图
 
-对于每个页面功能[导入](#import-page)和[导出](#export-page)，您应该提供一个[视图文件](controllers-views-ajax/＃introduction)和相应的名称 - **import.htm**和**export.htm**。
+对于每个页面功能[导入](#import-page)和[导出](#export-page)，您应该提供一个[视图文件](controllers-views-ajax/#introduction)和相应的名称 - **import.htm**和**export.htm**。
 
 导入/导出行为向控制器类添加了两个方法：`importRender`和`exportRender`。 这些方法根据上述YAML配置文件呈现导入和导出部分。
 

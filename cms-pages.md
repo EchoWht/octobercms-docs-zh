@@ -16,7 +16,7 @@
 ## 介绍
 
 
-所有网站都有网页。October的页面用页面模板表示。页面模板文件位于主题目录的 **/pages** 子目录中。页面文件名称不会影响路由，但最好根据页面功能命名页面。文件以 **htm** 作为扩展名。页面需要[Configuration](cms-themes.md#configuration-section)和[Twig](cms-themes.md＃twig-section)模板部分，但[PHP部分](cms-themes.md#php-section)是可选的。您可以在下面看到最简单的主页示例。
+所有网站都有网页。October的页面用页面模板表示。页面模板文件位于主题目录的 **/pages** 子目录中。页面文件名称不会影响路由，但最好根据页面功能命名页面。文件以 **htm** 作为扩展名。页面需要[Configuration](cms-themes.md#configuration-section)和[Twig](cms-themes.md#twig-section)模板部分，但[PHP部分](cms-themes.md#php-section)是可选的。您可以在下面看到最简单的主页示例。
     url = "/"
     ==
     <h1>Hello, world!</h1>
