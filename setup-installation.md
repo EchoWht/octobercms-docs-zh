@@ -98,23 +98,23 @@ October CMS 对应的服务器要求:
 
 ## 译者采取的安装方法
 
-克隆安装文件
+### 安装步骤
 
-    git clone https://github.com/octobercms/install.git october.wht.ink
+1. 克隆安装文件
+
+    > git clone https://github.com/octobercms/install.git october
+
+1. 给予文件夹权限
     
-    chmod -R 777 october.wht.ink/
+    > chmod -R 777 october/
     
-然后通过url访问
+1. 然后通过浏览器访问
 
-    http://october.wht.ink/install.php
+    > http://october.dev/install.php
     
-如果服务器参数都没问题，下一步是配置数据库环境，默认是mysql，如果不需要更改则需要填入数据库名(需要提前创建),以及数据库的用户名和密码
-
-再者是填写后台管理员密码等
-
-配置后台访问的路由url，默认是backend；code和文件夹权限
-
-选择安装模式，我选择第一种，第一种不安装任何插件和主题
-
-最后，安全起见删除install.php 文件和install_files文件夹 
+1. 如果服务器参数都没问题，下一步是配置数据库环境，默认是mysql，如果不需要更改则需要填入数据库名(需要提前创建)，以及数据库的用户名和密码
+1. 再者是填写后台管理员密码等
+1. 配置后台访问的路由url，默认是backend；加密code和文件夹权限
+1. 选择安装模式，我选择第一种，第一种不安装任何插件和主题
+1. 最后，安全起见删除 *install.php* 文件和 *install_files/* 文件夹，也可以吧 *.git/* 文件夹删掉
 
