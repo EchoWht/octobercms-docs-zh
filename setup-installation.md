@@ -95,26 +95,3 @@ October CMS 对应的服务器要求:
 
 您可以选择设置一个外部队列来处理排队的作业，默认情况下，这些工作将由平台异步处理。可以通过在“config/queue.php”中设置“default”参数来进行修改。
 如果您决定使用`数据库`队列驱动程序，最好为命令“php artisan queue:work --once”添加一个Crontab入口，以处理队列中第一个可用的作业。
-
-## 译者采取的安装方法
-
-### 安装步骤
-
-1. 克隆安装文件
-
-    > git clone https://github.com/octobercms/install.git october
-
-1. 给予文件夹权限
-    
-    > chmod -R 777 october/
-    
-1. 然后通过浏览器访问
-
-    > http://october.dev/install.php
-    
-1. 如果服务器参数都没问题，下一步是配置数据库环境，默认是mysql，如果不需要更改则需要填入数据库名(需要提前创建)，以及数据库的用户名和密码
-1. 再者是填写后台管理员密码等
-1. 配置后台访问的路由url，默认是backend；加密code和文件夹权限
-1. 选择安装模式，我选择第一种，第一种不安装任何插件和主题
-1. 最后，安全起见删除 *install.php* 文件和 *install_files/* 文件夹，也可以吧 *.git/* 文件夹删掉
-
