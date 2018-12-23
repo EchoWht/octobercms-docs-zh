@@ -154,8 +154,6 @@ Pages, partials 和 layout 模板最多可包含3个部分： **configuration**,
 <a name="twig-section"></a>
 ### Twig标记部分
 
-The Twig section defines the markup to be rendered by the template. In the Twig section you can use functions, tags and filters [provided by October](../markup), all the [native Twig features](http://twig.sensiolabs.org/documentation), or those [provided by plugins](plugin-registration.md#extending-twig). The content of the Twig section depends on the template type (page, layout or partial). You will find more information about specific Twig objects further in the documentation.
-
 Twig部分定义了模板要呈现的标记。在Twig部分，您可以使用函数，标签和过滤器[October提供](../markup)，所有[原生Twig功能](http://twig.sensiolabs.org/documentation)，或者[插件](plugin-registration.md#extending-twig)。 Twig部分的内容取决于模板类型(页面，布局或部分)。您可以在文档中找到有关特定Twig对象的更多信息。
 
 
