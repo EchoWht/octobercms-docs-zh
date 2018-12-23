@@ -74,7 +74,7 @@ The following fields are required in the form configuration file:
 **form** | 配置数组或对表单字段定义文件的引用，请参阅[表单字段](#form-fields)
 **modelClass** | 模型类名称，表单数据将加载并保存在此模型中。
 
-下面列出的配置选项是可选的。 如果希望表单行为支持[Create](#form-create-page), [Update](#form-update-page) or [Preview](#form-preview-page)页面，请定义它们。
+下面列出的配置选项是可选的。 如果希望表单行为支持[Create](#form-create-page), [Update](#form-update-page) 或 [Preview](#form-preview-page)页面，请定义它们。
 
 选项 | 描述
 ------------- | -------------
@@ -307,7 +307,7 @@ The following fields are required in the form configuration file:
             published: Published
             archived: Archived
 
-第二种方法使用模型类中声明的方法定义选项。 如果省略options元素，框架需要在模型中定义名为`get*FieldName*Options`的方法。 使用上面的示例，模型应该具有`getStatusTypeOptions`方法。 此方法的第一个参数是此字段的当前值，第二个参数是整个表单的当前数据对象。 此方法应返回**key=>label**格式的选项数组。
+第二种方法使用模型类中声明的方法定义选项。 如果省略options元素，框架需要在模型中定义名为 get*FieldName*Options 的方法。 使用上面的示例，模型应该具有`getStatusTypeOptions`方法。 此方法的第一个参数是此字段的当前值，第二个参数是整个表单的当前数据对象。 此方法应返回**key=>label**格式的选项数组。
 
     status_type:
         label: Blog Post Status
@@ -1100,6 +1100,4 @@ $form对象提供以下方法。
 
 <a name="validate-form-fields"></a>
 ## 验证表单字段
-
-可以通过覆盖控制器类中的`formExtendQuery`方法来扩展表单[数据库模型](database-model.md)的查询查询。 此示例将通过将**withTrashed**作用域应用于查询来确保仍可以找到并更新软删除的记录：
-
+要验证表单的字段，您可以在模型中使用[验证](../database/traits#validation)特征。
