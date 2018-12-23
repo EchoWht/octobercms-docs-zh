@@ -9,7 +9,7 @@
 - [Flash消息](#ajax-flash)
 - [使用示例](#usage-example)
 
-使用AJAX框架时，您可以选择指定** extras **后缀，其中包含其他StyleSheet和JavaScript文件。 在前端CMS页面中处理AJAX请求时，这些功能非常有用。
+使用AJAX框架时，您可以选择指定**extras**后缀，其中包含其他StyleSheet和JavaScript文件。 在前端CMS页面中处理AJAX请求时，这些功能非常有用。
 
     {% framework extras %}
 
