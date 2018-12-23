@@ -242,34 +242,20 @@ The following fields are required in the form configuration file:
 ## 可用的字段类型
 
 有各种本机字段类型可用于**类型**设置。 对于更高级的表单字段，可以使用[表单窗口小部件](#form-widgets)。
-
-<style>
-    .collection-method-list {
-        column-count: 3; -moz-column-count: 3; -webkit-column-count: 3;
-        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
-    }
-
-    .collection-method-list a {
-        display: block;
-    }
-</style>
-
-<div class="content-list collection-method-list" markdown="1">
-- [Text](#field-text)
-- [Number](#field-number)
-- [Password](#field-password)
-- [Textarea](#field-textarea)
-- [Dropdown](#field-dropdown)
-- [Radio List](#field-radio)
-- [Balloon Selector](#field-balloon)
-- [Checkbox](#field-checkbox)
-- [Checkbox List](#field-checkboxlist)
-- [Switch](#field-switch)
-- [Section](#field-section)
-- [Partial](#field-partial)
-- [Hint](#field-hint)
-- [Widget](#field-widget)
-</div>
+1. [Text](#field-text)
+1. [Number](#field-number)
+1. [Password](#field-password)
+1. [Textarea](#field-textarea)
+1. [Dropdown](#field-dropdown)
+1. [Radio List](#field-radio)
+1. [Balloon Selector](#field-balloon)
+1. [Checkbox](#field-checkbox)
+1. [Checkbox List](#field-checkboxlist)
+1. [Switch](#field-switch)
+1. [Section](#field-section)
+1. [Partial](#field-partial)
+1. [Hint](#field-hint)
+1. [Widget](#field-widget)
 
 <a name="field-text"></a>
 ### Text
@@ -499,19 +485,17 @@ The following fields are required in the form configuration file:
 
 标准中包含各种表单小部件，但插件通常提供自己的自定义表单小部件。 您可以在[Form Widgets](backend-widgets.md#form-widgets)文章上阅读更多内容。
 
-<div class="content-list collection-method-list" markdown="1">
-- [Code editor](#widget-codeeditor)
-- [Color picker](#widget-colorpicker)
-- [Date picker](#widget-datepicker)
-- [File upload](#widget-fileupload)
-- [Record finder](#widget-recordfinder)
-- [Media finder](#widget-mediafinder)
-- [Relation](#widget-relation)
-- [Repeater](#widget-repeater)
-- [Rich editor/WYSIWYG](#widget-richeditor)
-- [Markdown editor](#widget-markdowneditor)
-- [Tag list](#widget-taglist)
-</div>
+1. [Code editor](#widget-codeeditor)
+1. [Color picker](#widget-colorpicker)
+1. [Date picker](#widget-datepicker)
+1. [File upload](#widget-fileupload)
+1. [Record finder](#widget-recordfinder)
+1. [Media finder](#widget-mediafinder)
+1. [Relation](#widget-relation)
+1. [Repeater](#widget-repeater)
+1. [Rich editor/WYSIWYG](#widget-richeditor)
+1. [Markdown editor](#widget-markdowneditor)
+1. [Tag list](#widget-taglist)
 
 <a name="widget-codeeditor"></a>
 ### Code editor
