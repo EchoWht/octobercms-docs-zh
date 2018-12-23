@@ -71,4 +71,4 @@ AJAX框架在您的[CMS主题](cms-themes.md)中是可选的，要使用您应�
         $this->page['result'] = input('value1') + input('value2');
     }
 
-这个例子可以这样理解：“当提交表单时，向**onTest**处理程序发出一个AJAX请求。当处理程序完成时，渲染**mypartial**partial并将其内容注入**#myDiv**元素。“
+这个例子可以这样理解：“当提交表单时，向**onTest**处理程序发出一个AJAX请求。当处理程序完成时，渲染**mypartial**partial并将其内容注入**#myDiv** 元素。”
