@@ -4,8 +4,8 @@
     - [调用处理程序](#calling-handlers)
 - [AJAX处理程序中的重定向](#redirections-in-handlers)
 - [从AJAX处理程序返回数据](#returning-data-from-handlers)
-- [Throwing an AJAX exception](#throw-ajax-exception)
-- [抛出一个AJAX异常](#before-handler)
+- [抛出一个AJAX异常](#throw-ajax-exception)
+- [在处理程序之前运行代码](#before-handler)
 
 <a name="ajax-handlers"></a>
 ## AJAX处理程序
@@ -30,7 +30,7 @@ AJAX事件处理程序是PHP函数，可以在页面或布局[PHP部分](cms-the
     <!-- JavaScript API -->
     <script> $.request('onSubmitContactForm') </script>
 
-如果两个组件注册相同的处理程序名称，建议在处理程序前加上[组件短名称或别名](cms-components.md#aliases)。如果组件使用** mycomponent **的别名，则可以使用`mycomponent::onName`来定位处理程序。
+如果两个组件注册相同的处理程序名称，建议在处理程序前加上[组件短名称或别名](cms-components.md#aliases)。如果组件使用**mycomponent**的别名，则可以使用`mycomponent::onName`来定位处理程序。
 
     <button data-request="mycomponent::onSubmitContactForm">Go</button>
 
