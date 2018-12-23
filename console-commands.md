@@ -98,7 +98,7 @@ Composer被配置为查看插件目录内部的composer依赖，这些将包含�
 
     php artisan october:up
 
-反向命令`october：down`将反转所有迁移，删除数据库表并删除数据。 使用此命令时应小心。 [插件刷新命令](#plugin-refresh-command)是调试单个插件的有用替代方法。
+反向命令`october:down`将反转所有迁移，删除数据库表并删除数据。 使用此命令时应小心。 [插件刷新命令](#plugin-refresh-command)是调试单个插件的有用替代方法。
 
     php artisan october:down
 
