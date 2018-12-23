@@ -31,7 +31,7 @@
 这将使用组件定义的属性来初始化这个组件。某些属性是必需的，某些属性具有默认值。如果您不确定组件支持哪些属性，请参阅组件开发人员提供的文档，或使用October后端的Inspector。单击页面或布局组件面板中的组件时，将打开Inspector。
 
 When you refer a component, it automatically creates a page variable that matches the component name (`demoTodo` in the previous example). Components that provide HTML markup can be rendered on a page with the `{% component %}` tag, like this:
-当您引用组件时，它会自动创建一个与组件名称匹配的页面变量(前一个示例中的“demoTodo”)。通过`{％component％}`标签将组件在页面中展示出来，如下所示：
+当您引用组件时，它会自动创建一个与组件名称匹配的页面变量(前一个示例中的“demoTodo”)。通过`{%component%}`标签将组件在页面中展示出来，如下所示：
 
     {% component 'demoTodo' %}
 
@@ -94,7 +94,7 @@ When you refer a component, it automatically creates a page variable that matche
 ## 将变量传递给组件
 
 Components can be designed to use variables at the time they are rendered, similar to [Partial variables](cms-partials.md#partial-variables), they can be specified after the component name in the `{% component %}` tag. The specified variables will explicitly override the value of the [component properties](plugin-components.md#component-properties), including [external property values](#external-property-values).
-组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md#partial-variables)，它们可以在`{％component％}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components#component-properties)的值，​​包括[外部属性值](#external-property-values)
+组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md#partial-variables)，它们可以在`{%component%}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components#component-properties)的值，​​包括[外部属性值](#external-property-values)
 
 In this example, the **maxItems** property of the component will be set to *7* at the time the component is rendered:
 在此示例中，组件的 **maxItems* *属性将设置为 *7*
@@ -111,7 +111,7 @@ In this example, the **maxItems** property of the component will be set to *7* a
 <a name="moving-default-markup"></a>
 ### 将默认标签移动到partial
 
-每个组件都可以有一个名为 **default.htm** 的入口文件部分，它在调用`{％component％}`标标签时展示，在下面的例子中我们假设该组件叫做 **blogPost**。
+每个组件都可以有一个名为 **default.htm** 的入口文件部分，它在调用`{%component%}`标标签时展示，在下面的例子中我们假设该组件叫做 **blogPost**。
 
     url = "blog/post"
 

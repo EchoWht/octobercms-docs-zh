@@ -15,13 +15,13 @@ AJAX框架有两种形式，您可以使用[JavaScript API](ajax-javascript-api.
 <a name="framework-script"></a>
 ## 引入AJAX框架
 
-AJAX框架在您的[CMS主题](cms-themes.md)中是可选的，要使用您应该包含它的库，将`{％framework％}`标记放在[page]中的任何位置(../cms)/pages)或[layout](cms-layouts.md)。这增加了对October前端JavaScript库的引用。该库需要jQuery，因此应首先加载它，例如：
+AJAX框架在您的[CMS主题](cms-themes.md)中是可选的，要使用您应该包含它的库，将`{%framework%}`标记放在[page]中的任何位置(../cms)/pages)或[layout](cms-layouts.md)。这增加了对October前端JavaScript库的引用。该库需要jQuery，因此应首先加载它，例如：
 
     <script src="{{ 'assets/javascript/jquery.js'|theme }}"></script>
 
     {% framework %}
 
-`{％framework％}`标签支持可选的**extras**参数。如果指定了此参数，则标记会为[extra features](ajax-extras.md)添加StyleSheet和JavaScript文件，包括表单验证和加载指示符。
+`{%framework%}`标签支持可选的**extras**参数。如果指定了此参数，则标记会为[extra features](ajax-extras.md)添加StyleSheet和JavaScript文件，包括表单验证和加载指示符。
 
     {% framework extras %}
 

@@ -1,6 +1,6 @@
 # {% if %}
 
-`{％if％}`和`{％endif％}`标签将表示一个表达式，并且与PHP的if语句相同。 在最简单的形式中，您可以使用它来测试表达式是否计算为“true”：
+`{%if%}`和`{%endif%}`标签将表示一个表达式，并且与PHP的if语句相同。 在最简单的形式中，您可以使用它来测试表达式是否计算为“true”：
 
     {% if online == false %}
         <p>The website is in maintenance mode.</p>
@@ -16,7 +16,7 @@
         </ul>
     {% endif %}
 
-> **注意**: 如果要测试变量是否已定义，请使用`{％if users is defined％}`。
+> **注意**: 如果要测试变量是否已定义，请使用`{%if users is defined%}`。
 
 您还可以使用`not`来判断变量是否为`false`：
 
@@ -24,7 +24,7 @@
         <p>You are not subscribed to our mailing list.</p>
     {% endif %}
 
-对于多个表达式，可以使用`{％elseif％}`和`{％else％}`：
+对于多个表达式，可以使用`{%elseif%}`和`{%else%}`：
 
     {% if kenny.sick %}
         Kenny is sick.

@@ -597,7 +597,7 @@ The following fields are required in the form configuration file:
 **nameFrom**  |用于显示名称的关系中使用的列名称。默认值：名称。
 **descriptionFrom**  |用于显示描述的关系中使用的列名。默认值：说明。
 **title**  |要在弹出窗口的标题部分显示的文本。
-**prompt**  |没有选择记录时显示的文本。 `％s`字符代表搜索图标。
+**prompt**  |没有选择记录时显示的文本。 `%s`字符代表搜索图标。
 **list**  |配置数组或对列表列定义文件的引用，请参阅[list columns](backend-lists.md#list-columns)。
 **recordsPerPage**  |每页显示的记录，没有页面使用0。默认值：10
 **conditions**  |指定要应用于列表模型查询的raw where查询语句。
@@ -618,7 +618,7 @@ The following fields are required in the form configuration file:
 选项 | 描述
 ------------- | -------------
 **mode** | 预期的文件类型，文件或图像。 默认值：文件。
-**prompt** | 没有选择项目时显示的文本。 `％s`字符代表媒体管理器图标。
+**prompt** | 没有选择项目时显示的文本。 `%s`字符代表媒体管理器图标。
 **imageWidth** | 如果使用图像类型，预览图像将显示为此宽度，可选。
 **imageHeight** | 如果使用图像类型，预览图像将显示到此高度，可选。
 

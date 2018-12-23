@@ -1,6 +1,6 @@
 # {% content %}
 
-`{％content％}`标签将在页面上显示[CMS内容块](cms-content.md)。 要显示名为$contacts.htm **的内容块，请在引用为字符串的`content`标记后传递文件名。
+`{%content%}`标签将在页面上显示[CMS内容块](cms-content.md)。 要显示名为$contacts.htm **的内容块，请在引用为字符串的`content`标记后传递文件名。
 
     {% content "contacts.htm" %}
 

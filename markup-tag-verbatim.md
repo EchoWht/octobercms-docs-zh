@@ -1,6 +1,6 @@
 # {% verbatim %}
 
-`{％verbatim％}`标签将整个部分标记为不应解析的原始文本。
+`{%verbatim%}`标签将整个部分标记为不应解析的原始文本。
 
     {% verbatim %}<p>Hello, {{ name }}</p>{% endverbatim %}
 

@@ -329,9 +329,9 @@
 <a name="default-markup"></a>
 ## 默认标签
 
-所有组件都可以带有默认标记，当将其包含在带有`{％component％}`标记的页面上时使用该标记，尽管这是可选的。 默认标记保存在**组件partials部分目录**中，该目录与小写的组件类具有相同的名称。
+所有组件都可以带有默认标记，当将其包含在带有`{%component%}`标记的页面上时使用该标记，尽管这是可选的。 默认标记保存在**组件partials部分目录**中，该目录与小写的组件类具有相同的名称。
 
-默认组件标记应放在名为**default.htm**的文件中。 例如，Demo ToDo组件的默认标记在文件 **/plugins/october/demo/components/todo/default.htm** 中定义。 然后可以使用`{％component％}`标记将其插入页面的任何位置：
+默认组件标记应放在名为**default.htm**的文件中。 例如，Demo ToDo组件的默认标记在文件 **/plugins/october/demo/components/todo/default.htm** 中定义。 然后可以使用`{%component%}`标记将其插入页面的任何位置：
 
     url = "/todo"
 

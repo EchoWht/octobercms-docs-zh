@@ -1,6 +1,6 @@
 # {% for %}
 
-`{％for％}`和`{％endfor％}`标签将遍历集合中的每个值。 集合可以是实现`Traversable`接口的数组或对象。
+`{%for%}`和`{%endfor%}`标签将遍历集合中的每个值。 集合可以是实现`Traversable`接口的数组或对象。
 
     <ul>
         {% for user in users %}

@@ -36,7 +36,7 @@ partial配置部分还可以包含组件定义。 [组件](cms-components.md)在
 <a name="partial-variables"></a>
 ## 将变量传递给partials
 
-我们通常需要将变量从外部代码传递给partial变量。这使得partial更有用。例如，您可以使用partial展示博客帖子列表。如果您可以将帖子集合传递给partial，则可以在博客存档页面，博客类别页面等上使用相同的partial。您可以通过在`{％partial％}`标记中的partial名称后指定变量来将变量传递给partials：
+我们通常需要将变量从外部代码传递给partial变量。这使得partial更有用。例如，您可以使用partial展示博客帖子列表。如果您可以将帖子集合传递给partial，则可以在博客存档页面，博客类别页面等上使用相同的partial。您可以通过在`{%partial%}`标记中的partial名称后指定变量来将变量传递给partials：
   
     <div class="sidebar">
         {% partial "blog-posts" posts=posts %}

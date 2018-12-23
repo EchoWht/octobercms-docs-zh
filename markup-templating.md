@@ -32,7 +32,7 @@ October扩展了[Twig模板语言](http://twig.sensiolabs.org/documentation) ，
         去外面玩
     {% endif %}
 
-`{％set％}`标签可用于在模板内设置变量。
+`{%set%}`标签可用于在模板内设置变量。
 
     {% set activePage = 'blog' %}
 
@@ -83,5 +83,5 @@ Twig提供的一些功能在October不受支持。 它们列在等效功能旁�
 
 标签 | 相等
 ------------- | -------------
-`{% extend %}` | 使用[Layouts](Layouts)`{％placeholder％}
+`{% extend %}` | 使用[Layouts](Layouts)`{%placeholder%}
 `{% include %}` | 使用 `{% partial %}` 或 `{% content %}`

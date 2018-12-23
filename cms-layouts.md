@@ -11,7 +11,7 @@
 
 布局是定义页面框架，即在页面上重复的所有内容，例如页眉和页脚。布局通常包含HTML标签以及HEAD，TITLE和BODY标签。
 
-布局模板位于主题目录的 **/layouts** 子目录中。布局模板文件应以后缀名 **htm** 结尾。在布局文件中，您应该使用`{％page％}`标签来输出页面内容。最简单的布局示例：
+布局模板位于主题目录的 **/layouts** 子目录中。布局模板文件应以后缀名 **htm** 结尾。在布局文件中，您应该使用`{%page%}`标签来输出页面内容。最简单的布局示例：
 
     <html>
         <body>
@@ -26,7 +26,7 @@ To use a layout for a [page](cms-pages.md) the page should refer the layout file
     ==
     <p>Hello, world!</p>
 
-当请求示例中的页面时，其page内容将与layout布局合并，或者更准确地说 - 布局的`{％page％}`标签将替换为page页面中的内容。前面的示例将生成以下内容：
+当请求示例中的页面时，其page内容将与layout布局合并，或者更准确地说 - 布局的`{%page%}`标签将替换为page页面中的内容。前面的示例将生成以下内容：
 
     <html>
         <body>
@@ -49,7 +49,7 @@ To use a layout for a [page](cms-pages.md) the page should refer the layout file
 <a name="placeholders"></a>
 ## 占位符
 
-占位符允许page页面将内容注入布局。占位符在布局模板中通过`{％placeholder％}`标签定义。下一个示例显示了在HTML HEAD部分中定义的占位符 **head** 的布局模板。
+占位符允许page页面将内容注入布局。占位符在布局模板中通过`{%placeholder%}`标签定义。下一个示例显示了在HTML HEAD部分中定义的占位符 **head** 的布局模板。
 
     <html>
         <head>
@@ -58,7 +58,7 @@ To use a layout for a [page](cms-pages.md) the page should refer the layout file
         ...
 
 
-pages可以使用`{％put％}`和`{％endput％}`标记向占位符注入内容。以下示例演示了一个简单的页面模板，该模板将CSS链接注入前一个示例中定义的占位符 **head**中。
+pages可以使用`{%put%}`和`{%endput%}`标记向占位符注入内容。以下示例演示了一个简单的页面模板，该模板将CSS链接注入前一个示例中定义的占位符 **head**中。
 
     url = "/my-page"
     layout = "default"

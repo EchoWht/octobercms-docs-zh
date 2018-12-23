@@ -1,6 +1,6 @@
 # {% flash %}
 
-`{％flash％}`和`{％endflash％}`标签将呈现存储在用户会话中的任何flash消息，由Flash`PHP类设置。 里面的`message`变量将包含flash消息文本，里面的标记将重复多个flash消息。
+`{%flash%}`和`{%endflash%}`标签将呈现存储在用户会话中的任何flash消息，由Flash`PHP类设置。 里面的`message`变量将包含flash消息文本，里面的标记将重复多个flash消息。
 
     <ul>
         {% flash %}

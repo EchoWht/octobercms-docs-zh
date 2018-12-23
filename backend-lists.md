@@ -167,7 +167,7 @@
 **relation**| 定义模型关系列。
 **useRelationCount**| 使用定义的`relation`的计数作为此列的值。默认值:false
 **cssClass**| 将CSS类分配给列容器。
-**width**| 设置列宽，可以百分比(10％)或像素(50px)指定。可以有一个没有指定宽度的列，它将被拉伸以占用可用空间。
+**width**| 设置列宽，可以百分比(10%)或像素(50px)指定。可以有一个没有指定宽度的列，它将被拉伸以占用可用空间。
 **align**| 列对齐。可能的值是“left”，“right”和“center”。
 
 <a name="column-types"></a>

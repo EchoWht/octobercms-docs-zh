@@ -1,6 +1,6 @@
 # {% placeholder %}
 
-`{％placeholder％}`标签将呈现一个占位符部分，通常[在Layouts中使用](cms-layouts.md#placeholders)。 此标记将返回使用`{％put％}`标记添加的任何占位符内容，或任何已定义的默认内容(可选)。
+`{%placeholder%}`标签将呈现一个占位符部分，通常[在Layouts中使用](cms-layouts.md#placeholders)。 此标记将返回使用`{%put%}`标记添加的任何占位符内容，或任何已定义的默认内容(可选)。
     
     {% placeholder name %}
 
@@ -13,13 +13,13 @@
 <a name="default-placeholder-content"></a>
 ## 默认占位符内容
 
-占位符可以具有可以由页面替换或补充的默认内容。 如果未在页面上定义具有默认内容的占位符的`{％put％}`标记，则会显示默认占位符内容。 布局模板中的占位符定义示例：
+占位符可以具有可以由页面替换或补充的默认内容。 如果未在页面上定义具有默认内容的占位符的`{%put%}`标记，则会显示默认占位符内容。 布局模板中的占位符定义示例：
 
     {% placeholder sidebar default %}
         <p><a href="/contacts">Contact us</a></p>
     {% endplaceholder %}
 
-该页面可以向占位符注入更多内容。 `{％default％}`标记指定应显示默认占位符内容的位置。 如果未使用标记，则占位符内容将被完全替换。
+该页面可以向占位符注入更多内容。 `{%default%}`标记指定应显示默认占位符内容的位置。 如果未使用标记，则占位符内容将被完全替换。
 
     {% put sidebar %}
         <p><a href="/services">Services</a></p>
