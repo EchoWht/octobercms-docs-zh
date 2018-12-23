@@ -110,10 +110,10 @@ The following fields are required in the form configuration file:
 要支持“更新”页面，请将以下配置添加到YAML文件中：
 
     update:
-        title: 编辑文章
-        redirect: acme/blog/posts
-        flashSave:  保存成功
-        flashDelete: 删除成功
+        title:编辑文章
+        redirect:acme/blog/posts
+        flashSave:保存成功
+        flashDelete:删除成功
 
 “更新”页面支持以下配置选项：
 
@@ -132,7 +132,7 @@ The following fields are required in the form configuration file:
 要支持“预览”页面，请将以下配置添加到YAML文件中：
 
     preview:
-        title: 博客详情页
+        title:博客详情页
 
 “预览”页面支持以下配置选项：
 
