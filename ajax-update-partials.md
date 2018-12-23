@@ -10,7 +10,7 @@
 <a name="pulling-updates"></a>
 ## 拉取Partials更新
 
-客户端浏览器可以在执行AJAX请求时请求从服务器更新partial，这被认为是*拉取内容更新*。以下代码在调用`onRefreshTime` [事件处理程序](ajax-handlers.md)后，在页面上的`#myDiv`元素内部呈现** mytime ** partial。
+客户端浏览器可以在执行AJAX请求时请求从服务器更新partial，这被认为是*拉取内容更新*。以下代码在调用`onRefreshTime` [事件处理程序](ajax-handlers.md)后，在页面上的`#myDiv`元素内部呈现**mytime** partial。
 
     <div id="myDiv">{% partial 'mytime' %}</div>
 
