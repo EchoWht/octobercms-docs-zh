@@ -13,8 +13,8 @@ Attribute | Description
 **data-request** | 指定AJAX处理程序名称。
 **data-request-confirm** | 使用确认弹窗。在发送请求之前显示确认。如果用户单击“取消”按钮，则不会发送请求
 **data-request-redirect** | 指定在成功的AJAX请求后重定向浏览器的URL。
-**data-request-update** | 指定要更新的部分和页面元素(CSS选择器)的列表。格式如下：`partial：selector,partial：selector`。在某些情况下需要使用引号，例如：`'my-partial'：'#myelement'`。如果选择器字符串前面带有`@`符号，则从服务器接收的内容将附加到元素，而不是替换现有内容。如果选择器字符串前面带有“^”符号，则内容将被添加到前面。
-**data-request-data** | 指定要发送到服务器的其他POST参数。格式如下：`var：value，var：value`。如果需要，请使用引号：`var：'some string'`。该属性可以在触发元素上使用，例如在具有`data-request`属性的按钮上，在触发元素的最近元素和父表单元素上。框架合并了`data-request-data`属性的值。如果不同元素上的属性定义具有相同名称的参数，则框架使用以下优先级：触发元素`data-request-data`，更接近的父元素`data-request-data`，表单输入数据。
+**data-request-update** | 指定要更新的部分和页面元素(CSS选择器)的列表。格式如下：`partial:selector,partial:selector`。在某些情况下需要使用引号，例如：`'my-partial':'#myelement'`。如果选择器字符串前面带有`@`符号，则从服务器接收的内容将附加到元素，而不是替换现有内容。如果选择器字符串前面带有“^”符号，则内容将被添加到前面。
+**data-request-data** | 指定要发送到服务器的其他POST参数。格式如下：`var：value，var：value`。如果需要，请使用引号：`var:'some string'`。该属性可以在触发元素上使用，例如在具有`data-request`属性的按钮上，在触发元素的最近元素和父表单元素上。框架合并了`data-request-data`属性的值。如果不同元素上的属性定义具有相同名称的参数，则框架使用以下优先级：触发元素`data-request-data`，更接近的父元素`data-request-data`，表单输入数据。
 **data-request-before-update** | 指定在更新页面内容之前直接执行的JavaScript代码。在JavaScript代码中，您可以访问以下变量：`this`(页面元素触发请求)，`context`对象，从服务器接收的`data`对象，`textStatus`文本字符串和`jqXHR `对象。
 **data-request-success** | 指定在成功完成请求后要执行的JavaScript代码。在JavaScript代码中，您可以访问以下变量：`this`(页面元素触发请求)，`context`对象，从服务器接收的`data`对象，`textStatus`文本字符串和`jqXHR `对象。
 **data-request-error** | 指定在请求遇到错误时要执行的JavaScript代码。在JavaScript代码中，您可以访问以下变量：`this`(页面元素触发请求)，`context`对象，`textStatus`文本字符串和`jqXHR`对象。
@@ -39,7 +39,7 @@ Attribute | Description
 
 提交表单时触发`onCalculate`处理程序。使用**calcresult** partial更新标识符为`result`的元素：
 
-    <form data-request="onCalculate" data-request-update="calcresult: '#result'">
+    <form data-request="onCalculate" data-request-update="calcresult:'#result'">
 
 在发送请求之前单击“删除”按钮时请求确认：
 
