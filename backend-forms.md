@@ -1100,4 +1100,5 @@ $form对象提供以下方法。
 
 <a name="validate-form-fields"></a>
 ## 验证表单字段
+
 要验证表单的字段，您可以在模型中使用[验证](../database/traits#validation)特征。
