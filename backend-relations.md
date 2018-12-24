@@ -14,7 +14,7 @@
 <a name="introduction"></a>
 ## 介绍
 
-`Relation behavior` 是一个控制器修饰符，用于轻松管理页面上的复杂[模型](database-model.md) 关系。 不要与仅提供简单管理的 [List relation columns](backend-lists.md#column-types) or [Form relation fields](backend-forms.md#widget-relation) 混淆。
+`Relation behavior` 是一个控制器修饰符，用于轻松管理页面上的复杂[模型](database-model.md) 关系。 不要与仅提供简单管理的 [List relation columns](backend-lists.md#column-types)或[Form relation fields](backend-forms.md#widget-relation) 混淆。
 
 关系行为取决于[关系定义](#relation-definitions)。 为了使用关系行为，您应该将`Backend.Behaviors.RelationController`定义添加到控制器类的`$implement`字段中。 此外，应定义`$relationConfig`类属性，其值应引用用于[配置行为选项](#configuring-relation)的YAML文件。
 
@@ -31,7 +31,7 @@
         public $relationConfig = 'config_relation.yaml';
     }
 
->**注意:**关系行为通常与[表单行为](form)一起使用。
+> **注意:**关系行为通常与[表单行为](form)一起使用。
 
 <a name="configuring-relation"></a>
 ## 配置关系行为
@@ -140,7 +140,7 @@
             toolbarButtons: create|delete
 
 <a name="belongs-to-many"></a>
-### Belongs to many
+### 属于很多
 
 1. 相关记录显示为列表(**view.list**)。
 1. 单击*添加*将显示选择列表(**manage.list**)。
@@ -164,7 +164,7 @@
             form: $/acme/user/models/role/fields.yaml
 
 <a name="belongs-to-many-pivot"></a>
-### Belongs to many (with Pivot Data)
+### 属于很多(与数据透视数据)
 
 1. 相关记录显示为列表(**view.list**)。
 1. 单击记录将显示更新表单(**pivot.form**)。
