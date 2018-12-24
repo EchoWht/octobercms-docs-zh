@@ -113,7 +113,7 @@
 <a name="import-view"></a>
 ### 导入视图
 
-**import.htm**视图表示允许用户导入数据的导入页面。 典型的导入页面包含面包屑，导入部分本身和提交按钮。 ** data-request **属性应该引用行为提供的`onImport` AJAX处理程序。 以下是典型的import.htm视图文件的内容。
+**import.htm**视图表示允许用户导入数据的导入页面。 典型的导入页面包含面包屑，导入部分本身和提交按钮。 **data-request**属性应该引用行为提供的`onImport` AJAX处理程序。 以下是典型的import.htm视图文件的内容。
 
     <?= Form::open(['class' => 'layout']) ?>
 
@@ -244,7 +244,7 @@
             type: checkbox
             default: true
 
-可以使用导入模型的`importData`方法中的`$this-> auto_create_lists`访问上面名为** auto_create_lists **的表单字段的值。 如果这是导出模型，则该值将在`exportData`方法中可用。
+可以使用导入模型的`importData`方法中的`$this-> auto_create_lists`访问上面名为**auto_create_lists**的表单字段的值。 如果这是导出模型，则该值将在`exportData`方法中可用。
 
     class SubscriberImport extends \Backend\Models\ImportModel
     {
