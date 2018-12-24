@@ -212,7 +212,7 @@
                     pivot[team_color]:
                         label: Team color
 
->**注意:**[deferred bindings](database-relations.md#deferred-binding)目前不支持数据透视数据，因此父模型应该存在。
+> **注意:**[deferred bindings](database-relations.md#deferred-binding)目前不支持数据透视数据，因此父模型应该存在。
 
 <a name="belongs-to"></a>
 ### Belongs to
@@ -272,7 +272,7 @@
     $post = Post::where('id', 7)->first();
     $this->initRelation($post);
 
->**注意:**[表单行为](backend-forms.md)将在其创建，更新和预览操作上自动初始化模型。
+> **注意:**[表单行为](backend-forms.md)将在其创建，更新和预览操作上自动初始化模型。
 
 然后可以通过调用`relationRender`方法显示关系管理器以获得指定的关系定义。 例如，如果要在[预览](backend-forms.md#form-preview-view) 页面上显示关系管理器，**preview.htm**视图内容可能如下所示：
 
