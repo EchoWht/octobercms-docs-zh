@@ -93,11 +93,10 @@ When you refer a component, it automatically creates a page variable that matche
 <a name="component-variables"></a>
 ## 将变量传递给组件
 
-Components can be designed to use variables at the time they are rendered, similar to [Partial variables](cms-partials.md#partial-variables), they can be specified after the component name in the `{% component %}` tag. The specified variables will explicitly override the value of the [component properties](plugin-components.md#component-properties), including [external property values](#external-property-values).
 组件可以设计为在渲染时使用变量，类似于[Partial变量](cms-partials.md#partial-variables)，它们可以在`{%component%}`标签中的组件名称之后定义。定义的变量将显式覆盖[组件属性](./ plugin/components#component-properties)的值，​​包括[外部属性值](#external-property-values)
 
 In this example, the **maxItems** property of the component will be set to *7* at the time the component is rendered:
-在此示例中，组件的 **maxItems* *属性将设置为 *7*
+在此示例中，组件的 **maxItems**属性将设置为 *7*
 
     {% component 'demoTodoAlias' maxItems='7' %}
 
@@ -138,7 +137,6 @@ In this example, the **maxItems** property of the component will be set to *7* a
 <a name="overriding-partials"></a>
 ### 覆盖组件部分
 
-All component partials can be overridden using the theme partials. If a component called **channel** uses the **title.htm** partial.
 可以使用theme主题部分覆盖所有component组件部分。如果名为 **channel** 的组件使用 **title.htm** partial。
 
     url = "mypage"
