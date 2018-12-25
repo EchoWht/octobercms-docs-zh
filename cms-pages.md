@@ -224,7 +224,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
         $this->addCss(['assets/less/base.less']);
     }
 
-为了在页面或[布局](layout) 上输出注入的资源，请使用 [{% styles %}](../markup/tag-styles) 和 [{% scripts %}](../markup/tag-scripts) 标签。例如：
+为了在页面或[布局](layout) 上输出注入的资源，请使用 [{% styles %}](markup/tag-styles) 和 [{% scripts %}](markup/tag-scripts) 标签。例如：
 
     <head>
         ...
