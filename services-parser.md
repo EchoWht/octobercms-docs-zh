@@ -33,14 +33,14 @@ Markdown允许您编写易于阅读且易于编写的纯文本格式，然后转
 
     $html = Markdown::parse($markdown);
 
-您也可以使用`| md`过滤器[解析前端标记中的Markdown](../markup/filter-md)。
+您也可以使用`| md`过滤器[解析前端标记中的Markdown](markup-filter-md.md)。
 
     {{ '**Text** is bold.'|md }}
 
 <a name="twig-parser"></a>
 ## Twig模板解析器
 
-Twig是一个简单但功能强大的模板引擎，它将HTML模板解析为优化的PHP代码，它是[前端标记](../markup)，[视图内容](services-response-view.md#views)和[邮件消息内容](services-mail.md#message-content)。
+Twig是一个简单但功能强大的模板引擎，它将HTML模板解析为优化的PHP代码，它是[前端标记](markup.md)，[视图内容](services-response-view.md#views)和[邮件消息内容](services-mail.md#message-content)。
 
 `Twig` facade用于解析Twig语法，你可以使用`Twig::parse`方法将Twig渲染为HTML。
 

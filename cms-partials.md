@@ -71,7 +71,7 @@ Partials像页面一样，也可以使用任何Twig功能。有关详细信息�
     ==
     <h3>{{ hello }}</h3>
 
-October提供的模板语言在[标记指南](../markup)中有具体描述。执行处理程序的整体顺序在[动态布局](cms-layouts.md#dynamic-layouts)的文章中有提到.
+October提供的模板语言在[标记指南](markup.md)中有具体描述。执行处理程序的整体顺序在[动态布局](cms-layouts.md#dynamic-layouts)的文章中有提到.
 
 <a name="life-cycle-limitations"></a>
 ### 生命周期限制

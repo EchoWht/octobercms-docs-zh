@@ -68,7 +68,7 @@ pages可以使用`{%put%}`和`{%endput%}`标记向占位符注入内容。以下
 
     <p>这里是页面的内容</p>
 
-M有关占位符的更多信息可以在[标记指南](../markup/tag-placeholder)中找到。
+M有关占位符的更多信息可以在[标记指南](markup-tag-placeholder.md)中找到。
 
 <a name="dynamic-layouts"></a>
 ## 动态布局

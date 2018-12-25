@@ -204,7 +204,7 @@ Collection | 如上所述的收件人对象的集合。
         <img src="{{ message.embed(pathToFile) }}">
     </body>
 
-如果您计划使用排队的电子邮件，请确保该文件的路径是绝对的。 要实现这一点，您只需使用[app filter](../markup/filter-app)：
+如果您计划使用排队的电子邮件，请确保该文件的路径是绝对的。 要实现这一点，您只需使用[app filter](markup-filter-app.md)：
 
     <body>
         Here is an image:

@@ -98,7 +98,7 @@
 <a name="combiner-vars"></a>
 ### 组合变量
 
-使用`|theme` [过滤器和组合器](../markup/filter-theme)组合的资源可以将值传递给支持过滤器，例如LESS过滤器。 在定义表单字段时，只需指定`assetVar`选项，该值应包含所需的变量名称。
+使用`|theme` [过滤器和组合器](markup-filter-theme.md)组合的资源可以将值传递给支持过滤器，例如LESS过滤器。 在定义表单字段时，只需指定`assetVar`选项，该值应包含所需的变量名称。
 
     form:
         fields:

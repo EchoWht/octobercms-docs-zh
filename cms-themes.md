@@ -154,7 +154,7 @@ Pages, partials 和 layout 模板最多可包含3个部分： **configuration**,
 <a name="twig-section"></a>
 ### Twig标记部分
 
-Twig部分定义了模板要呈现的标记。在Twig部分，您可以使用函数，标签和过滤器[October提供](../markup)，所有[原生Twig功能](http://twig.sensiolabs.org/documentation)，或者[插件](plugin-registration.md#extending-twig)。 Twig部分的内容取决于模板类型(页面，布局或部分)。您可以在文档中找到有关特定Twig对象的更多信息。
+Twig部分定义了模板要呈现的标记。在Twig部分，您可以使用函数，标签和过滤器[October提供](markup.md)，所有[原生Twig功能](http://twig.sensiolabs.org/documentation)，或者[插件](plugin-registration.md#extending-twig)。 Twig部分的内容取决于模板类型(页面，布局或部分)。您可以在文档中找到有关特定Twig对象的更多信息。
 
 
 <a name="theme-logging"></a>

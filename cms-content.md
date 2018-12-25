@@ -43,7 +43,7 @@
 
     <h1>欢迎{name}~</h1>
 
-可以在[标记指南](../markup/tag-content)中找到更多信息。
+可以在[标记指南](markup-tag-content.md)中找到更多信息。
 
 <a name="content-global-variables"></a>
 ### 全局变量

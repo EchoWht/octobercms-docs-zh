@@ -119,7 +119,7 @@ T您应注意的第一个功能是在运行AJAX请求时显示在页面顶部的
         Flash::success('You did it!')
     }
 
-为了与基于AJAX的闪存消息保持一致，您可以通过将此代码放入页面或布局来在页面加载时呈现[标准flash消息](../markup/tag-flash)。
+为了与基于AJAX的闪存消息保持一致，您可以通过将此代码放入页面或布局来在页面加载时呈现[标准flash消息](markup-tag-flash.md)。
 
     {% flash %}
         <p
