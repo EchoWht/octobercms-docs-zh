@@ -90,7 +90,7 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 <a name="dynamic-pages"></a>
 ## 动态页面
 
-在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](markup.md))。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](cms-components.md)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
+在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](markup.md)。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](cms-components.md)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
 
 <a name="page-life-cycle"></a>
 ### 页面执行的生命周期
