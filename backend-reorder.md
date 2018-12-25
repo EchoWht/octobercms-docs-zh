@@ -66,7 +66,7 @@
 <a name="reorder-display"></a>
 ## 显示重新排序页面
 
-您应该提供名为**reorder.htm**的[view file](controllers-views-ajax/#introduction) 。 此视图表示允许用户重新排序记录的“重新排序”页面。 由于重新排序包括工具栏，因此视图文件将仅包含单个`reorderRender`方法调用。
+您应该提供名为**reorder.htm**的[视图文件](controllers-views-ajax/#introduction) 。 此视图表示允许用户重新排序记录的“重新排序”页面。 由于重新排序包括工具栏，因此视图文件将仅包含单个`reorderRender`方法调用。
 
     <?= $this->reorderRender() ?>
 
