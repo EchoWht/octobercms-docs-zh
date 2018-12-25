@@ -134,7 +134,7 @@
 
     Db::commit();
 
-> **注意:** 使用`Db` facade的事务方法还控制[query builder](database-query.md) 和[model queries](database-model.md)的事务。
+> **注意:** 使用`Db` facade的事务方法还控制[查询构建器](database-query.md) 和[model queries](database-model.md)的事务。
 
 <a name="database-events"></a>
 ## 数据库事件

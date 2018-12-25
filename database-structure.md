@@ -279,7 +279,7 @@
 <a name="seeder-structure"></a>
 ## 填充结构
 
-与迁移文件一样，填充类默认只包含一个方法：`run`并应扩展`Seeder`类。 执行更新过程时会调用`run`方法。 在此方法中，您可以根据需要将数据插入数据库。 您可以使用[query builder](database-query.md)手动插入数据，也可以使用[model classes](database-model.md)。 在下面的示例中，我们将使用`run`方法中的`User`模型创建一个新用户：
+与迁移文件一样，填充类默认只包含一个方法：`run`并应扩展`Seeder`类。 执行更新过程时会调用`run`方法。 在此方法中，您可以根据需要将数据插入数据库。 您可以使用[查询构建器](database-query.md)手动插入数据，也可以使用[model classes](database-model.md)。 在下面的示例中，我们将使用`run`方法中的`User`模型创建一个新用户：
 
     <?php namespace Acme\Users\Updates;
 
@@ -302,7 +302,7 @@
         }
     }
 
-或者，使用`Db::table` [query builder](database-query.md) 方法可以实现相同的目的：
+或者，使用`Db::table` [查询构建器](database-query.md) 方法可以实现相同的目的：
 
     public function run()
     {

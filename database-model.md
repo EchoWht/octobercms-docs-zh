@@ -192,7 +192,7 @@ October根据[Laravel的Eloquent](http://laravel.com/docs/eloquent)提供了一�
         ->take(10)
         ->get();
 
-> **注意:** 由于模型是查询构建器，因此您应该熟悉[query builder](database-query.md)中可用的所有方法。 您可以在模型查询中使用任何这些方法。
+> **注意:** 由于模型是查询构建器，因此您应该熟悉[查询构建器](database-query.md)中可用的所有方法。 您可以在模型查询中使用任何这些方法。
 
 <a name="returning-collections"></a>
 #### 集合
