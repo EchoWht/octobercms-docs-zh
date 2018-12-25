@@ -10,7 +10,7 @@
 <a name="file-attachments"></a>
 ## 文件附件
 
-Model可以使用[多态关系]的子集支持文件附件(database-relations.md#polymorphic-relations)。 `$attachOne`或`$attachMany`关系用于将文件链接到名为“attachments”的数据库记录。在几乎所有情况下，`System\Models\File`Model用于维护这种关系，其中对文件的引用作为记录存储在`system_files`表中，并且和父Model具有多态关系。
+Model可以使用[多态关系](database-relations.md#polymorphic-relations)的子集支持文件附件。 `$attachOne`或`$attachMany`关系用于将文件链接到名为“attachments”的数据库记录。在几乎所有情况下，`System\Models\File`Model用于维护这种关系，其中对文件的引用作为记录存储在`system_files`表中，并且和父Model具有多态关系。
 
 在下面的示例中，Model具有单个头像附件Model和许多照片附件Model。
 
