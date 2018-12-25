@@ -62,7 +62,7 @@
 
 传递给`select`方法的第一个参数是原始SQL查询，而第二个参数是需要绑定到查询的任何参数绑定。 通常，这些是`where`子句约束的值。 参数绑定提供了针对SQL注入的保护。
 
-`select`方法将始终返回结果的`数组'。 数组中的每个结果都是一个PHP`stdClass`对象，允许您访问结果的值：
+`select`方法将始终返回结果的`数组`。 数组中的每个结果都是一个PHP`stdClass`对象，允许您访问结果的值：
 
     foreach ($users as $user) {
         echo $user->name;
