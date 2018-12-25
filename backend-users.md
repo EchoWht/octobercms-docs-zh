@@ -40,7 +40,7 @@
         'password_confirmation' => 'changeme'
     ]);
 
-`BackendAuth::check`方法是检查用户是否已登录的快速方法。要返回已登录的用户模型，请改用“BackendAuth::getUser”。 此外，活动用户将在任何[后端控制器](backend-controllers-ajax.md)中以`$this->user`的形式提供。
+`BackendAuth::check`方法是检查用户是否已登录的快速方法。要返回已登录的用户模型，请改用`BackendAuth::getUser`。 此外，活动用户将在任何[后端控制器](backend-controllers-ajax.md)中以`$this->user`的形式提供。
 
     // 如果已登录，则返回true。
     $loggedIn = BackendAuth::check();
@@ -116,7 +116,7 @@
         public $requiredPermissions = ['acme.blog.access_posts'];
     }
 
-您还可以使用**星号**符号来指示“所有权限”条件。 在下一个示例中，对于具有以“acme.blog”开头的任何权限的所有用户，都可以访问控制器页面。：
+您还可以使用**星号**符号来指示“所有权限”条件。 在下一个示例中，对于具有以`acme.blog`开头的任何权限的所有用户，都可以访问控制器页面。：
 
     public $requiredPermissions = ['acme.blog.*'];
 
