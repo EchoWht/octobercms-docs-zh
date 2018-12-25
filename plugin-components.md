@@ -437,4 +437,4 @@
         $this->addJs('/plugins/acme/blog/assets/javascript/blog-controls.js');
     }
 
-如果`addCss`和`addJs`方法参数中指定的路径以斜杠(/)开头，那么它将相对于网站根目录。 如果资产路径不以斜杠开头，则它相对于组件目录。
+如果`addCss`和`addJs`方法参数中指定的路径以斜杠(/)开头，那么它将相对于网站根目录。 如果资源路径不以斜杠开头，则它相对于组件目录。

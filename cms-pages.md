@@ -90,7 +90,6 @@ URL中间的参数是必填的。在下一个示例中，`:post_id`参数被标�
 <a name="dynamic-pages"></a>
 ## 动态页面
 
-Inside the [Twig section](cms-themes.md#twig-section) of a page template you can use any [functions, filters and tags provided by October](../markup). Any dynamic page requires **variables**. In October page variables can be prepared by the page or layout [PHP section](cms-themes.md#php-section) or by [Components](cms-components.md). In this article we describe how to prepare variables in the PHP section.
 在页面模板的[Twig部分](cms-themes.md#twig-section)内，您可以使用任何[October提供的函数，过滤器和标签](../markup))。任何动态页面都需要**变量**。October页面变量可以通过页面或布局[PHP部分](cms-themes.md#php-section)或[Components](cms-components.md)来准备。在本文中，我们将介绍如何在PHP部分中准备变量。
 
 <a name="page-life-cycle"></a>
@@ -167,7 +166,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
 
 > **注意:** 如果在页面布局中定义了具有相同名称的方法，则页面和页面[组件](cms-components.md) October 将执行页面方法。如果在组件和布局中定义了方法，则将执行布局方法。方法的优先级是：页面，布局，组件。
 
-如果要引用特定[组件][component](cms-components.md)中定义的方法, use the component name or alias in the handler reference:
+如果要引用特定[组件][component](cms-components.md)中定义的方法, 在处理程序引用中使用组件名称或别名
 
     {{ form_open({ request: 'myComponent::onHandleForm' }) }}
 
@@ -225,7 +224,7 @@ October提供的默认变量和Twig扩展名在[标记指南](../markup)中描�
         $this->addCss(['assets/less/base.less']);
     }
 
-为了在页面或[布局](layout) 上输出注入的资产，请使用 [{% styles %}](../markup/tag-styles) 和 [{% scripts %}](../markup/tag-scripts) 标签。例如：
+为了在页面或[布局](layout) 上输出注入的资源，请使用 [{% styles %}](../markup/tag-styles) 和 [{% scripts %}](../markup/tag-scripts) 标签。例如：
 
     <head>
         ...
