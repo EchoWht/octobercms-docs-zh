@@ -31,7 +31,7 @@
         public $relationConfig = 'config_relation.yaml';
     }
 
-> **注意:**关系行为通常与[表单行为](form)一起使用。
+> **注意:** 关系行为通常与[表单行为](form)一起使用。
 
 <a name="configuring-relation"></a>
 ## 配置关系行为
