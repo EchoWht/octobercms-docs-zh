@@ -1,4 +1,7 @@
 # octobercms 中文文档
+
+> [https://octobercms.com/docs/cms/themes](https://octobercms.com/docs/cms/themes)
+
 ## 目录
 1. CMS
     1. [安装](setup-installation.md)
