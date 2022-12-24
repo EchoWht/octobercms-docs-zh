@@ -77,3 +77,8 @@
     1. [命令行界面](console-commands.md)
     1. [脚手架命令](console-scaffolding.md)
     1. [控制台开发](console-development.md)
+    
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=EchoWht/octobercms-docs-zh&type=Date)](https://star-history.com/#EchoWht/octobercms-docs-zh&Date)
+
